@@ -1,0 +1,23 @@
+//211006_013_Tardiani_Simone.c
+//Caricare un vettore v dimensionato 10 con in primi 10 numeri naturali.
+//Eseguire un right-shift (spingere a dx) 1 2 3 4 5 6 7 8 9 10 ->  10 1 2 3 4 5 6 7 8 9
+#include<stdio.h>
+#define DIM 10
+
+int main()
+{
+    int v[]={1,2,3,4,5,6,7,8,9,10}, LastNum, i ;
+    LastNum=0;
+    i=0;
+    //Shift
+    LastNum=v[DIM-1];
+    for ( i = DIM-2; i >= 0; i--){
+        v[i+1]=v[i] ;
+    }
+    v[0]=LastNum;
+    //Vis
+    for(i=0; (i<sizeof(v)/sizeof(int)); i++){
+        printf("%d ",v[i]);
+    }
+    return 0;
+}

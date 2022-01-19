@@ -1,0 +1,20 @@
+.info {
+  background-color: rgb(90, 118, 138);
+  color: #ffffff;
+  font-family: "Bahnschrift";
+  font-size: small;
+}
+.lists {
+  float: left;
+  padding-right: 10%;
+  font-size: small;
+}
+.graphics {
+  background-color: white;
+  margin: 0%;
+  color: black;
+  font-size: large;
+  padding-left: 20%;
+  padding-right: 20%;
+  padding-top: 1%;
+}

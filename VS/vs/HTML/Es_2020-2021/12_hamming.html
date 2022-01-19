@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 style="color: blue; font-size: 30px">Il codice di Hamming</h1>
+
+    Il <span style="color: rgb(204, 55, 209)">codice di Hamming</span> si dice:
+
+    <ol type="a">
+      <li>Codice a rilevazione dell'errore.</li>
+      <li>Codice a correzzione dell'errore.</li>
+    </ol>
+
+    <div style="line-height: 2.2">
+      Lo si ottiene mettendo dei bit di
+      <span style="font-weight: bold">dato</span> intervallati a dei bit di
+      <span style="font-weight: bold">controllo</span>
+      <br />
+      Supponiamo che io voglia trasmettere
+      <span style="color: blue">1011</span>.
+      <br />
+      Il pattern de fare sarà:
+      <br />
+      <span style="color: red">XX</span>1<span style="color: red">X</span>011
+
+      <!--Primo passaggio-->
+      <p>
+        <span style="font-size: 150%; font-weight: bold">Primo passaggio</span>
+      </p>
+
+      Prendo un bit si uno no partendo dalla prima X e applico la parità:
+      <br />
+      Risultato <span style="color: red">XX</span>1<span style="color: red"
+        >X</span
+      >011
+
+      <!--Secondo passaggio-->
+      <p>
+        <span style="font-size: 150%; font-weight: bold"
+          >Secondo passaggio</span
+        >
+      </p>
+
+      Prendo due bit si due bit no partendo dalla prima X non svolta e applico
+      la parità:
+      <br />
+      Risultato <span style="color: red">XX</span>1<span style="color: red"
+        >X</span
+      >011
+
+      <!--Terzo passaggio-->
+      <p>
+        <span style="font-size: 150%; font-weight: bold">Terzo passaggio</span>
+      </p>
+
+      Prendo quattro bit si quattro bit no partendo dalla prima X e applico la
+      parità:
+      <br />
+      Risultato <span style="color: red">XX</span>1<span style="color: red"
+        >X</span
+      >011
+    </div>
+  </body>
+</html>

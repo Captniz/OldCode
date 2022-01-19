@@ -1,0 +1,519 @@
+# JAVASCRIPT <img src="js_logo.png" align="right" height="40"/><!-- omit in toc -->
+
+This guide is created for people who have at least the base knowledge of programming, like how to assign variables, use operators and stuff like this.
+
+`Javascript` is extremely similar to `Python` and `C`, so if you have at least some experience with one of these languages you can read this guide.
+
+---
+
+## 🔠 Table of contents <!-- omit in toc -->
+
+- [🔣 Symbols, structures and syntax](#-symbols-structures-and-syntax)
+  - [**_Comparing variables:_**](#comparing-variables)
+  - [**_Semicolon:_**](#semicolon)
+  - [**_Comments:_**](#comments)
+  - [**_String escapes:_**](#string-escapes)
+  - [**_Switch case_**](#switch-case)
+  - [**_Ternary operator_**](#ternary-operator)
+  - [**_Try and catch_**](#try-and-catch)
+  - [**_Arrow Functions_**](#arrow-functions)
+- [⏹ Data types](#-data-types)
+  - [**_Arrays:_**](#arrays)
+  - [**_Spread operator:_**](#spread-operator)
+  - [**_Destructuring assignments (Arrays):_**](#destructuring-assignments-arrays)
+  - [**_Objects:_**](#objects)
+  - [**_Destructuring assignments (Objects):_**](#destructuring-assignments-objects)
+- [🔁 Functions](#-functions)
+  - [**_Default parameters:_**](#default-parameters)
+  - [**_Rest operator:_**](#rest-operator)
+  - [**_Function encyclopedia:_**](#function-encyclopedia)
+    - [**Fundamentals:**](#fundamentals)
+    - [**Number manipulation:**](#number-manipulation)
+    - [**String manipulation:**](#string-manipulation)
+    - [**Array manipulation:**](#array-manipulation)
+    - [**Object manipulation:**](#object-manipulation)
+
+---
+
+## 🔣 Symbols, structures and syntax
+
+### **_Comparing variables:_**
+
+To compare two variables we use the `==` sign, which attemps to convert the two variables to a single variable type; using instead the `===` sign means that the two variable types wont be converted, this way we can check if a variable is exactly the same of another variable:
+
+```javascript
+if ("1" == 1) {
+  console.log('"1" and 1 are equal');
+}
+
+if ("1" === 1) {
+  console.log('"1" and 1 are EXACTLY equal');
+}
+
+// this program will log '"1" and 1 are equal'
+```
+
+The same can be done whith the `!==` sign, which has the same functioning:
+
+```javascript
+if ("1" != 1) {
+  console.log('"1" and 1 aren\'t equal');
+}
+
+if ("1" !== 1) {
+  console.log('"1" and 1 aren\'t AT ALL equal');
+}
+
+// this program will log '"1" and 1 aren't AT ALL equal'
+```
+
+### **_Semicolon:_**
+
+The semicolon at the end of a line of code isn't required in **javascript**, tough it's useful to understand where the line of code ends.
+
+### **_Comments:_**
+
+- Single line comment
+
+```javascript
+//This is single line comment
+```
+
+- Multi-line comment
+
+```javascript
+/*This is a multi line comment*/
+```
+
+### **_String escapes:_**
+
+```javascript
+var 1 = "\' single quote"
+var 2 = "\" double quote"
+var 3 = "\\ backslash"
+var 4 = "\n new line"
+var 5 = "\r carriage return"
+var 6 = "\t tab"
+var 7 = "\b backspace"
+var 8 = "\f form feed"
+```
+
+### **_Switch case_**
+
+The switch case is a simplified version of `If else` chains:
+
+```javascript
+switch (VarName) {
+  case 1:
+    console.log("equals 1");
+  case 2:
+    console.log("equals 2");
+  case 3:
+    console.log("equals 3");
+  default:
+    console.log("error");
+}
+```
+
+The default case is used when no other case is satisfied.
+
+### **_Ternary operator_**
+
+The ternary operator is a simplified version of a binary `if`:
+
+```javascript
+//condition ? if-true : if-false
+a==b ? return true : return false;
+```
+
+### **_Try and catch_**
+
+The keyword `try` tries a block of code, if it fails `catch` gets the error in a variable and executes another block of code in which the variable can be used
+
+```javascript
+try {
+  nonexhistentFunction();
+} catch (ErrorVariable) {
+  console.log(ErrorVariable);
+}
+```
+
+### **_Arrow Functions_**
+
+Arrow functions are simpler ways to write functions:
+
+```javascript
+var func = (input1, input2) => {
+  //code
+}
+
+//if you only have to return somthing:
+
+var func = (input1, input2) => returnVariable
+
+//if you dont need to assign it a name:
+
+() => {}
+
+//if you have to pass only one input:
+
+inputVar => {}
+```
+
+They are used most of the time to return data obtained trough some processing a single time.
+
+---
+
+## ⏹ Data types
+
+In **javascript** there are **7** types of data:
+
+> - **undefined:**  
+>   A non-defined variable
+> - **null:**  
+>   Nothing
+> - **boolean:**  
+>   True or false
+> - **string:**  
+>    Text (string variables can be added to eachother or a string trough additions).  
+>   You can refer toi a specifica char of a string this way: **varString**[**CharNumber**], starting from 0.  
+>   Strings are immutable, this means that you cant change single chars in the string once created.
+> - **symbol**
+> - **number:**  
+>   Number
+> - **object:**  
+>   Array which pair a property to a series of variables, this way we can access variables trough another variable
+
+To get the type of a variable in string from we use the keyword `typeof Varname`.
+
+To declare a variable we use 1 of 3 keywords (The variable could be any of the data types):
+
+> - **var:**  
+>   A variable that you can use everywhere in your program
+> - **let:**  
+>   A variable only visible in the scope where the variable is decleared
+> - **const:**  
+>   A constant variable that cant be changed
+
+The syntax to declare a variable is:
+
+```javascript
+var VarName = "Text";
+let VarName1 = 10;
+const VarName2 = true;
+```
+
+A variable which value has not yet been assigned is equal to undefined:
+
+```javascript
+var a;
+console.log(a);
+
+//This code will log to console "undefined"
+```
+
+### **_Arrays:_**
+
+Arrays are groups of variables, they are declared trough this syntax:
+
+```javascript
+var Array1 = ["String", 1, true];
+
+//Arrays can also be nested in eachother:
+var ArrayInArray = [
+  [1, 2],
+  ["a", "b"],
+];
+/*To acces a variable in a nested array you use the syntax: 
+ArrayInArray[0][0];*/
+```
+
+### **_Spread operator:_**
+
+To copy an array into another array we use the spread operator `...` trough this syntax:
+
+```javascript
+var Array1 = [1, 2, 3];
+var Array2 = [];
+
+Array2 = [...Array1];
+```
+
+If we directly copy the arrays using `=` without the spread operator, changing one array will change the other one too.
+
+### **_Destructuring assignments (Arrays):_**
+
+To spread the variables of an array on some externals variables in a quick way we use destructuring assignments trough this syntax:
+
+```javascript
+var Array1 = [1, 2, 3, 4, 5];
+
+[a, b, , d] = Array1;
+
+console.log(d);
+```
+
+You cannot assign a variable to a specific array variable, but you can use commas without specifing a variable to jump a position like in the example.
+
+A neat thing to do with this teqnique is swap two variables like this:
+
+```javascript
+var a = 1;
+var b = 0;
+
+[a, b] = [b, a];
+```
+
+Variables don't need to be declared for the destructuring assignment to work.
+
+### **_Objects:_**
+
+Objects are similar to arrays, they define a variable not trough an index but trough a property, they can be declared trough this syntax:
+
+```javascript
+var anObject = {
+  a: "apple",
+  b: "banana",
+  c: "coconut",
+};
+
+/*To acces a variable in an object you use the syntax:
+anObject["a"];*/
+
+//-------------------------
+
+//Objects can also be nested in themselves:
+var anObject = {
+  a: "apple",
+  b: { blueberry: 1, banana: 2, berry: 3 },
+  c: "coconut",
+};
+/*To acces a variable in a nested array you use the syntax:
+anObject["b"]["blueberry"];*/
+
+//Arrays can also be nested in objects:
+var anObject = {
+  a: "apple",
+  b: ["blueberry", "banana"],
+  c: "coconut",
+};
+/*To acces a variable in a nested array you use the syntax:
+anObject["b"][0];*/
+
+//-------------------------
+
+//You can also add properties to object trough this syntax:
+var anObject = {
+  a: "apple",
+  b: ["blueberry", "banana"],
+  c: "coconut",
+};
+
+anObject["NewProperty"] = "NewVar";
+
+//and remove them trough this syntax:
+
+var anObject = {
+  a: "apple",
+  b: ["blueberry", "banana"],
+  c: "coconut",
+};
+
+delete anObject["a"];
+```
+
+### **_Destructuring assignments (Objects):_**
+
+To spread the variables of an object on some externals variables in a quick way we use destructuring assignments trough this syntax:
+
+```javascript
+var anObject = {
+  a: "apple",
+  b: "blueberry",
+  c: "coconut",
+};
+
+var { a: Var1, b: Var2, c: Var3 } = anObject;
+```
+
+Variables don't need to be declared for the destructuring assignment to work.
+
+To spread variables of a nested object we use the same syntax 2 times:
+
+```javascript
+var anObject = {
+  a: "apple",
+  b: { 1: "blueberry", 2: "banana" },
+  c: "coconut",
+};
+
+var {
+  a: Var1,
+  b: { 1: Var2 },
+  c: Var3,
+} = anObject;
+```
+
+---
+
+## 🔁 Functions
+
+Functions in **javascript** are created trough the keyword `function`, trough this syntax:
+
+```javascript
+function functionName(inputVar1, inputVar2) {
+  //Code
+  return output;
+}
+```
+
+Functions can access variables defined where they were **DECLARED** (**!= CALLED**) and variable visible to scope where they were **DECLARED**, and treat them like they were passed by address.
+
+### **_Default parameters:_**
+
+You can assign a default value for a parameter of a function, to do this we use this syntax:
+
+```javascript
+function functionName(inputVar1 = 10) {
+  //Code
+  return output;
+}
+```
+
+This way if when calling the function you don't specify the value of the parameter it will default to 10 (in this example).
+
+### **_Rest operator:_**
+
+You can make a functions which takes in input an undefined number of parameters, to do this we use this syntax:
+
+```javascript
+function functionName(...ArrayName) {
+  //Code
+  return output;
+}
+```
+
+This way any variable put as a parameter will end up in the ArrayName array (in this example).
+
+### **_Function encyclopedia:_**
+
+#### **Fundamentals:**
+
+```javascript
+console.log(a);
+//Used to print to console something
+```
+
+#### **Number manipulation:**
+
+```javascript
+Math.floor(1.1);
+//Used to round a number to the nearest whole number
+```
+
+```javascript
+Math.random() * 100 + 1;
+//Used to create a random decimal number
+```
+
+```javascript
+ParseInt("100");
+//Used to convert a string to int
+
+ParseInt("11", 2); // = 3
+//You can also use it to convert to different bases
+```
+
+```javascript
+ParseFloat("100.1");
+//Used to convert a string to float
+```
+
+#### **String manipulation:**
+
+```javascript
+var String = "String";
+
+String.length;
+//Used to find the length of a string
+```
+
+#### **Array manipulation:**
+
+```javascript
+var Array1 = [1, 2, 3];
+var Array2 = [4, 5, 6];
+
+Array1.concat(Array2);
+//Used to concatenate 2 arrays
+```
+
+```javascript
+var Array1 = [1, 2, 3, 4];
+
+Array1.push(5);
+//Used to append data to the end of an array
+```
+
+```javascript
+var Array1 = [1, 2, 3, 4];
+
+Array1.unshift(0);
+//Used to append data to the start of an array
+```
+
+```javascript
+var Array1 = [1, 2, 3, 4];
+var RemovedFromArray;
+
+var RemovedFromArray = Array1.pop();
+//Used to remove the data from the last index of an array, you can equal this function to a var to assign it the value that has been removed
+```
+
+```javascript
+var Array1 = [1, 2, 3, 4];
+var RemovedFromArray;
+
+var RemovedFromArray = Array1.shift();
+//Used to remove the data from the last first of an array, you can equal this function to a var to assign it the value that has been removed
+```
+
+```javascript
+var Array1 = [1, 2, 3, 4];
+
+console.log("Array:" + JSON.stringify(Array1));
+//Used to transform an object or array to string type
+```
+
+#### **Object manipulation:**
+
+```javascript
+var anObject = {
+  1: "a",
+  2: "b",
+  3: "c",
+};
+
+anObject.hasOwnProperty(1);
+//Used to check if an object has the specified property
+```
+
+```javascript
+var anObject = {
+  1: "a",
+  2: "b",
+  3: "c",
+};
+
+Object.freeze(anObject);
+//Used to convert to constant all the properties of an boject
+```
+
+---
+
+Simone Tardiani  
+01/01/2022
+
+---
+
+<!-- TODO: 3:04:57 -->

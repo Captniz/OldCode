@@ -1,0 +1,15 @@
+Programmi da risolvere - tutti i prg saranno di volta in volta aggiornati in questo file
+
+nomi dei file: 
+210917_001_Cognome_Nome.c
+
+NUMBER SIGN (#) 
+AT SIGN (@)
+AMPERSAND (&)
+DASH (–)
+UNDERSCORE (_)
+SLASH (/)
+BACKSLASH (\)
+PIPE (|)
+
+

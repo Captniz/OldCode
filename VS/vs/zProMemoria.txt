@@ -1,0 +1,44 @@
+Usa breakpoints per vedere variabili durante debug
+
+'f1' / 'f2' per navigare rispettivamente funzioni e file di VScode
+
+#TODO: per segnare promemoria nel codice o #FIXME: per segnare un errore da correggere
+
+'f3' per navigare le tabelle laterali
+
+ctrl + n per nuovo file
+
+apri il file HTML in preview (f1 -> preview) per analizzarlo mentre programmi
+
+Usa "live server" + "file preview" per far si che si autoaggiorni su salvataggio
+
+puoi programmare gli snippet (f1 -> snippets setting) personalizzati per ogni linguaggio 
+
+puoi usare liveshare per condividere il codice
+
+puoi aprire un file html direttamente nel browser
+
+ctrl + space per attivare intellisense se si disattiva
+
+usa la zen mode se ti vuoi concentrare sul codice (f1 -> zen)
+
+il codice si formatterà da solo sopo un save
+
+nel caso ci sia un file css, cliccando sulla classe nel file html si potrebbe vedere il contenuto di css per quella classe (CSS peek)
+
+naviga con "cd" a "C:\Users\simon\AppData\Local\Programs\Python\Python*VersPython*\Scripts", poi usa 
+"pip install *****" per installare con "pip"
+
+puoi cambiare la versione di python in basso a sinistra in visual studio code
+
+usando alt + <- si torna alla precedente posizione del cursore
+
+tenendo premuto alt all inizio di una linea di codice e usando le freccette si sposta la riga di codice
+
+tenendo premuto control e hoverando sopra una var o funzione si puo vedere il contenuto e successivamente cliccandoci sopra il cursore si spostera a dove la varo o funzione è definita
+
+git lfs pusha i file piu grandi di 100mb
+
+ricorda sempre di fare un pull prima di lavorare
+
+per l'amor di cristo non toccare neanche per sbaglio la versione di c# e la versione del pacchetto per vscode su unity o giuro su dio che tocco il contatore

@@ -1,0 +1,1 @@
+numero binario random e c
