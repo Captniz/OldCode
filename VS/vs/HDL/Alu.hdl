@@ -1,0 +1,66 @@
+CHIP ALU {
+    IN  
+        a[16], b[16],  // 16-bit inputs        
+        zx, // zero the x input?
+        nx, // negate the x input?
+        zy, // zero the y input?
+        ny, // negate the y input?
+        f,  // compute out = x + y (if 1) or x & y (if 0)
+        no; // negate the out output?
+
+    OUT 
+        out[16], // 16-bit output
+        zr, // 1 if (out == 0), 0 otherwise
+        ng; // 1 if (out < 0),  0 otherwise
+
+    PARTS:
+        //X 
+        //Negate x
+        Mux16(a=a, b=false, sel=zx, out=NegateA); 
+        //Mux16(a=x,b[0..15]=false,sel=zx,out=zdx);
+        
+        //Not x
+        Not16(a=NegateA, out=NotNegateA);
+        //Not16(in=zdx,out=notx); 
+        Mux16(a=NegateA, b=NotNegateA, sel=nx, out=FinalA);
+        //Mux16(a=zdx,b=notx,sel=nx,out=ndx); 
+
+        //Y
+        //Negate y
+        Mux16(a=b, b=false, sel=zy, out=NegateB);
+        //Mux16(a=y,b[0..15]=false,sel=zy,out=zdy);
+        
+        //Not y
+        Not16(a=NegateB, out=NotNegateB);
+        //Not16(in=zdy,out=noty);
+        Mux16(a=NegateB, b=NotNegateB, sel=ny, out=FinalB);
+        //Mux16(a=zdy,b=noty,sel=ny,out=ndy);
+
+        //Twin stream
+        //And 16
+        And16(a=FinalA, b=FinalB, out=AndFinal);
+        //And16(a=ndx,b=ndy,out=xandy); 
+
+        //Add 16
+        Add16(a=FinalA, b=FinalB, out=AddFinal);
+        //Add16(a=ndx,b=ndy,out=xplusy);
+
+        //Add or And
+        Mux16(a=AndFinal, b=AddFinal, sel=f, out=FinalData);
+        //Mux16(a=xandy,b=xplusy,sel=f,out=fxy);
+
+        //Negate final data
+        Not16(a=FinalData, out=NotFinalData);
+        //Not16(in=fxy,out=nfxy);
+        Mux16(a=FinalData, b=NotFinalData, sel=no, out=oo);
+        //Mux16(a=fxy,b=nfxy,sel=no,out=oo);
+
+        //Negative number?
+        Or(a=false, b=oo[15], out=ng);
+
+        //Output = 0?
+        Or16Way(a=oo,out=ooo);
+        Not(a=ooo, out=zr);
+        //Output
+        Or16(a=oo, b=false, out=out);
+}

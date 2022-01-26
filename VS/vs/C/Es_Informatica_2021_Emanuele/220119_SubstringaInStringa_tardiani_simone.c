@@ -17,28 +17,26 @@ int main(){
     printf("SubStringa:\n");
     gets(subs);
     
-    for ( i = 0; i < 50-2; i++){
+    for ( i = 0; s[i] != '\0'; i++){
         flag=1;
-        if(s[i]==subs[0]){
-            for ( j = 1; j < 3; j++){
-                if (s[i+j]!=subs[j]){
-                    flag=0;
-                }
+        while (flag && j<strlen(subs)){
+            if (s[i+j]!=subs[j]){
+                flag=0;
             }
-
-            if (flag){
-                for ( j = s[i+3]; j < 50; j++){
-                    box=s[j-3];
-                    s[j-3]=s[j];
-                    s[j]=box;
-                }
-                i=51;
-            }
-        }    
+            j++;
+        }
+        
+        if (flag){
+            // for ( j = i+strlen(subs); s[j]!='\0' ; j++){
+            //     s[j-strlen(subs)]=s[j];
+            // }  
+            // s[j-strlen(subs)]='\0';
+            // puts(s);
+            printf("pos:%d\n",i);
+            return 0;
+        }
     }
     
-    puts(s);
-
+    printf("stringa non trovata\n");
     return 0;
-
 }
