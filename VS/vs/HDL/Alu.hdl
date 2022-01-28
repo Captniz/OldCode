@@ -1,4 +1,4 @@
-CHIP ALU {
+CHIP Alu {
     IN  
         a[16], b[16],  // 16-bit inputs        
         zx, // zero the x input?
@@ -52,15 +52,8 @@ CHIP ALU {
         //Negate final data
         Not16(a=FinalData, out=NotFinalData);
         //Not16(in=fxy,out=nfxy);
-        Mux16(a=FinalData, b=NotFinalData, sel=no, out=oo);
-        //Mux16(a=fxy,b=nfxy,sel=no,out=oo);
-
-        //Negative number?
-        Or(a=false, b=oo[15], out=ng);
-
-        //Output = 0?
-        Or16Way(a=oo,out=ooo);
-        Not(a=ooo, out=zr);
-        //Output
-        Or16(a=oo, b=false, out=out);
+        Mux16(a=FinalData, b=NotFinalData, sel=no, out=out, out[15]=ng, out=out1);
+        
+        Or16Way(a=out1,out=orout);
+        Not(in=orout, out=zr);
 }

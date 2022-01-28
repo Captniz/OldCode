@@ -2,6 +2,7 @@ CHIP Or16Way{
     IN a[16];
     OUT out;
 
+    PARTS:
     Or(a=a[0], b=a[1], out=c1);
     Or(a=c1, b=a[2], out=c2);
     Or(a=c2, b=a[3], out=c3);
