@@ -3,35 +3,81 @@
   <head>
     <title>Galleria</title>
     <style>
+      .griglia {
+        display: grid;
+        grid-gap: 25px;
+        column-gap: 100px;
+      }
+      body {
+        font-family: Baskerville old face;
+        background-color: rgb(146, 146, 146);
+        text-align: center;
+      }
       img {
-        padding-top: 80px;
-        padding-bottom: 80px;
-        padding-left: 50px;
-        padding-right: 50px;
+        width: 200px;
       }
     </style>
   </head>
-  <body
-    style="
-      text-align: center;
-      font-family: Baskerville old face;
-      font-size: xx-large;
-      background-color: rgb(146, 146, 146);
-    "
-  >
-    <h1>Galleria d'arte</h1>
-
-        <img src="220115_web9\web9\dscn0030.jpg" width="300" />
-        <img src="220115_web9\web9\dscn0031.jpg" width="300" />
-        <img src="220115_web9\web9\dscn0032.jpg" width="300" />
-      <br />
-      <img src="220115_web9\web9\dscn0033.jpg" width="300" />
-      <img src="220115_web9\web9\dscn0034.jpg" width="300" />
-      <img src="220115_web9\web9\dscn0035.jpg" width="300 " />
-      <br />
-      <img src="220115_web9\web9\dscn0036.jpg" width="300" />
-      <img src="220115_web9\web9\dscn0037.jpg" width="300" />
-      <img src="220115_web9\web9\dscn0038.jpg" width="300" />
+  <body>
+    <!--titolo-->
+    <h1 style="text-align: center">Galleria d'arte</h1>
+    <!--griglia-->
+    <div class="griglia">
+      <!--Img 1-->
+      <div style="grid-column-start: 1; grid-column-end: 1">
+        <a href="HTML/Dip1.html"
+          ><img class="first_img" src="220115_web9\web9\dscn0030.jpg"
+        /></a>
+      </div>
+      <!--Img 2-->
+      <div style="grid-column-start: 2; grid-column-end: 2">
+        <a href="HTML/Dip2.html"
+          ><img class="first_img" src="220115_web9\web9\dscn0031.jpg"
+        /></a>
+      </div>
+      <!--Img 3-->
+      <div style="grid-column-start: 3; grid-column-end: 3">
+        <a href="HTML/Dip3.html"
+          ><img class="first_img" src="220115_web9\web9\dscn0032.jpg"
+        /></a>
+      </div>
+      <!--Img 4-->
+      <div style="grid-row-start: 2; grid-column-start: 1; grid-column-end: 1">
+        <a href="HTML/Dip4.html"
+          ><img class="first_img" src="220115_web9\web9\dscn0033.jpg"
+        /></a>
+      </div>
+      <!--Img 5-->
+      <div style="grid-row-start: 2; grid-column-start: 2; grid-column-end: 2">
+        <a href="HTML/Dip5.html"
+          ><img class="first_img" src="220115_web9\web9\dscn0034.jpg"
+        /></a>
+      </div>
+      <!--Img 6-->
+      <div style="grid-row-start: 2; grid-column-start: 3; grid-column-end: 3">
+        <a href="HTML/Dip6.html"
+          ><img class="first_img" src="220115_web9\web9\dscn0035.jpg"
+        /></a>
+      </div>
+      <!--Img 7-->
+      <div style="grid-row-start: 3; grid-column-start: 1; grid-column-end: 1">
+        <a href="HTML/Dip7.html"
+          ><img class="first_img" src="220115_web9\web9\dscn0036.jpg"
+        /></a>
+      </div>
+      <!--Img 8-->
+      <div style="grid-row-start: 3; grid-column-start: 2; grid-column-end: 2">
+        <a href="HTML/Dip8.html"
+          ><img class="first_img" src="220115_web9\web9\dscn0037.jpg"
+        /></a>
+      </div>
+      <!--Img 9-->
+      <div style="grid-row-start: 3; grid-column-start: 3; grid-column-end: 3">
+        <a href="HTML/Dip9.html"
+          ><img class="first_img" src="220115_web9\web9\dscn0038.jpg"
+        /></a>
+      </div>
+      <!--Fine griglia-->
     </div>
   </body>
 </html>
