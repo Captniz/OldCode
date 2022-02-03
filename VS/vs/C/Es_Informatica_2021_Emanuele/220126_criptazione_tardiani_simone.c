@@ -12,18 +12,22 @@ int main(){
     for ( i = 0; i < 80; i++){
         s[i]='\0';
     }
-    
 
-    printf("Stringa:");
+    printf("Stringa:\n");
     gets(s);
 
     printf("Chiave:");
     scanf("%d",&c);
 
+    c=c-(26*(c/26));
+
     for ( i = 0; s[i] != '\0'; i++){
         //97
-        ctr=(s[i]-96+c)%26;
-        s[i]=s[i]+c-(26*ctr);
+        s[i]=s[i]+c;
+
+        if (s[i]>122){
+            s[i]=s[i]-26;
+        }
     }
     
     puts(s);
