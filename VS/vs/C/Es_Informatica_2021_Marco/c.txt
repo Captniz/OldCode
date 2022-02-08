@@ -12,4 +12,48 @@ SLASH (/)
 BACKSLASH (\)
 PIPE (|)
 
+220114
+======
+57> 
+Switch case (menu)
+0. Carica
+1. Visualizza
+2. Bubble sort
+3. Selection sort
+4. Insertion sort
+5.exit
 
+220118
+======
+58> Benchmark tra sorting: bubble, selection, insertion
+
+int swap_count = 0;
+int comp_count = 0;
+void incSwap() { swap_count++; }
+void incComp() { comp_count++; }
+
+void resetCounters(){
+	swap_count = 0;
+	comp_count = 0;
+}
+void printCounters(){
+	printf("Confronti effettuati: %d\n", comp_count);
+	printf("Scambi effettuati: %d\n", swap_count);
+}
+
+220121
+======
+59> Caricare un vet v DIM=20 con numeri random a piacere.
+Visualizzare v.
+Ordinare la prima metà di v e poi la seconda metà di v.
+Alla fine v risulterà ordinato.
+Visualizzare nuovamente v.
+
+60> Data una stringa s="Oggi ProVIAMO a VeDere chi Vince" caricata contestualmente estrarre solo le maiuscole e ordinarle in una seconda stringa s2 in modo discendente.
+visualizzare s.
+visualizzare s2.
+
+220125
+======
+61> Eseguire una ricerca binaria su un array v dimensionato DIM=10.
+Inserire un valore esternamente e trovare se appartiene o meno a v.
