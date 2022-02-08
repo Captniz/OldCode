@@ -1,21 +1,21 @@
-CHIP Or16Way{
-    IN a[16];
+CHIP Or16Way {
+    IN in[16];
     OUT out;
 
     PARTS:
-    Or(a=a[0], b=a[1], out=c1);
-    Or(a=c1, b=a[2], out=c2);
-    Or(a=c2, b=a[3], out=c3);
-    Or(a=c3, b=a[4], out=c4);
-    Or(a=c4, b=a[5], out=c5);
-    Or(a=c5, b=a[6], out=c6);
-    Or(a=c6, b=a[7], out=c7);
-    Or(a=c7, b=a[8], out=c8);
-    Or(a=c8, b=a[9], out=c9);
-    Or(a=c9, b=a[10], out=c10);
-    Or(a=c10, b=a[11], out=c11);
-    Or(a=c11, b=a[12], out=c12);
-    Or(a=c12, b=a[13], out=c13);
-    Or(a=c13, b=a[14], out=c14);
-    Or(a=c14, b=a[15], out=out);
+    Or(a=in[0],b=in[1],out=a);
+	Or(a=a,b=in[2],out=b);
+	Or(a=b,b=in[3],out=c);
+	Or(a=c,b=in[4],out=d);
+	Or(a=d,b=in[5],out=e);
+	Or(a=e,b=in[6],out=f);
+	Or(a=f,b=in[7],out=g);
+	Or(a=g,b=in[8],out=h);
+	Or(a=h,b=in[9],out=i);
+	Or(a=i,b=in[10],out=j);
+	Or(a=j,b=in[11],out=k);
+	Or(a=k,b=in[12],out=l);
+	Or(a=l,b=in[13],out=m);
+	Or(a=m,b=in[14],out=n);
+	Or(a=n,b=in[15],out=out);
 }
