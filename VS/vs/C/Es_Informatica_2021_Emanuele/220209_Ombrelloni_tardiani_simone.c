@@ -29,7 +29,6 @@ Confronta() confronta se il costo totale di un ombrellone (lettino + noleggio) �
 Nel main infine è necessario dato il valore di una posizione di un  ombrellone, cercare tutti gli ombrelloni che hanno un costo minore di quell’ombrellone implementando una funzione cerca(). 
 Stampa un main di prova che gestisca la modifica e tutte le funzioni.*/
 
-
 #include<stdio.h>
 #include<stdlib.h>
 #include<time.h>
@@ -56,8 +55,8 @@ int main(){
     printf("Costo?:");
     scanf("%f",&Costo);
     Inizializza(Omb, Let, LetOccup);
+    //Scrive gli array per debugging
 
-    //!DELETE
         int i,j;
         j=0;
         i=0;
@@ -83,8 +82,7 @@ int main(){
             putchar('\n');
         }
         putchar('\n');
-    //!DELETE
-
+    
     Stampa(Omb, Let, LetOccup);
     calMAXaFatturato(Omb, Let, LetOccup, Costo);    
     Occupa(Omb, Let, LetOccup);
@@ -106,16 +104,22 @@ void Inizializza(int Omb[ROW][COL], int Let[ROW][COL], int LetOccup[ROW][COL]){
 
     for ( i = 0; i < ROW; i++){
         for ( j = 0; j < COL; j++){
+            //Creazione di una matrice di ombrelloni occupati (Maggiori di 0) con i giorni occupati
             Omb[i][j]=rand()%(MAXOCCUPATI+1)+0;
+
+            //Azzeramento array
             LetOccup[i][j]=0;
             Let[i][j]=0;
+            
+            //Se l'array Omb ha un ombrellone occupato assegna la presenza o meno di un lettino (questo step tecnicamente non è necessario, tuttavia uscirebbero troppi pochi lettini non occupati attraverso una randomizzazione semplice, dato che lo zero avrebbe pari probabilita di uscire di tutti gli altri numeri)
             if (Omb[i][j]){
                 LetOccup[i][j]=rand()%2+0;
             }
+
+            //Se in lettino è segnato come occupato, assegnali un tot di lettini da occupati randomicamente
             if (LetOccup[i][j]){ 
                 Let[i][j]=rand()%MAXLETTINI+1;
-            }
-            
+            }   
         }
     }
 }
@@ -127,7 +131,9 @@ void Stampa(int Omb[ROW][COL], int Let[ROW][COL], int LetOccup[ROW][COL]){
     j=0;
     i=0;
 
-    printf("\n-----------\n");
+    printf("\n-----------\n"); //<--- queste barrette le utilizzo per chiarezza nell' output durante tutto il programma
+
+    //Stampa un resoconto semplice di tutti i dati dei lettini
     for ( i = 0; i < ROW; i++){
         for ( j = 0; j < COL; j++){
             printf("%d lettini occupati per %d giorni nella posizione (%d;%d)\n",Let[i][j],Omb[i][j]*LetOccup[i][j],i,j);
@@ -148,8 +154,10 @@ void calMAXaFatturato(int Omb[ROW][COL], int Let[ROW][COL], int LetOccup[ROW][CO
     printf("\n-----------\n");
     for (i=0;i<ROW;i++){
         for (j=0;j<COL;j++){
+            //Se il lettino è presente...
             if (Omb[i][j]){
                 if (LetOccup[i][j]){
+                    //Chiamo una funzione che calcola il costo del lettino e poi lo stampo con una frase
                     costo = CostoLettino(j,i,Costo,Let,Omb);
                     printf("Il costo totale dei lettini occupati nella posizione (%d;%d) e' %f$\n",i,j,costo);
                 }
@@ -167,6 +175,7 @@ void Occupa(int Omb[ROW][COL], int Let[ROW][COL], int LetOccup[ROW][COL]){
     g=0;
     
     printf("\n-----------\n");
+    //Richiesta coordinate del ombrellone/lettino e controllo che siano corrette e disponibili
     do{
         do{
             printf("Lettino da occupare (coord. x partendo da 0):");
@@ -183,15 +192,15 @@ void Occupa(int Omb[ROW][COL], int Let[ROW][COL], int LetOccup[ROW][COL]){
         printf("Lettini da prenotare:");
         scanf("%d",&g);
     }while(g>MAXLETTINI);
-    Let[y][x]=g;
+    Let[y][x]=g; //<-- input informazioni nell'array
 
     do{
         printf("Giorni della prenotazione:");
         scanf("%d",&g);
     }while(g>MAXOCCUPATI);
-    Omb[y][x]=g;
+    Omb[y][x]=g; //<-- input informazioni nell'array
 
-    LetOccup[y][x]=1;
+    LetOccup[y][x]=1; //<-- input informazioni nell'array
 
     printf("\n-----------\n");
 }
@@ -204,6 +213,8 @@ void stampaDisponibilita(int Omb[ROW][COL]){
     char X[2]="X\0";
 
     printf("\n-----------\n");
+
+    //Stampa semplice della matrice con aggiunta della condizione se è 0 scrive X
     for ( i = 0; i < ROW; i++){
         for ( j = 0; j < COL; j++){
             if (Omb[i][j]){
@@ -229,6 +240,8 @@ void Confronta(int Omb[ROW][COL], int Let[ROW][COL], int LetOccup[ROW][COL], flo
     costo2=0;
 
     printf("\n-----------\n");
+
+    //Richiesta coordinate del ombrellone/lettino e controllo che siano corrette e disponibili
     do{
         printf("Lettino 1 (coord. x partendo da 0):");
         scanf("%d",&x1);
@@ -248,13 +261,12 @@ void Confronta(int Omb[ROW][COL], int Let[ROW][COL], int LetOccup[ROW][COL], flo
         scanf("%d",&y2);
     }while(y2>=ROW);
     
+    //Confronto tra i due costi totali
     if ((CostoLettino(x1,y1,Costo,Let,Omb)+CostoOmbrellone(x1,y1,Costo,Let,Omb))>(CostoLettino(x2,y2,Costo,Let,Omb)+CostoOmbrellone(x2,y2,Costo,Let,Omb))){
         printf("Il primo ombrellone costa più del secondo");
     }else{
         printf("Il primo ombrellone non costa piu' del secondo");
     }
-    
-    
 
     printf("\n-----------\n");
 }
@@ -268,18 +280,21 @@ void Cerca(){
 
     printf("\n-----------\n");
 
+    //Qua ci interessa sapere solo la y dell'ombrellone poichè la funzione tralascia i lettini e il prezzo dell'ombrellone basato unicamente sull'altezza.
     printf("Coord x ombrellone:");
-    scanf("%d",&y);
+    scanf("%d",&y);  //<--- Chiediamo comunque la x all'utente per farlo sentire intelligente
     printf("\nCoord y ombrellone:");
     scanf("%d",&y);
 
-    if (y!=0)
-    {
+
+    if (y!=0){
         printf("Gli ombrelloni delle/a file/a ");
         for ( i = 0; i < y; i++){
             printf("%d ",i);
         }
         printf("costano di meno");
+
+    //Se l'ombrellone fa parte della fila 0 non ci sono ombrelloni meno costosi
     }else{
         printf("Nessun ombrellone costa meno");
     }
@@ -287,13 +302,17 @@ void Cerca(){
     printf("\n-----------\n");
 }
 
+//Nelle due funzioni seguenti viene calcolato in entrambe lo sconto anzi che una singola, questo comporta che il prezzo venga scontato non corretamente molte volte, tuttavia lo lascerò nel programma poichè sono un uomo magnianimo e faccio lo sconto aggiuntivo.
+
 //Calcola costo lettino specificato
 float CostoLettino(int x, int y, float Costo, int Let[ROW][COL],int Omb[ROW][COL]){
 
     float costo=0;
-
+    
+    //Espressione per il calcolo esatto del costo del lettino
     costo = ((((((Costo*2)/(ROW-1))*y)+Costo)/4)*Let[y][x]);
 
+    //Aplicazione degli sconti
     if (Omb[y][x]>=10){
         //sconto 1
         costo=costo-(costo/100*20);
@@ -310,8 +329,10 @@ float CostoOmbrellone(int x, int y, float Costo, int Let[ROW][COL],int Omb[ROW][
     
     float costo=0;
 
+    //Espressione per il calcolo esatto del costo del lettino
     costo = ((((Costo*2)/(ROW-1))*y)+Costo);
 
+    //Aplicazione degli sconti
     if (Omb[y][x]>=10){
         //sconto 1
         costo=costo-(costo/100*20);
