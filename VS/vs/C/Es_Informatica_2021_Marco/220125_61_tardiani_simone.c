@@ -10,13 +10,17 @@ void vis(int v[]);
 void ordina(int v[]);
 
 int main(){
-    int v[DIM];
+    int v[DIM],N;
+    N=0;
     srand(time(NULL));
+
+    printf("Numero?:");
+    scanf("%d",&N);
 
     carica(v);
     ordina(v);
     vis(v);
-    printf("\n\n%d\n",BinarySearch(0,DIM,2,v));
+    printf("\n\n%d\n",BinarySearch(0,DIM,N,v));
     return 0;
 }
 

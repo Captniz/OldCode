@@ -41,19 +41,13 @@ void printCounters(){
 	printf("Scambi effettuati: %d\n", swap_count);
 }
 
-220121
+220218
 ======
-59> Caricare un vet v DIM=20 con numeri random a piacere.
-Visualizzare v.
-Ordinare la prima metà di v e poi la seconda metà di v.
-Alla fine v risulterà ordinato.
-Visualizzare nuovamente v.
 
-60> Data una stringa s="Oggi ProVIAMO a VeDere chi Vince" caricata contestualmente estrarre solo le maiuscole e ordinarle in una seconda stringa s2 in modo discendente.
-visualizzare s.
-visualizzare s2.
+64> dato un array dimensionato DIM=10 di stringhe con lunghezza L=80 inserite esternamente
+preparare il seguente menu
 
-220125
-======
-61> Eseguire una ricerca binaria su un array v dimensionato DIM=10.
-Inserire un valore esternamente e trovare se appartiene o meno a v.
+0 - escape
+n – ordina le stringhe per nome in modo crescente
+d – ordina le stringhe per lunghezza in modo crescente 
+v – ordina le stringhe contenenti più vocali in modo crescente 

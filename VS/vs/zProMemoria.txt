@@ -42,3 +42,5 @@ git lfs pusha i file piu grandi di 100mb
 ricorda sempre di fare un pull prima di lavorare
 
 per l'amor di cristo non toccare neanche per sbaglio la versione di c# e la versione del pacchetto per vscode su unity o giuro su dio che tocco il contatore
+
+temi preferiti: One Monokai, Github dark

@@ -95,45 +95,14 @@ void BubbleSort( int v[DIM]){
 
 }
 void InsertionSort( int v[DIM]){
-
-    int k,j,i,box,a[DIM];
-    i=0;
-    j=0;
-    k=0;
-    box=0;
-
-    //AZZERA
-    for ( i = 0; i < DIM; i++){
-        a[i]=0;
-    }
-    
-    a[0]=v[0];
-    if (a[0]<=v[1]){
-        a[1]=v[1];
-    }else{
-        a[1]=a[0];
-        a[0]=v[1];
-    }
-    
-    for ( i = 2; i < DIM; i++){
-        for ( j = i-1; j != 0; j--){
-            if (v[i]>=a[j]){
-                for ( k = DIM-1; k-1 != j ; k--){
-                    //printf("/%d--3/",j); //!pk è DIECI DIOCANE??????!??!?!?
-                    box=a[k];
-                    a[k]=a[k-1];
-                    a[k-1]=box;
-                }               
-                a[j+1]=v[i]; 
-                j=DIM+1;
-            }
+	int i,j,min;
+    for(i=1;i<DIM;i++){
+        min=v[i];
+        for(j=i-1;(j>=0) && (min<v[j]);j--){
+            v[j+1]=v[j];
         }
+        v[j+1]=min;
     }
-
-    for ( i = 0; i < DIM; i++){
-        v[i]=a[i];
-    }
-    
 }
 void SelectionSort( int v[DIM]){
     
