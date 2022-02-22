@@ -37,6 +37,7 @@ Stampa un main di prova che gestisca la modifica e tutte le funzioni.*/
 #define MAXOCCUPATI 5
 #define MAXLETTINI 3
 
+void DEBUG(int a,int Omb[ROW][COL], int Let[ROW][COL], int LetOccup[ROW][COL]);
 void Inizializza(int Omb[ROW][COL], int Let[ROW][COL], int LetOccup[ROW][COL]);
 void Stampa(int Omb[ROW][COL], int Let[ROW][COL], int LetOccup[ROW][COL]);
 void calMAXaFatturato(int Omb[ROW][COL], int Let[ROW][COL], int LetOccup[ROW][COL], float Costo);
@@ -54,35 +55,9 @@ int main(){
 
     printf("Costo?:");
     scanf("%f",&Costo);
-    Inizializza(Omb, Let, LetOccup);
-    //Scrive gli array per debugging
-
-        int i,j;
-        j=0;
-        i=0;
-
-        for (i=0;i<ROW;i++){
-            for (j=0;j<COL;j++){
-                printf("%3d",Omb[i][j]);
-            }
-            putchar('\n');
-        }
-        putchar('\n');
-        for (i=0;i<ROW;i++){
-            for (j=0;j<COL;j++){
-                printf("%3d",Let[i][j]);
-            }
-            putchar('\n');
-        }
-        putchar('\n');
-        for (i=0;i<ROW;i++){
-            for (j=0;j<COL;j++){
-                printf("%3d",LetOccup[i][j]);
-            }
-            putchar('\n');
-        }
-        putchar('\n');
-    
+    Inizializza(Omb, Let, LetOccup); 
+    //Cambia a 1 se si vuole gli array per debugging
+    DEBUG(0,Omb, Let, LetOccup);
     Stampa(Omb, Let, LetOccup);
     calMAXaFatturato(Omb, Let, LetOccup, Costo);    
     Occupa(Omb, Let, LetOccup);
@@ -342,4 +317,36 @@ float CostoOmbrellone(int x, int y, float Costo, int Let[ROW][COL],int Omb[ROW][
     } 
 
     return costo;
+}
+
+//Scrive gli array per debugging
+void DEBUG(int a, int Omb[ROW][COL], int Let[ROW][COL], int LetOccup[ROW][COL]){
+
+    if(a){
+        int i,j;
+            j=0;
+            i=0;
+
+        for (i=0;i<ROW;i++){
+            for (j=0;j<COL;j++){
+                printf("%3d",Omb[i][j]);
+            }
+            putchar('\n');
+        }
+        putchar('\n');
+        for (i=0;i<ROW;i++){
+            for (j=0;j<COL;j++){
+                printf("%3d",Let[i][j]);
+            }
+            putchar('\n');
+        }
+        putchar('\n');
+        for (i=0;i<ROW;i++){
+            for (j=0;j<COL;j++){
+                printf("%3d",LetOccup[i][j]);
+            }
+            putchar('\n');
+        }
+        putchar('\n');
+    }
 }
