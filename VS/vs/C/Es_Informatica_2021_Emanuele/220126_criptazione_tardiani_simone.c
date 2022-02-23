@@ -4,10 +4,9 @@
 int main(){
     
     char s[80];
-    int ctr,i,c;
+    int i,c;
     i=0;
     c=0;
-    ctr=0;
 
     for ( i = 0; i < 80; i++){
         s[i]='\0';
