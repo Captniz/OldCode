@@ -70,3 +70,5 @@ ctrl + x cancella un intera riga
 ctr + alt + su/giu mette un cursore o su o giu
 
 alt + shift + su/giu copia la riga non scendendo col cursore o scendendo
+
+simple browser ti permette di andare su moodle da vscode
