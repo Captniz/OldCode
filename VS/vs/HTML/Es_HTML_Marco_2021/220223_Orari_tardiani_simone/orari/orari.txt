@@ -1,0 +1,6 @@
+
+il sito scolastico prevede a sx menu con anche un link a orario docenti (un argomento)
+dovete gestire l'orario di 5 docenti al momento (ma ce ne saranno altri)
+
+CSS esterni
+

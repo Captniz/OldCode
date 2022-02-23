@@ -1,0 +1,17 @@
+.grid {
+  display: grid;
+  grid-template-rows: 4% repeat(6, 16%);
+  grid-template-columns: 2% repeat(7, 14%);
+  width: 100%;
+  height: 100%;
+}
+div {
+  border: solid;
+  border-width: 1px;
+  grid-column: auto;
+  grid-row: auto;
+}
+body {
+  width: 100%;
+  height: 100%;
+}
