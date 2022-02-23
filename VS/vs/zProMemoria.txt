@@ -8,15 +8,15 @@ Usa breakpoints per vedere variabili durante debug
 
 ctrl + n per nuovo file
 
-apri il file HTML in preview (f1 -> preview) per analizzarlo mentre programmi
+apri il file HTML in preview (f1 -> preview) per analizzarlo mentre programmi //deprecato: usa live preview
 
-Usa "live server" + "file preview" per far si che si autoaggiorni su salvataggio
+Usa "live server" + "file preview" per far si che si autoaggiorni su salvataggio //deprecato: usa live preview
 
 puoi programmare gli snippet (f1 -> snippets setting) personalizzati per ogni linguaggio 
 
 puoi usare liveshare per condividere il codice
 
-puoi aprire un file html direttamente nel browser
+puoi aprire un file html direttamente nel browser con "open in browser"
 
 ctrl + space per attivare intellisense se si disattiva
 
