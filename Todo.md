@@ -1,54 +1,54 @@
-# My TODO list
+# My TODO list          
 
-- [ ] Olimpiadi cybersecurity in 4a
-- [ ] crea gioco d&d per html
-- [ ] "I made a real life pip boy and mine is better"
-- [ ] -chivaetta ome tastiera
-- [ ] -matrix 1 gennaio
-- [ ] -programmi ops
-- [ ] -mac per linux
-- [ ] -homepod remoto
-- [ ] -gioco unity
-- [ ] -imposta wake on lan
-- [ ] -ricrea stack per qualunque app
-- [ ] -chibi di culpo
-- [ ] -droni
-- [ ] -calendar
-- [ ] -Impara typesceipt/
-- [ ] cos e un debugger e cone funzione /
-- [ ] cos e un franework/
-- [ ] cos e un compiler/
-- [ ] impara vari linguaggi/
-- [ ] cos è docker /
-- [ ] criptogia/https://www.microsoft.com/it-it/p/devtoys/9pgcv4v3bk4w?rtc=1&activetab=pivot:overviewtab
-- [ ] guardati lore ds
-- [ ] -scarica dlc aggiuntivi MHW
-- [ ] Cos è un API /
-- [ ] fai libro terminologie da programmatore
-- [ ] -Cosa sono le codifiche (utf- unicode)
-- [ ] -Devtoys
-- [ ] -Fai un insieme di tools da tenerti dietro
-- [ ] -Fai un server col raspberry, come google drive i modo da avere uno spazio dove caricare file illimitatamente
-- [ ] -Scarica repo book of secrets da github
-- [ ] -Scopri come caricare su github la tua repo
-- [ ] -Stampante casari
-- [ ] -Unisci calendar-milanot-todo sul desktop
-- [ ] latte
-- [ ] Video culpo
-- [ ] ToDo sul pc
-- [ ] MHW
-- [ ] Mate
-- [ ] Corso IA
-- [ ] Corso Droni
-- [ ] linux rice
-- [ ] compiti inglese
-- [ ] siti info
-- [ ] softair
-- [ ] Chitarra
-- [ ] vr
-- [ ] fare sport
-- [ ] tabletop
-- [ ] calendar 9 feb
-- [ ] anime
-- [ ] bloodborne
-- [ ] fare programma che a ogni clcik della tastiera lo registra in un file e dopo tot tempo lo invia a me
+- [ ] Olimpiadi cybersecurity in 4a         
+- [ ] crea gioco d&d per html           
+- [ ] "I made a real life pip boy and mine is better"           
+- [ ] -chivaetta ome tastiera           
+- [ ] -matrix 1 gennaio         
+- [ ] -programmi ops            
+- [ ] -mac per linux            
+- [ ] -homepod remoto           
+- [ ] -gioco unity          
+- [ ] -imposta wake on lan          
+- [ ] -ricrea stack per qualunque app           
+- [ ] -chibi di culpo           
+- [ ] -droni            
+- [ ] -calendar         
+- [ ] -Impara typesceipt/           
+- [ ] cos e un debugger e cone funzione /           
+- [ ] cos e un franework/           
+- [ ] cos e un compiler/            
+- [ ] impara vari linguaggi/            
+- [ ] cos è docker /            
+- [ ] criptogia/https://www.microsoft.com/it-it/p/devtoys/9pgcv4v3bk4w?rtc=1&activetab=pivot:overviewtab            
+- [ ] guardati lore ds          
+- [ ] -scarica dlc aggiuntivi MHW           
+- [ ] Cos è un API /            
+- [ ] fai libro terminologie da programmatore           
+- [ ] -Cosa sono le codifiche (utf- unicode)            
+- [ ] -Devtoys          
+- [ ] -Fai un insieme di tools da tenerti dietro            
+- [ ] -Fai un server col raspberry, come google drive i modo da avere uno spazio dove caricare file illimitatamente         
+- [ ] -Scarica repo book of secrets da github           
+- [ ] -Scopri come caricare su github la tua repo           
+- [ ] -Stampante casari         
+- [ ] -Unisci calendar-milanot-todo sul desktop         
+- [ ] latte         
+- [ ] Video culpo           
+- [ ] ToDo sul pc           
+- [ ] MHW           
+- [ ] Mate          
+- [ ] Corso IA          
+- [ ] Corso Droni           
+- [ ] linux rice            
+- [ ] compiti inglese           
+- [ ] siti info         
+- [ ] softair           
+- [ ] Chitarra          
+- [ ] vr            
+- [ ] fare sport            
+- [ ] tabletop          
+- [ ] calendar 9 feb            
+- [ ] anime         
+- [ ] bloodborne            
+- [ ] fare programma che a ogni clcik della tastiera lo registra in un file e dopo tot tempo lo invia a me          

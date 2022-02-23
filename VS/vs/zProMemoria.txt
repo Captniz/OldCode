@@ -50,3 +50,23 @@ swissknife è un estensione utilissima per conversioni
 Per creare delle regioni colorate usa questa sintassi con l'estensione "colored regions"
 //#region [rgba(181,247,111,0.2)]
 //#endregion
+
+Con alt+shift+i metti un cursore a fine di ogni linea selezionata
+
+ctrl+< seleziona tutto il contenuto di una parantesi
+
+ctrl + l per selezionare tutta la riga
+
+ctrl + backspace cancella l'ultima parola che hai scritto
+
+premere il tasto home del tastierino numerico porta il cursore a inizio riga
+
+ctrl+shift+d duplica la selezione
+
+ctrl + end/home ti muovono all'inizio o alla fine di un file
+
+ctrl + x cancella un intera riga
+
+ctr + alt + su/giu mette un cursore o su o giu
+
+alt + shift + su/giu copia la riga non scendendo col cursore o scendendo
