@@ -1,18 +1,24 @@
 #include<stdio.h>
+#include<stdlib.h>
 #define DIM 10
 
-void vis(int []);
-
 int main(){
-    int v[DIM]={1,2,3,4,5,6,7,8,9,10};
-    vis(v);
-    return 0;
-}
+    
+    int n,i;
+    n=0;
+    i=0;
 
-void vis(int v[DIM]){
-    int i=0;
+    do{
+    printf("n:");
+    scanf("%d",&n);
+    }while(n<=10);
 
-    for ( i = 0; i < DIM; i++){
+    int v[n];
+
+    for ( i = 0; i < n; i++){
+        v[i]=i;
         printf("%d",v[i]);
-    }
+    }    
+
+    return 0;
 }
