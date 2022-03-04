@@ -19,10 +19,3 @@ int Npari(int a){
         return a*2+Npari(a-1);
     }
 }
-int Npari(int a){
-    if(a==0){
-        return a;
-    }else{
-        return a*2+Npari(a-1);
-    }
-}

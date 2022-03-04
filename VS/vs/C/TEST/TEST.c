@@ -1,24 +1,32 @@
 #include<stdio.h>
 #include<stdlib.h>
-#define DIM 10
+#include<string.h>
+/*
+int main(){
+    
+    char a[80], *ar;
+
+    printf("a:");
+    gets(a);
+
+    ar = (char *) malloc((strlen(a)+1) * sizeof(char));
+
+    puts(a);
+
+    return 0;
+}
+*/
 
 int main(){
     
-    int n,i;
-    n=0;
-    i=0;
+    char *ar[80];
 
-    do{
-    printf("n:");
-    scanf("%d",&n);
-    }while(n<=10);
+    printf("a:");
+    gets(ar);
 
-    int v[n];
+    ar = (char *) malloc((strlen(ar)+1) * sizeof(char));
 
-    for ( i = 0; i < n; i++){
-        v[i]=i;
-        printf("%d",v[i]);
-    }    
-
+    puts(a);
+    printf("%d\n",sizeof(ar));
     return 0;
 }

@@ -30,9 +30,6 @@ int main(){
         }
         i++;
     }
-
-    putchar('s');
-
     if(flag){
         for ( i = flag; i < strlen(s); i++){
             s[i]=s[i+3];
