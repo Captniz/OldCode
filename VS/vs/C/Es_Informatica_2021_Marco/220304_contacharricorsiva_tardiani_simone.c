@@ -23,17 +23,14 @@ int main(){
 }
 
 int count_char(char *str, char c){
-
+    
     if (*str == '\0'){
         return 0;
     }
     
     if (*str ==  c){
-        str=str+1;
-        return 1+count_char(str, c);
+        return 1+count_char((str+1), c);
     }else{
-        str=str+1;
-        return count_char(str, c);
+        return count_char((str+1), c);
     }
-    
 }
