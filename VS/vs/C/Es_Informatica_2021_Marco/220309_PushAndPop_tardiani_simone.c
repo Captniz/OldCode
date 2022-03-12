@@ -94,10 +94,10 @@ int Pop(int v[DIM]){
     temp=0;
 
     temp=v[0];
-    v[0]=0;
     for ( i = 1; i < DIM; i++){
         v[i-1]=v[i];
     }
+    v[DIM-1]=0;
     return temp;
 }
 

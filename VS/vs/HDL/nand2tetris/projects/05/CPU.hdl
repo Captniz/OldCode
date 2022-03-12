@@ -1,0 +1,44 @@
+CHIP CPU {
+
+    IN  inM[16],      // M value input  (M = contents of RAM[A])
+        instruction[16], // Instruction for execution
+        reset;           // Signals whether to re-start the current
+                         // program (reset=1) or continue executing
+                         // the current program (reset=0).
+
+    OUT outM[16],        // M value output
+        writeM,          // Write into M? 
+        addressM[15],    // Address in data memory (of M)
+        pc[15];          // address of next instructiontruction
+
+    PARTS:
+        Not(in=instruction[15], out=notI);
+        Or(a=instruction[15], b=instruction[5], out=loadA);
+        And(a=instruction[15], b=instruction[4], out=loadD);
+
+        Mux16(a=inM, b=instruction, sel=notI, out=inA);
+        ARegister(in=inA, load=loadA, out=outA, out[0..14]=addressM); //A
+        DRegister(in=inM, load=loadD, out=outD); //D
+
+        Mux16(a=outA, b=inM, sel=instruction[12], out=inALU);
+
+        ALU(x=outD, y=inALU, zx=instruction[11], nx=instruction[10], zy=instruction[9], ny=instruction[8], f=instruction[7], no=instruction[6], out=OutM, zr=jzr, ng=jng);
+
+        And(a=jzr, b=instruction[1], out=jzr1);
+        And(a=jng, b=instruction[2], out=jng1);
+        Or(a=jng1, b=jzr1, out=j1);
+
+        Not(in=jng, out=njng);
+        Not(in=jzr, out=njzr);
+        And(a=njng, b=instruction[0], out=njng1);
+        And(a=njng1, b=njzr, out=j2);
+
+        Or(a=j1, b=j2, out=j3);
+        And(a=j3, b=instruction[15], out=jfinal);
+        Not(in=jfinal, out=njfinal);
+
+        PC(in=outA, load=jfinal, inc=njfinal, reset=reset, out[0..14]=pc);
+
+        And(a=instruction[15], b=instruction[3], out=writeM);
+        //TODO: FIX
+}
