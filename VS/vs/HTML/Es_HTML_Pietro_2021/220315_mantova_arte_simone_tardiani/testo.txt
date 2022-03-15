@@ -1,0 +1,2 @@
+Menù orizzontale con 5 voci.
+Ogni voce apre l'immagine relativa a sinistra con la descrizione sulla destra.
