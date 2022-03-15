@@ -52,4 +52,5 @@
 - [ ] anime
 - [ ] bloodborne
 - [ ] fare programma che a ogni clcik della tastiera lo registra in un file e dopo tot tempo lo invia a me
+- [ ] Pulsisci installazione vs code
 - [ ] maiami
