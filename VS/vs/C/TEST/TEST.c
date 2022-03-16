@@ -2,36 +2,20 @@
 #include<stdlib.h>
 #include<string.h>
 
-//! Indirizzo Puntatore => Puntatore => Indirizzo => Valore
-//! & = Indirizzo
-//! * = Valore
+//FAttoreiale: 5*4*3*2*1
 
-int funz (int *a, int b);
+int fat(int n);
 
 int main(){
-    int a,b,v[10]={0,1,2,3,4,5,6,7,8,9};
-    a=0;
-    b=0;
-    
-    int *p_b;
-    p_b = v;
+    int n=5;
 
-    // &a = 45678456788
-    funz(&a,b);
-    printf("%d %d\n",a,b);
-    printf("%d %d",*v,*p_b);
+    printf("%d",fat(n));
+
 }
 
-int funz(int *c, int d){
-    //! Indirizzo Puntatore => Puntatore => Indirizzo => Valore
-    //! & = Indirizzo
-    //! * = Valore
-
-    // c => &a = 45678456788 
-    // *c => *(&a) => a 
-
-    *c=*c+100;
-    d++;
-
-    return 0;
+int fat(int n){
+    if (n == 1){
+        return n;
+    }
+    return n * fat((n-1));
 }

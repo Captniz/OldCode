@@ -43,7 +43,7 @@ ricorda sempre di fare un pull prima di lavorare
 
 per l'amor di cristo non toccare neanche per sbaglio la versione di c# e la versione del pacchetto per vscode su unity o giuro su dio che tocco il contatore
 
-temi preferiti: One Monokai, Github dark
+temi preferiti: One Monokai, Github dark, Bamboo
 
 swissknife è un estensione utilissima per conversioni
 
@@ -72,3 +72,5 @@ ctr + alt + su/giu mette un cursore o su o giu
 alt + shift + su/giu copia la riga non scendendo col cursore o scendendo
 
 simple browser ti permette di andare su moodle da vscode
+
+scrivendo ":" nel finder puoi navigare a una linea del codice
