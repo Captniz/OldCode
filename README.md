@@ -53,4 +53,4 @@ Im continuously uploading whatever i do so a lot of programs will change frequen
 
 ---
 
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=captniz&repo=Captniz&show_icons=true&bg_color=30,FF3F21,FA205B&title_color=fff&text_color=fff&icon_color=fff)](https://github.com/anuraghazra/github-readme-stats)
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=captniz&repo=Captniz&show_icons=true&bg_color=30,FF3F21,FA205B&title_color=fff&text_color=fff&icon_color=fff)](https://github.com/Captniz)
