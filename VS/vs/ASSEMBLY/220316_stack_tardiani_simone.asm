@@ -1,15 +1,14 @@
 @256    //Inizializzo lo stack pointer
 D=A
 @SP
-M=D 
-
+M=D     //end
 @7      //Push 7
 D=A
 @SP
 A=M
 M=D
 @SP
-M=M+1
+M=M+1   //end
 
 @8      //Push 8
 D=A
@@ -17,7 +16,7 @@ D=A
 A=M
 M=D
 @SP
-M=M+1
+M=M+1   //end
 
 M=M-1   //Add
 A=M
@@ -27,4 +26,6 @@ M=0
 M=M-1
 A=M
 D=D+M
-M=D
+M=D     
+@SP
+M=M+1   //end
