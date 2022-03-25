@@ -1,21 +1,28 @@
+#include "F:\Rep_1\VS\vs\C\MyLibs\Essentials.c"
 #include<stdio.h>
 #include<stdlib.h>
-#include<string.h>
-
-//FAttoreiale: 5*4*3*2*1
-
-int fat(int n);
+#include<time.h>
+#define DIM 5
 
 int main(){
-    int n=5;
 
-    printf("%d",fat(n));
+    int a[DIM], b[DIM], c[(DIM*2)];
+    int i=0;
+    srand(time(NULL));
 
-}
+    ranload(a,DIM,10,1);
+    ranload(b,DIM,10,1);
+    Bubble(a,DIM);
+    Bubble(b,DIM);
+    MergeOrdinated(a,b,c,DIM,DIM);
 
-int fat(int n){
-    if (n == 1){
-        return n;
+    vis(a,DIM);
+    putchar('\n');
+    vis(b,DIM);
+    putchar('\n');
+    for(i=0; i<(DIM*2); i++){
+        printf("%d ",c[i]);
     }
-    return n * fat((n-1));
+
+    return 0;
 }
