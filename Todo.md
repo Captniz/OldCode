@@ -56,3 +56,4 @@
 - [ ] maiami
 - [ ] non so cosa faccia SSH sono ignorante
 - [ ] ltxdgn
+- [ ] Un bel dualboot su chiavetta di una distro di linux
