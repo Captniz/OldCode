@@ -74,3 +74,5 @@ alt + shift + su/giu copia la riga non scendendo col cursore o scendendo
 simple browser ti permette di andare su moodle da vscode
 
 scrivendo ":" nel finder puoi navigare a una linea del codice
+
+Github copilot ti puo aiutare

@@ -55,4 +55,4 @@
 - [ ] Pulsisci installazione vs code
 - [ ] maiami
 - [ ] non so cosa faccia SSH sono ignorante
-- [ ] ltxdgn
+- [ ] lista SIMO amazon
