@@ -58,3 +58,4 @@
 - [ ] lista SIMO amazon
 - [ ] ltxdgn
 - [ ] Un bel dualboot su chiavetta di una distro di linux
+- [ ] compra manga (berserk, chainsawman)
