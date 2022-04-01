@@ -55,9 +55,7 @@
 - [ ] Pulsisci installazione vs code
 - [ ] maiami
 - [ ] non so cosa faccia SSH sono ignorante
-<<<<<<< HEAD
 - [ ] lista SIMO amazon
-=======
 - [ ] ltxdgn
 - [ ] Un bel dualboot su chiavetta di una distro di linux
->>>>>>> b359aa2894167008940b901f395b3bad6c2b5663
+- [ ] compra manga (berserk, chainsawman)
