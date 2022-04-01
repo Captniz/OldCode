@@ -76,3 +76,7 @@ simple browser ti permette di andare su moodle da vscode
 scrivendo ":" nel finder puoi navigare a una linea del codice
 
 Github copilot ti puo aiutare
+
+tenendo premuto ctrl hovernado su qualcosa, intellisense ti darà info aggiuntive
+
+se si commenta sulla destra di una variabile, dopo usando il promemoria sopra ci sarà scritto il commento
