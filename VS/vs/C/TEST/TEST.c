@@ -1,68 +1,47 @@
-/* Determina il numero di caratteri di un file esistente */
-#include <stdio.h>
-int main(){
- char buffer[100]; /* Buffer per la lettura */
- FILE *fp; // File pointer */
- long nc; /* Contatore caratteri */
- int n; /* Numero caratteri letti con fread() */
- int fine_file =0;/* Indica la fine della lettura del file */
+#include<stdio.h>
 
- fp = fopen("prova.txt", "r");/* Apertura del file prova.txt */
+#include<time.h>
 
- if( fp == NULL ){ /* Si è verificato un errore: il file non esiste */
-    printf("Errore : il file non esiste\n");
- }else{
-    nc = 0L; /* Inizializza il contatore */
-    
-    do { /* Ciclo di lettura */
-        /* Legge 100 caratteri dal file ordini */
-        n = fread(buffer, 1, 100, fp);
-        if(n==0){ /* Controllo di fine file */
-            fine_file = 1;
-        }
-        nc += n; /* Incremento del contatore */
-    } while(fine_file==0);
+#include<stdlib.h>
 
-    fclose(fp); /* Chiusura del file clienti */
-    printf("Il file contiene %ld caratteri\n", nc);
- }
- return 0;
-}
-/* scrittura più compressa
- * while(1)
-for(;;) {
- n = fread(buf, 1, 100, fp);
- if(n==0) break;
- nc += n;
-}*/
-/* Scrittura di una stringa in un file */
-#include <stdio.h>
-#include <string.h>
-int main()
+#define dim 10
+
+
+void main(  )
 {
- char buffer[100]; /* Buffer */
- FILE *fp; /* File pointer */
- int len;
- 
- printf("Inserisci un nome : ");
- scanf("%s",buffer);
- fflush(stdin);
- 
- len = strlen(buffer);
- fp = fopen("prova2.txt", "w"); /* Crea il file prova2 */
- 
- /* Memorizza il nome nel file */
- fwrite(buffer, 1, len, fp);
- fclose(fp); /* Chiude il file */
- printf("scrittura avvenuta correttamente");
- getchar();
- return 0;
-}
-// if( fp == NULL ) // memoria massa full
+srand(time(NULL));
 
-/*
-1> copiare un file su un altro file
-copia avvenuta correttamente
-2> appendere file2 a file1 in un fileall (a)
-3> leggere un file e vedere quante cifre ci sono [0..9]
-*/
+int s = 0;
+int t = 0;
+
+int MATRICE[dim][dim];
+
+
+RANDOMICO(MATRICE);
+
+
+for ( s = 0; s < dim; s++ ){for ( t = 0; t < dim; t++ ){if (s == t){MATRICE[s][t]=0;MATRICE[(dim-1-s)][(dim-1-t)]=0; t=0;s++;}if((t+s)==(dim-1)){MATRICE[s][t]=0;MATRICE[t][s]=0;t=0;s++;}}}
+
+
+//DATP CHE IL PéROGRAMMA NON FUNZIONAVA L HO CORRETTO COSì
+MATRICE[0][dim-1]=0;
+MATRICE[dim-1][0]=0;
+
+
+VISUALIZZAZIONE(MATRICE);}
+
+
+
+
+int RANDOMICO( int MATRICE[dim][dim] ){
+int q;
+for ( q = 0; q < dim; q++){ for ( int w = 0; w < dim; w++){ MATRICE[q][w] = rand()%20+1;}}return 20;}
+
+
+
+
+
+
+int VISUALIZZAZIONE( int MATRICE[dim][dim] ){
+int q;
+for ( q = 0; q < dim; q++){ for ( int w = 0; w < dim; w++){ printf("%3d",MATRICE[q][w]);}putchar('\n');}return 100;}
