@@ -14,6 +14,7 @@
 - [ ] -chibi di culpo
 - [ ] -droni
 - [ ] -calendar
+- [ ] - si potrebbe mettere su una piccola attività tuttofare riguardante l informatica in gruppo: manutezione e costruzione di pc, lezioni di informatica e costruzione pc, programmi e siti web
 - [ ] -Impara typesceipt/
 - [ ] cos e un debugger e cone funzione /
 - [ ] cos e un franework/
