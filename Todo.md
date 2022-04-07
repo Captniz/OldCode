@@ -57,8 +57,8 @@
 - [ ] maiami
 - [ ] non so cosa faccia SSH sono ignorante
 - [ ] lista SIMO amazon
-- [ ] ltxdgn
 - [ ] Un bel dualboot su chiavetta di una distro di linux
 - [ ] compra manga (berserk, chainsawman)
 - [ ] wake on lan
 - [ ] leggi i libri di info e non solo
+- [ ] SQL e SQL injection
