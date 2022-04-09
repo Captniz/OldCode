@@ -62,3 +62,5 @@
 - [ ] wake on lan
 - [ ] leggi i libri di info e non solo
 - [ ] SQL e SQL injection
+- [ ] setup apple home correttamente
+- [ ] msvc su vscode
