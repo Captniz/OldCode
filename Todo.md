@@ -14,6 +14,7 @@
 - [ ] -chibi di culpo
 - [ ] -droni
 - [ ] -calendar
+- [ ] - si potrebbe mettere su una piccola attività tuttofare riguardante l informatica in gruppo: manutezione e costruzione di pc, lezioni di informatica e costruzione pc, programmi e siti web
 - [ ] -Impara typesceipt/
 - [ ] cos e un debugger e cone funzione /
 - [ ] cos e un franework/
@@ -58,5 +59,11 @@
 - [ ] lista SIMO amazon
 - [ ] ltxdgn
 - [ ] Un bel dualboot su chiavetta di una distro di linux
+<<<<<<< HEAD
 - [ ] compra manga (berserk, chainsawman
 - [ ] usa compiler MSVC per VScode
+=======
+- [ ] compra manga (berserk, chainsawman)
+- [ ] wake on lan
+- [ ] leggi i libri di info e non solo
+>>>>>>> a17bf9d242f96c03501a2f828f94f2a7a303ce62
