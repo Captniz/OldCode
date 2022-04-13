@@ -57,7 +57,6 @@
 - [ ] maiami
 - [ ] non so cosa faccia SSH sono ignorante
 - [ ] lista SIMO amazon
-- [ ] ltxdgn
 - [ ] Un bel dualboot su chiavetta di una distro di linux
 <<<<<<< HEAD
 - [ ] compra manga (berserk, chainsawman
@@ -66,4 +65,10 @@
 - [ ] compra manga (berserk, chainsawman)
 - [ ] wake on lan
 - [ ] leggi i libri di info e non solo
+<<<<<<< HEAD
 >>>>>>> a17bf9d242f96c03501a2f828f94f2a7a303ce62
+=======
+- [ ] SQL e SQL injection
+- [ ] setup apple home correttamente
+- [ ] msvc su vscode
+>>>>>>> 5954902e0cf09ed078d4dfe5d0a034ea1266c179
