@@ -65,3 +65,4 @@
 - [ ] SQL e SQL injection
 - [ ] setup apple home correttamente
 - [ ] msvc su vscode
+- [ ] cos'e' un framework
