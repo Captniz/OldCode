@@ -69,6 +69,10 @@
 - [ ] setup apple home correttamente
 <<<<<<< HEAD
 - [ ] msvc su vscode
+<<<<<<< HEAD
 =======
 - [ ] msvc su vscode
 >>>>>>> 2f65c6aaa078302cf9427d3588f22b607e24d407
+=======
+- [ ] cos'e' un framework
+>>>>>>> 9c4c35cda2a4d9db9d064554a9f7ea722f15c193
