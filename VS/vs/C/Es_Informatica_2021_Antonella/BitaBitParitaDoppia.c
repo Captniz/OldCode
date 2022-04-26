@@ -99,6 +99,7 @@ int BitUno(int n,int dim){
 int ParitaOriz(int n,int ctr){
     if (ctr%2!=0){
         n=n|256;
+        //1 0000 0000
     }
 
     return n;
@@ -114,7 +115,6 @@ int RilevaErrore(int par){
     }
     return 0;
 }
-
 void ParitaVert(int v[(DIM+1)]){
     int i,j,ctr;
     j=0;
