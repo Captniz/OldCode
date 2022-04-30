@@ -1,44 +1,43 @@
 #include<stdio.h>
 #include<stdlib.h>
-#define DIM 10;
+#define DIM 10
 
 void sequenza(int v[DIM],int *n, int *ctr);
 
 int main(){
-   int v[DIM]={0,0,0,0,1,1,2,3,3,3},*n,*ctr;
+   int v[DIM]={0,0,0,0,1,1,2,3,3,3},*n,*ctr,ctr1,n1;
+   n1=0;
+   ctr1=0;
+   ctr=&ctr1;
+   n=&n1;
+
    sequenza(v, n , ctr);
+
+   printf("\nN:%d",*n);
+   printf("\nCTR:%d",*ctr);
+
+   return 0;
 }
 
 void sequenza(int v[DIM],int *n, int *ctr){
-   int i,max,ctr,maxctr,nctr;
+   int i,seq;
+   i=1;
+   seq=1;
 
-   i=0;
-   maxn=v[0];
-   ctr=1;
-   maxctr=0;
-   nctr=v[0];
-
-   for(i=1;i<DIM;i++){
-
-      if(nctr=v[i]){
-        ctr++;
-
+   for ( i = 1; i < DIM; i++){
+      if (v[i]==v[i-1]){
+         seq++;
       }else{
-         if(ctr>maxctr){
-            maxctr=ctr;
-            max=nctr;
+         if (*ctr<seq){
+            *ctr=seq;
+            *n=(v[i-1]);
          }
-
-         nctr=v[i];
-         ctr=1;
+         seq=1;
       }
    }
-
-   if(ctr>maxctr){
-      maxctr=ctr;
-      max=nctr;
+   
+   if (*ctr<seq){
+      *ctr=seq;
+      *n=(i-1);
    }
-
-  *n=maxn;
-  *ctr=maxctr;
 }
