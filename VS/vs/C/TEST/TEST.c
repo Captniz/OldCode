@@ -5,35 +5,15 @@
 
 int main(int argc, char const *argv[]){
    
-   int i,temp_voto,VOTI[DIM];
-   temp_voto=0;
-   i=0;
-   
-   for(i=0; i<DIM; i++){
-      VOTI[i]=0;
-   }
-   i=0;
+   int i=0;
 
-   printf("\nVoto %d:",(i+1));
-   scanf("%d",&temp_voto);
-   fflush(stdin);
-zzz
-   while (temp_voto!=0){
-      VOTI[i]=temp_voto;
-      i++;
-      if (i<DIM){
-         printf("\nVoto %d:",(i+1));
-         scanf("%d",&temp_voto);
-         fflush(stdin);
-      }else{
-         temp_voto=0;
-      }
-   }
-   
-   for(i=0; i<DIM; i++){
-      printf("%d ",VOTI[i]);
-      fflush(stdin);
-   }
+   FILE* out=fopen("test_output.txt","r+");
+
+   fseek(out,3,SEEK_SET);
+
+   fputc('c',out);
+
+   fclose(out);
 
    return 0;
 }

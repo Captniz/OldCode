@@ -68,3 +68,4 @@
 - [ ] msvc su vscode
 - [ ] cos'e' un framework
 - [ ] metti a posto la camera (risistema workspace)
+- [ ] messener in lan per scuola
