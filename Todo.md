@@ -70,3 +70,4 @@
 - [ ] metti a posto la camera (risistema workspace)
 - [ ] messenger in LAN per scuola
 - [ ] setup macchina linux decente
+- [ ] fai un po di cybercecurity (siti internet e non)
