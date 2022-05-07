@@ -72,3 +72,4 @@
 - [ ] setup macchina linux decente
 - [ ] fai un po di cybercecurity (siti internet e non)
 - [ ] impara come funziona un sito
+- [ ] ottieni un dominio internet
