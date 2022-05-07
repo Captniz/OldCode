@@ -71,3 +71,4 @@
 - [ ] messenger in LAN per scuola
 - [ ] setup macchina linux decente
 - [ ] fai un po di cybercecurity (siti internet e non)
+- [ ] impara come funziona un sito
