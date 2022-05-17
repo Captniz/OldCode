@@ -73,3 +73,4 @@
 - [ ] ottieni un dominio internet
 - [ ] fai un po di cybercecurity (siti internet e non)
 - [ ] setup macchina linux decente
+- [ ] impara bash
