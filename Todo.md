@@ -65,11 +65,11 @@
 - [ ] SQL e SQL injection
 - [ ] setup apple home correttamente
 - [ ] msvc su vscode
-- [ ] msvc su vscode
 - [ ] cos'e' un framework
 - [ ] metti a posto la camera (risistema workspace)
 - [ ] messenger in LAN per scuola
-- [ ] setup macchina linux decente
-- [ ] fai un po di cybercecurity (siti internet e non)
+- [ ] download automaticfo file C di culpo
 - [ ] impara come funziona un sito
 - [ ] ottieni un dominio internet
+- [ ] fai un po di cybercecurity (siti internet e non)
+- [ ] setup macchina linux decente
