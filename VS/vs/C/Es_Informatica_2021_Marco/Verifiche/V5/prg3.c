@@ -40,6 +40,7 @@ float inserisci(struct studente v[DIM]){
    i++;
 
    while(i<DIM && v[i-1].Voto!=0){
+      putchar('\n');
       printf("Nome %d:",i+1);
       gets(v[i].Nome);
       fflush(stdin);

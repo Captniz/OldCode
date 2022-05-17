@@ -1,19 +1,29 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
-#define DIM 3
+#define DIM 30
 
-int main(int argc, char const *argv[]){
+int main(){
+   char n;
+   FILE*  out; 
+   out= fopen("test_output.txt", "r+"); 
+/*    
+   printf("%d\n",ftell(out));
+
+   fread(&n,sizeof(char),1,out);
+   while (n!='\n'){
+      putchar('x');
+      fread(&n,sizeof(char),1,out);
+   }
    
-   int i=0;
+   printf("\n%d",ftell(out)); */
 
-   FILE* out=fopen("test_output.txt","r+");
-
-   fseek(out,3,SEEK_SET);
-
-   fputc('c',out);
+   while (!feof(out)){
+      fread(&n,sizeof(char),1,out);
+      putchar('x');
+   }
 
    fclose(out);
-
    return 0;
+                
 }

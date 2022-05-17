@@ -80,3 +80,5 @@ Github copilot ti puo aiutare
 tenendo premuto ctrl hovernado su qualcosa, intellisense ti darà info aggiuntive
 
 se si commenta sulla destra di una variabile, dopo usando il promemoria sopra ci sarà scritto il commento
+
+tenendo premuto shift puoi mettere il percorso di un file buttandlo dalle finestre di Vscode

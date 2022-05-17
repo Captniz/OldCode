@@ -5,7 +5,7 @@
 void sequenza(int v[DIM],int *n, int *ctr);
 
 int main(){
-   int v[DIM]={0,0,0,0,1,1,2,3,3,3},*n,*ctr,ctr1,n1;
+   int v[DIM]={0,0,0,1,1,2,3,3,3,3},*n,*ctr,ctr1,n1;
    n1=0;
    ctr1=0;
    ctr=&ctr1;
@@ -38,6 +38,6 @@ void sequenza(int v[DIM],int *n, int *ctr){
    
    if (*ctr<seq){
       *ctr=seq;
-      *n=(i-1);
+      *n=(v[i-1]);
    }
 }
