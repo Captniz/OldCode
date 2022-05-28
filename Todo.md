@@ -75,3 +75,4 @@
 - [ ] setup macchina linux decente
 - [ ] impara bash
 - [ ] impara un po di rust
+- [ ] fai un interazione tra MPD di linux e apple music (itunes)
