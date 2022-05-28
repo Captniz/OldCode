@@ -74,5 +74,6 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
 /VS/vs/OPS/Programmi/Prove_OPS_C/
+/VS/vs/PYTHON/CliChatRoom/
 
 # End of https://www.toptal.com/developers/gitignore/api/unity
