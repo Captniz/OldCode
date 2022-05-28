@@ -1,38 +1,33 @@
-STARTPGM	= 0xee00
-RESETVECT	= 0xfffe
-STARTDATI	= 0b10000000
+STARTPGM	= 0xee00		;ROM
+RESETVECT	= 0xfffe		;VETTORE DI RESET
+STARTDATI	= 0b10000000	;AREA DATI
 ;			
-		.area	DATI (ABS)
+		.area	DATI (ABS)	;DEFINISCO L'AREA DATI
 		.org	STARTDATI
 ;
-num1:		.blkb 	1				
-num2:		.blkb 	1					
-num3:       .blkb   1
+num1:		.blkb 	1		;VARIABILE DI TEST 1		
+count:		.blkb 	1		;VARIABILE DI TEST 2		
+risultato:		.blkb 	1		;VARIABILE DI TEST 2			
 ;
-		.area   PROGRAMMA (ABS)
+		.area   PROGRAMMA (ABS)	;AREA DEL PROGRAMMA
 		.org    STARTPGM
 ;
-MAIN:	MOV #30, num1
-		MOV #20, num2
-		MOV #20, num3
-		;
-		LDA num1
-		;
-		CMP num2 
-		BLT IF		;a<var
-;
-COND:	CMP num3
-		BLT IF2
-		;
-		BRA FINE
-;
-IF	:	LDA num2
-		BRA COND
-;
-IF2	:	LDA num3
-		BRA FINE	
-;
-FINE:	BRA FINE
+MAIN: 		MOV #6,num1 
+			MOV #1,count 
+			MOV #0,risultato 
+LDA count 
+
+CICLOW: 	CMP num1 
+			BGT FINE 
+			LDA risultato 
+			ADD num1 
+			STA risultato 
+			LDA count 
+			ADD #1 
+			STA count 
+			BRA CICLOW 
+FINE: BRA FINE 
+
 ;
 	.area   RESET (ABS)
 	.org    RESETVECT
