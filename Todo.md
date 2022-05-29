@@ -76,3 +76,4 @@
 - [ ] impara bash
 - [ ] impara un po di rust
 - [ ] fai un interazione tra MPD di linux e apple music (itunes)
+- [ ] fare un app per sviluppatori; un misto tra una eiki, quell app per installare diversi programmi, tips and trick, link utili, progetti, etc
