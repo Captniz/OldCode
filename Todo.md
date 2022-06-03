@@ -78,3 +78,4 @@
 - [ ] fai un interazione tra MPD di linux e apple music (itunes)
 - [ ] fare un app per sviluppatori; un misto tra una wiki, quell app per installare diversi programmi base, tips and trick, link utili, progetti di esempio,spiegazioni per rookie, manuali, tools, etc
 - [ ] lucca comics
+- [ ] fare un programma CLI per myanimelist da mettere in acccoppiata con ani-cli
