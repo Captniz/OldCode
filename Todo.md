@@ -81,3 +81,4 @@
 - [ ] fare un programma CLI per myanimelist da mettere in acccoppiata con ani-cli
 - [ ] fare un programma per linux che crea delle applicazioni con icona che avviano un comando nel terminale cosi da poter dare un applicazione con icona alle app che non ce l'hanno come quelle installate con snap
 - [ ] riarreda camera
+- [ ] intalla catpuccin
