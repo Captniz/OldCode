@@ -19,10 +19,6 @@ This is a repository for all my projects, made for storing my code and my files 
 >
 > > My Unity projects...
 >
-> 📂BLENDER
->
-> > My Blender projects...
->
 > 📂VisualStudio
 >
 > > My ViusalStudio (**_general programs_**) projects...
