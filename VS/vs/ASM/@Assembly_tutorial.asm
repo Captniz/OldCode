@@ -41,5 +41,12 @@ D=A
 0;JMP   //Si esegue un JMP
 
 //CPU sim:
-16384: Indirizzo monitor
-24576: Indirizzo tastiera
+16384 //Indirizzo monitor
+24576 //Indirizzo tastiera
+
+//VETT:
+VETT:   .byte 5
+        .byte 6
+        .byte 7
+ENDVETT:
+
