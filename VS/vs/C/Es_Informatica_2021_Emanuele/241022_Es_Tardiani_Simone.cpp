@@ -69,8 +69,8 @@ int main(){
     fprintf(out,"%d",array[0]);
     fgets(str,10,in);
     fread(str,10,4,in);
-    feof(in);
-    fseek(in,0,SEEK_SET);
+    fgetc(in);
+    fseek(in,0,SEEK_END);
     ftell(in);
     fclose(in);
     fclose(out);
