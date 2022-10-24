@@ -1,0 +1,562 @@
+Programmi da risolvere - tutti i prg saranno di volta in volta aggiornati in questo file
+
+nomi dei file: 
+210917_001_Cognome_Nome.c
+
+NUMBER SIGN (#) 
+AT SIGN (@)
+AMPERSAND (&)
+DASH (–)
+UNDERSCORE (_)
+SLASH (/)
+BACKSLASH (\)
+PIPE (|)
+
+
+
+210917
+======
+001 - area rettangolo (con fflush(stdin) - sizeof())
+002 - dati 10 N inseriti esternamente, viasualizzare la somma e dire se è > < = a 100
+
+003 - (101) Dati due numeri m e n, visualizzare, contare e sommare i numeri che sono divisori di entrambi.
+Esempio con m=20, n=30 
+1 2 5 10 conteggio 4, somma 18
+
+004 - (201) Dato un numero n, contare quanti divisori pari e quanti divisori dispari ha.
+Esempio: 16
+Dispari: 1 			1
+Pari: 2 4 8 16 			4
+
+Esempio: 25
+Dispari: 1 5 25 		3
+Pari: (nessuno) 		0
+
+210918
+======
+005 -(204) Dato un numero n, contare quanti suoi divisori sono potenze di 2.
+Esempio: 16
+2 4 8 16 		4
+Esempio: 25
+(nessuno) 		0
+
+210921
+======
+006 - Inserire dei numeri a piacere (0 to esc).
+Visualizzare il primo max e il secondo max.
+
+210922
+======
+007 - caricare un vettore v con DIM=10 con numeri random [50..99].
+visualizzare max, min e somma.
+
+
+
+lavori di gruppo del 210923:
+----------------
+ Definizione di informatica
+ Dati e informazioni
+ La codifica delle informazioni
+ Hardware e software
+ Definizione di sistema
+ Sistema di elaborazione dati
+ Il modello logico-funzionale dell’elaboratore:
+ modello di Von Neumann
+ Classificazione del sw
+ Definizione di Sistema Operativo 
+
+210923
+======
+008 - caricare un vettore v con DIM=10 con numeri random a piacere
+-visualizzare il vettore
+-scambiare il max col min
+-visualizzare il vettore
+
+210928
+======
+009 - caricare un vettore v con DIM=10 con numeri random a piacere
+- inserire un  numero k
+- determinare  l’elemento  di v  più prossimo a k e la relativa posizione    
+
+010 - caricare un vettore let con DIM=10 con lettere maiuscole (HELP: dichiarare quindi  char let[DIM])
+- visualizzare il numero complessivo delle vocali presenti nel vettore.
+
+211001
+======
+011 - Dichiarare un vettore v con DIM=10.
+caricamento esterno: richiesto un elemento controllare, prima di inserirlo nel vettore, se è già presente, nel qual caso richiedere l’elemento.
+
+211006
+======
+012 - Caricare un vettore v con DIM=15 con in primi 15 numeri primi.
+
+013 - Caricare un vettore v con DIM=10 con in primi 10 numeri naturali.
+-visualizzare il vettore
+Eseguire un right-shift (spingere a dx) 1 2 3 4 5 6 7 8 9 10 ->  10 1 2 3 4 5 6 7 8 9
+-visualizzare il vettore
+
+014 - Caricare un vettore v dimensionato 10 con in primi 10 numeri naturali.
+-visualizzare il vettore
+Eseguire un left-shift (spingere a sx) 1 2 3 4 5 6 7 8 9 10 ->  2 3 4 5 6 7 8 9 10 1
+-visualizzare il vettore
+
+211008
+======
+015 - Caricare una matrice quadrata con DIM=10 con numeri random [1..9] nella parte superiore.
+Nella parte inferiore gli elementi sono posti = 0.
+
+es con DIM=4
+
+2 4 6 7
+0 3 2 3
+0 0 3 5
+0 0 0 7	
+
+016 - Caricare una matrice con ROW = 5 e COL=7 con numeri random a piacere.
+Visualizzare la matrice.
+Individuare la colonna con somma degli elementi
+massima.
+Visualizzare la colonna.
+
+
+017 - Caricare una matrice con ROW = 5 e COL=7 con numeri random a piacere.
+Visualizzare la matrice. 
+Individuare la colonna con somma degli elementi massima e minima.
+Scambiare le due colonne.
+Visualizzare nuovamente la matrice.
+
+211009
+======
+018 - Caricare un vettore v dimensionato DIM 10 con numeri random.
+Visualizzare un vettore.
+Mettere prima i numeri primi e poi i non primi, senza alterare l'ordine.
+
+211013
+======
+019 - Caricare un vettore v di DIM=10 con numeri random [1..100].
+Inserire esternamente un numero N > 0 (data entry).
+Contare quante volte occorre N nel vettore.
+Visualizzare N.
+
+020 -Caricare una matrice quadrata m con numeri random [1..100].
+Visualizzare la matrice.
+Scambiare le righe 2 a 2(la prima con la seconda ... la penultima con l'ultima).
+Visualizzare la matrice.
+
+211016
+======
+021 - Caricare un vettore v di DIM=20 con i primi DIM numeri della successione di FIBONACCI.
+Visualizzare un vettore v.
+
+1 1 3 5 8 13 21 34 55 ...
+(NB: esiste un altro numero palindromo nella successione, dopo il 55?)
+
+210119
+======
+022> Scrivere un programma che, letti gli elementi di due vettori v e v2 di lunghezza 5, determini il vettore w di lunghezza 10 ottenuto “appendendo” gli elementi di v2 a v. 
+Visualizzare v, v2 e w.
+
+Es: se v1 e v2 sono i vettori di caratteri
+v 	PROVA
+v2 	ESAME
+w	PROVAESAME
+
+023>Scrivere un programma che inizializzi e quindi visualizzi una matrice m di ROW=8 e COL=11 di int in cui ciascun elemento è dato dalla somma dei propri indici.
+
+211106
+======
+024> Caricare due vettori v e v2 con DIM=10 con numeri random [1..100].
+Un terzo vettore v3 con DIM=10 contiene il max tra v e v2 di ogni posizione. 
+Visualizzare v, v2 e v3 con la griglia semplice.
+.......
+carica(v)
+carica(v2)
+carica-max(v,v2,v3)
+visualizza-frame(v)  // potete passare un 2° parametro
+visualizza-frame(v2) // potete passare un 2° parametro
+visualizza-frame(v3) // potete passare un 2° parametro
+
+025> Caricare un vettore v con DIM=10 con numeri random [10..99].
+Visualizzare il vettore.
+Scambiare gli elementi due a due: primo col secondo etc.
+Visualizzare il vettore.
+.......
+carica(v)
+visualizza(v)
+scambia(v)
+visualizza(v)
+
+026> Caricare una matrice quadrata m con DIM=10 con numeri progressivi che partono da 1 e finiscono a 100.
+Visualizzare mcon la griglia semplice.
+Caricamento per righe.
+.......
+carica(m)
+visualizza-frame(m) 
+
+211109
+======
+027>  Caricare una matrice quadrata m con DIM=10 con tutti 0.
+Visualizzare la matrice.
+Sovrascivere sulla matrice numeri progressivi, in senso orario, a partire dalla prima riga, ultima colonna, ultima riga e proma colonna.
+.......
+azzera(m);
+visualizza(m);
+spirale(m);
+visualizza(m);
+
+211112
+======
+028> Emulare la funzione:
+strcpy(s1, s2)   Copia s2 in s1
+visualizzare le 2 stringhe.
+
+029> data una stringa s1, caricare il reverse di s1 in s2.
+visualizzare le 2 stringhe.
+
+030> emulare la funzione:
+strcat(s1, s2)   Concatena s2 dopo s1
+visualizzare le 2 stringhe.
+
+031> emulare la funzione:
+strlen(s)     Resituisce la lunghezza di s
+--------------
+l=lunghezza(s) 
+
+032> data una stringa s1, copiare in una stringa s2 mettendo le vocali alla fine (sia MAIUSCOLE che minuscole! - ovviamente la lunghezza di s2 è uguale a quella di s)
+es: "Mio nonno" -> "M nnniooo"
+
+211113
+======
+033> Inserire esternamente un numero di 5 cifre.
+Demolire il numero nelle 5 cifre.
+Caricarlo in un array DIM 5 nello stesso ordine.
+
+034> Inserire esternamente una stringa.
+Restituire con una funzione le vocali.
+--------
+int vocali(char [])
+
+211116
+======
+035> Scrivere una funzione che calcoli una qualunque potenza maggiore o uguale a zero.
+long int potenza(int , int);
+
+036> Scrivere una funzione che visualizzi un rettangolo di row righe per col colonne di *.
+---------
+void rettangolo(int, int);
+
+211117
+======
+37> emulare la funzione strcpy char by char
+
+38> emulare la funzione strncpy char by char
+
+39> emulare la funzione strcmp char by char
+
+40> emulare la funzione strncmp char by char
+
+41> emulare la funzione strcat char by char
+
+42> emulare la funzione strlen char by char
+
+211123
+======
+43> Data una stringa s contare quante cifre ci sono.
+
+44> Data una stringa s1 e una stringa s2, la funzione 
+int cerca(char [], char [])
+retistuisce l'indice d'inizio se s2 è contenuta in s1
+altrimenti riorna 0.
+(appena s2 è contenuta in s1 inutile procedere nella ricerca)
+
+211124
+======
+45> Progettare e realizzare una funzione che effettui il controllo di validità (data entry) della data immessa nella forma gg/mm/aaaa.
+1 se valida
+0 se non valida
+
+46> Una volta controllato che due date sono valide trovare la differenza in giorni tra le due date. (Potrebbe risultare utile stabilire prima quale delle due date è maggiore).
+
+211126
+======
+47> quale data è maggiore tra 2 date
+
+work group: 3 es sulle date 
+*validità di una data (45)
+*differenza in gg tra 2 date (46)
+*quale data è maggiore tra 2 date (2 metodi: 
+o riconducendo le 2 date all'anno 0, 
+oppure partendo dall'anno se a1 = a2 allora confronto mese1 con mese2 ... etc) (47a, 47b)
+
+211130
+======
+48> inserire un array di stringhe dimensionato DIM
+cercare la stringa se esiste o se non esiste
+Esce con Enter
+
+211203
+======
+49> Dato un array s dimensionato DIM di stringhe dimensionate L, scrivere una funzione 
+int confronta(char [][L])
+che ritorna il numero di stringhe uguali.
+
+211217
+======
+50> Dato un array v dimensionato DIM=10 ordinare gli elementi limitatamente alla posizione del max e del min.
+Se il min precede il max ordinamento crescente 
+altrimenti decrescente.
+ES: 1 5 3 9 8 5 
+    ^     ^
+    1 3 5 9 8 
+
+ES: 2 9 3 7 8 1
+      ^       ^
+    2 9 8 7 3 1
+    
+51> 
+int v1[DIM]={23,11,34,76,99,23,67,83,88,10};
+
+int i,j,box,c=0,cswap=0;
+	for(i=0;i<DIM;i++){
+		for(j=0;j<DIM;j++){
+			if(v[i]<v[j]){
+				box=v[i];
+				v[i]=v[j];
+				v[j]=box;
+				cswap++;
+			}
+			c++;
+		}
+	}
+confronti? 100  swap? ..... ordina? si se si (C/D)
+
+211218
+======
+52> convertire un array dimensionato DIM=8 da binario a decimale
+es int v[]={0,0,0,0,1,1,0,1}; //un byte
+00001101[2]=13[10]
+
+53> convertire numero decimale a un array dimensionato DIM=8 binario 
+es: 7[10]=00000111
+
+220107
+======
+54> data una stringa s caricata contestualmente (contenente solo lettere e spazi per ipotesi)
+eliminare gli spazi e caricare in una seconda stringa s2
+convertire s2 tutto in minuscole
+ordinare s2 in modo crescente
+visualizzare s2
+
+es: s="vADo al maRe"
+s2="vADoalmaRe"
+s2="vadoalmare"
+s2="aaadelmorv"
+
+55> Ci sono 2 gare di 10 atleti con punteggio [1..50] 
+ordinate gara1 e gara2 in modo decrescente
+scrivere gli atleti che hanno realizzato i 3 migliori tempi tenendo conto delle due gare
+
+es di 2 gare tra 5 atleti: (1 7 sta per atleta1 con punteggio 7)
+gara1: 1  7, 2 21, 3 12, 4 45, 5 13
+gara2: 1 17, 2 20, 3 12, 4 41,	5 18
+
+ordinamento gara 1
+4 45, 2 21, 5 13, 3 12, 1 7
+
+ordinamento gara 2
+4 41, 2 20, 5 18, 1 17, 3 12
+
+3 migliori tempi:
+4 45, 4 41, 2 21 
+(cioè l'atleta4 si piazza al primo posto con 45 e al secondo posto con 41, terzo l'atleta2 con 21)
+
+220108
+======
+56> ordina-stringhe  
+Scrivere un programma che ordini in modo crescente e con un algoritmo in-place un array di
+DIM stringhe inserite esternmente, visualizzando il risultato dell'ordinamento sullo schermo. Si assuma che ogni stringa abbia una lunghezza L non superiore a 80 caratteri.
+
+220114
+======
+57> 
+Switch case (menu)
+0. Carica
+1. Visualizza
+2. Bubble sort
+3. Selection sort
+4. Insertion sort
+5.exit
+
+220118
+======
+58> Benchmark tra sorting: bubble, selection, insertion
+
+int swap_count = 0;
+int comp_count = 0;
+void incSwap() { swap_count++; }
+void incComp() { comp_count++; }
+
+void resetCounters(){
+	swap_count = 0;
+	comp_count = 0;
+}
+void printCounters(){
+	printf("Confronti effettuati: %d\n", comp_count);
+	printf("Scambi effettuati: %d\n", swap_count);
+}
+
+220121
+======
+59> Caricare un vet v DIM=20 con numeri random a piacere.
+Visualizzare v.
+Ordinare la prima metà di v e poi la seconda metà di v.
+Alla fine v risulterà ordinato.
+Visualizzare nuovamente v.
+
+60> Data una stringa s="Oggi ProVIAMO a VeDere chi Vince" caricata contestualmente estrarre solo le maiuscole e ordinarle in una seconda stringa s2 in modo discendente.
+visualizzare s.
+visualizzare s2.
+
+220125
+======
+61> Eseguire una ricerca binaria su un array v dimensionato DIM=10.
+Inserire un valore esternamente e trovare se appartiene o meno a v.
+
+220218
+======
+62> dato una matrice numerica quadrata m dimensionato DIM=10 con caricamento contestuale a piacere [10..90].
+visualizzare la matrice.
+Riga dispari ordinata in modo crescente
+Riga pari ordinata in modo decrescente
+visualizzare la matrice.
+
+63> dato un vettore numerico v dimensionato DIM=20 con caricamento random [1..9] 
+visualizzare la cifra che presenta più occorrenze
+
+
+64> dato un array dimensionato DIM=10 di stringhe con lunghezza L=80 inserite esternamente
+preparare il seguente menu
+
+0 - escape
+n – ordina le stringhe per nome in modo crescente
+d – ordina le stringhe per lunghezza in modo crescente 
+v – ordina le stringhe contenenti più vocali in modo crescente 
+
+220223
+======
+65> Dato un numero n inserito esternamente calcolare la somma dei primi N numeri pari (>0) positivi in maniera ricorsiva.
+
+220225
+======
+66> Calcolare il massimo di un vettore v dimensionato DIM con procedimento ricorsivo.
+
+220304
+======
+67> puntatori e ricorsione
+==========================
+Scrivere la funzione ricorsiva:
+int count_char(char *str, char c, int) // + facile
+int count_char(char *str, char c) // + difficile
+che conta il numero di occorrenze del carattere c nella stringa str. 
+
+
+68> Scrivere una funzione ricorsiva che, dati due numeri interi n1 ed n2, restituisca la somma di tutti gli interi compresi tra n1 ed n2 estremi esclusi.
+
+69> Algoritmo ricorsivo per la visualizzazione di un vettore di interi
+
+70> Algoritmo ricorsivo per la ricerca di un intero in un vettore
+
+220308
+======
+71>
+Ricerca dicotomica ricorsiva in un array ordinato
+
+72> ADT simulato di uno stack mediante un array
+primitive:
+void push(element, stack);
+element pop(stack);
+boolean isEmpty(stack);
+boolean isFull(stack);
+int Top(stack);
+
+220315
+======
+73>
+In una classe sono memorizzati 10 studenti:
+● cognome;
+● nome;
+● voto_info
+● voto_condotta
+Realizza un programma che implementi le seguenti funzionalità:
+1. Inserimento dei dati dgli alunni;
+2. dato il nominativo di un alunno permetta di modificare solo il voto di condotta
+3. modifichi (incrementando o decrementando di un punto il voto di informatica di tutti gli alunni)
+0. Esc
+220401
+======
+74> leggere un file "prova.txt" e visualizzarlo 
+
+75> copiare un file "prova.txt" su un altro file "provacopy.txt"
+
+76> appendere "file2.txt" a "file1.txt" in un "fileall.txt" 
+
+77> leggere un file "numeri.txt" e vedere quante cifre [0..9] ci sono 
+
+220405
+======
+78> 
+Creare un file "ricordi.old" tutto minuscolo.
+Cambiare il primo carattere di ogni paragrafo in maiuscolo (paragrafo: si va a capo dopo il punto).
+
+79> 
+int v[row];
+int *pv;
+pv=&v[0];
+    
+int m[row][col];
+int *pm;
+pm=&m[0][0];
+  
+caricare, visualizzare e trovare il max
+USANDO SOLO ARITMETICA DEI PUNTATORI 
+row e col sono chieste all'utente
+
+220422
+======
+80>
+Dato un file si testo "prova.txt" riversare il file su un secondo file "prova2.txt", ma al posto della 'f' va scritta la stringa "effe".
+es: caffettiera -> caeffeeffettiera
+
+81> 
+Fare l'operazione contraria: sostituire la stringa "effe" con il carattere 'f'.
+es: caeffeeffettiera -> caffettiera 
+
+82> 
+dato un file "numeri.num" contare quante cifre ci sono e attaccarle a fine file.
+(NB: il numero va scomposto nelle sue cifre prima di convertirlo in testo)
+
+es: "prova di 12345 scrittura 123123 alla 0 fine."
+-> "prova di 12345 scrittura 123123 alla 0 fine.12"
+
+83>
+Gestione di un'anagrafica "anagrafica.dat"
+              (cognome, nome, indirizzo,eta)
+1. Inserimento 
+2. Modifica
+3. Cancellazione 
+4. Ricerca 
+5. Visualizzazione  
+0. Fine
+
+avrete bisogno di:
+ftell()
+fseek()
+fread()
+fwrite()
+
+e delle aperture(vi conviene fare in modo che 
+ogni function apra e chiuda il file nel modo opportuno):
+r
+r+
+a+
+

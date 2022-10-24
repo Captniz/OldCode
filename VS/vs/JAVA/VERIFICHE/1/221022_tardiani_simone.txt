@@ -1,0 +1,63 @@
+class SecondoTardiani{
+	public static void main(String args[]){
+		if(args.length == 0){
+			System.out.print("Non ci sono argomeni.");
+			return;
+		}
+		System.out.print("Ci sono " + args.length + " argomenti: ");
+		for(int i=0; i<args.length; i++){
+			System.out.print(args[i] + " ");
+		}
+		return;
+	}
+}
+
+class TerzoTardiani{
+	public static void main(String args[]){
+		int m[][] = new int [10][10];
+		int ctr=0;
+		
+		for(int i=0; i<10; i++){
+			for(int j=0; j<10; j++){
+				ctr++;
+				m[j][i]=ctr;
+			}
+		}
+		
+		for(int i=0; i<10; i++){
+			for(int j=0; j<10; j++){
+				System.out.format("%4d",m[i][j]);
+			}
+			System.out.print("\n");
+		}
+		return;
+	}
+}
+
+class QuartoTardiani{
+	public static void main(String args[]){
+		int v[] = new int [args.length];
+		int sum=0;
+		
+		if(args.length <=1){
+			System.out.print("Inserire almeno due valori.");
+			return;
+		}
+		
+		try{
+			for(int i=0; i<args.length; i++){
+				v[i]=Integer.valueOf(args[i]).intValue();
+				sum=sum+v[i];
+			}
+		}catch(Exception e){
+			System.out.print("Inserire solo numeri.");
+			return;
+		}
+		
+		for(int i=0; i<args.length; i++){
+			System.out.format("%4d",v[i]);
+		}
+		System.out.print("Somma: " + sum);
+		return;
+	}
+}

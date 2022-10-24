@@ -1,0 +1,16 @@
+Suddivisione argomenti:
+    Fondamenti C       :     001 - 006
+    Vettori e matrici  :     007 - 027 (no 022),052, 053, 063
+    Stringhe           :     022,  028 - 044,  054
+    Lavori di gruppo   :     045 - 049, 081
+    Sorting            :     050,  051, 054 - 062, 064
+    Ricorsione         :    065 - 066, 068 - 071
+    Funzioni primitive :     072
+    Strutture          :    073
+    File:            074-077, 078, 080,082 084-92
+    Puntatori:        079
+
+TODO 
+file 
+puntatori
+Lavori gruppo 081, 083
