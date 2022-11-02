@@ -47,7 +47,8 @@
     "xutility": "cpp",
     "string.h": "c",
     "time.h": "c",
-    "array": "cpp"
+    "array": "cpp",
+    "sstream": "cpp"
   },
   "git.ignoreLimitWarning": true
 }
