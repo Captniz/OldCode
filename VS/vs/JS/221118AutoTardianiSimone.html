@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Auto</title>
+    <style>
+      td {
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>AUTO</h1>
+    <div id="ins">
+      <table>
+        <tr>
+          <td><input type="text" placeholder="Modello" id="modello" /></td>
+          <td>
+            <form id="marc">
+              <span>Marca</span><br />
+              <input type="radio" name="marca" value="Fiat" />Fiat<br />
+              <input type="radio" name="marca" value="Alfa romeo" />Alfa
+              romeo<br />
+              <input type="radio" name="marca" value="Lancia" />Lancia<br />
+            </form>
+          </td>
+          <td>
+            <form id="alime">
+              <span>Alimentazione</span><br />
+              <input
+                type="radio"
+                name="alim"
+                value="Elettrica"
+              />Elettrica<br />
+              <input type="radio" name="alim" value="Diesel" />Alfa Alfaromeo<br />
+              <input type="radio" name="alim" value="Benzina" />Benzina<br />
+              <input type="radio" name="alim" value="GPL" />GPL<br />
+            </form>
+          </td>
+          <td>
+            <form id="colore">
+              <span>Colore</span><br />
+              <input type="radio" name="color" value="Bianco" />Bianco<br />
+              <input type="radio" name="color" value="Nero" />Nero <br />
+              <input type="radio" name="color" value="Rosso" />Rosso<br />
+              <input type="radio" name="color" value="Grigio" />Grigio<br />
+            </form>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <input type="button" value="Stampa" onclick="setup()" /><br />
+    <div id="vis" style="border: 1px solid; text-align: center"></div>
+
+    <script type="text/javascript" src="221118AutoTardianiSimone.js"></script>
+  </body>
+</html>

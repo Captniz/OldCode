@@ -2,7 +2,7 @@ var a = "ciao";
 len = a.length;
 ch = a.charAt(0);
 
-var ran = (parseInt(Math.random() * 10) % 10) + 1;
+var ran = parseInt(Math.random() * 10 + 1);
 
 var b = [];
 b[0] = 12;
