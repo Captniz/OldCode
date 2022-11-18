@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rubrica</title>
+  </head>
+  <body>
+    <nav style="text-align: center">
+      <input
+        style="margin: 20px"
+        type="button"
+        value="Inserisci"
+        id="inserisci"
+        onclick="setInsert()"
+      />
+      <input
+        style="margin: 20px"
+        type="button"
+        value="Modifica"
+        id="modifica"
+        onclick="setModify()"
+      />
+      <input
+        style="margin: 20px"
+        type="button"
+        value="Cancella"
+        id="cancella"
+        onclick="setDelete()"
+      />
+      <input
+        style="margin: 20px"
+        type="button"
+        value="Cerca"
+        id="cerca"
+        onclick="setFind()"
+      />
+    </nav>
+
+    <form name="ins" id="ins" style="display: none">
+      <div style="text-align: center">
+        <span style="font-size: 20px; font-family: courier">Inserisci</span
+        ><br />
+        <input
+          style="margin: 20px; width: 50%; text-align: center"
+          type="text"
+          placeholder="Nome"
+          id="nome"
+        />
+        <br />
+        <input
+          style="margin: 20px; width: 50%; text-align: center"
+          type="text"
+          placeholder="Cognome"
+          id="cnome"
+        />
+        <br />
+        <input
+          style="margin: 20px; width: 50%; text-align: center"
+          type="text"
+          placeholder="Numero"
+          id="numero"
+        /><br /><input type="button" value="Inserisci" onclick="insert()" />
+      </div>
+    </form>
+
+    <form name="mod" id="mod" style="display: none">
+      <div style="text-align: center">
+        <span style="font-size: 20px; font-family: courier">Modifica</span
+        ><br />
+        <input
+          style="margin: 20px; width: 50%; text-align: center"
+          type="text"
+          placeholder="Nome"
+          id="nome"
+        /><span id="srcNome">Nome Selezionato</span>
+        <br />
+        <input
+          style="margin: 20px; width: 50%; text-align: center"
+          type="text"
+          placeholder="Cognome"
+          id="cnome"
+        /><label id="srcCognome">Cognome Selezionato</label>
+        <br />
+        <input
+          style="margin: 20px; width: 50%; text-align: center"
+          type="text"
+          placeholder="Numero"
+          id="numero"
+        /><label id="srcCognome">Numero Selezionato</label> <br /><input
+          type="button"
+          value="Modifica"
+        />
+      </div>
+    </form>
+
+    <form name="del" id="del" style="display: none">
+      <div style="text-align: center">
+        <span style="font-size: 20px; font-family: courier">Cancella</span
+        ><br /><br />
+
+        <span style="padding: 50px" id="srcNome">Nome Selezionato</span>
+        <br /><br />
+
+        <span style="padding: 50px" id="srcCognome">Cognome Selezionato</span>
+        <br /><br />
+
+        <span style="padding: 50px" id="srcNumero">Numero Selezionato</span
+        ><br /><br />
+
+        <input type="button" value="Cancella" />
+      </div>
+    </form>
+
+    <form name="src" id="src" style="display: none">
+      <div style="text-align: center">
+        <span style="font-size: 20px; font-family: courier">Cerca</span><br />
+        <input
+          style="margin: 20px; width: 50%; text-align: center"
+          type="text"
+          placeholder="Cognome"
+          id="cnome"
+        /><br /><input type="button" value="Cerca" onclick="find()" />
+        <input type="button" value="Seleziona" onclick="select()" />
+      </div>
+    </form>
+
+    <script
+      type="application/javascript"
+      src="221118_Rubrica_Tardiani_Simone.js"
+    ></script>
+  </body>
+</html>
