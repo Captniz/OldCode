@@ -84,7 +84,7 @@ lavori di gruppo del 210923:
 211001
 ======
 011 - Dichiarare un vettore v con DIM=10.
-caricamento esterno: richiesto un elemento controllare, prima di inserirlo nel vettore, se è già presente, nel qual caso richiedere l’elemento.
+caricamento esterno: richiesto un elemento controllare, prima di inserirlo nel vettore, se è gia' presente, nel qual caso richiedere l’elemento.
 
 211006
 ======
@@ -271,7 +271,7 @@ altrimenti riorna 0.
 
 211124
 ======
-45> Progettare e realizzare una funzione che effettui il controllo di validità (data entry) della data immessa nella forma gg/mm/aaaa.
+45> Progettare e realizzare una funzione che effettui il controllo di validita' (data entry) della data immessa nella forma gg/mm/aaaa.
 1 se valida
 0 se non valida
 
@@ -282,7 +282,7 @@ altrimenti riorna 0.
 47> quale data è maggiore tra 2 date
 
 work group: 3 es sulle date 
-*validità di una data (45)
+*validita' di una data (45)
 *differenza in gg tra 2 date (46)
 *quale data è maggiore tra 2 date (2 metodi: 
 o riconducendo le 2 date all'anno 0, 
@@ -409,8 +409,8 @@ void printCounters(){
 ======
 59> Caricare un vet v DIM=20 con numeri random a piacere.
 Visualizzare v.
-Ordinare la prima metà di v e poi la seconda metà di v.
-Alla fine v risulterà ordinato.
+Ordinare la prima meta' di v e poi la seconda meta' di v.
+Alla fine v risultera' ordinato.
 Visualizzare nuovamente v.
 
 60> Data una stringa s="Oggi ProVIAMO a VeDere chi Vince" caricata contestualmente estrarre solo le maiuscole e ordinarle in una seconda stringa s2 in modo discendente.
@@ -487,7 +487,7 @@ In una classe sono memorizzati 10 studenti:
 ● nome;
 ● voto_info
 ● voto_condotta
-Realizza un programma che implementi le seguenti funzionalità:
+Realizza un programma che implementi le seguenti funzionalita':
 1. Inserimento dei dati dgli alunni;
 2. dato il nominativo di un alunno permetta di modificare solo il voto di condotta
 3. modifichi (incrementando o decrementando di un punto il voto di informatica di tutti gli alunni)
