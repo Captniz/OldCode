@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Targhe</title>
+  </head>
+  <body style="padding: 0%; margin: 0%">
+    <nav
+      style="
+        display: flex;
+        justify-content: space-around;
+        background-color: coral;
+        padding: 2%;
+      "
+    >
+      <input onclick="Show('nuova')" type="button" value="Nuova" />
+      <input onclick="Show('autorizza')" type="button" value="Autorizza" />
+      <input onclick="Show('revoca')" type="button" value="Revoca" />
+      <input onclick="Show('modifica')" type="button" value="Modifica" />
+      <input onclick="Show('stampa')" type="button" value="Stampa" />
+    </nav>
+    <!--!Nuova-->
+    <div id="nuova" style="display: none">
+      <form name="nuovaF" id="nuovaF">
+        <h1>Nuova</h1>
+        <input type="text" name="nome" id="nome" />
+        <label for="nome">Nome</label><br />
+
+        <input type="text" name="cognome" id="cognome" />
+        <label for="cognome">Cognome</label><br />
+
+        <input type="text" name="indirizzo" id="indirizzo" />
+        <label for="indirizzo">Indirizzo</label><br />
+
+        <input type="text" name="citta" id="citta" />
+        <label for="citta">Città di residenza</label><br />
+
+        <input type="text" name="luogo" id="luogo" />
+        <label for="luogo">Luogo di nascita</label><br />
+
+        <input type="date" name="data" id="data" />
+        <label for="data">Data di nascita</label><br />
+        <br />
+        <input type="text" name="targa" id="targa" />
+        <label for="targa">Targa</label><br />
+        <br />
+        <input type="submit" value="Invia" onclick="Nuova()" />
+      </form>
+    </div>
+    <!--!Autorizza-->
+    <div id="autorizza" style="display: none">
+      <h1>Autorizza</h1>
+      <input type="text" name="nome" id="nome" />
+      <label for="nome">Nome</label><br />
+
+      <input type="text" name="cognome" id="cognome" />
+      <label for="cognome">Cognome</label><br />
+
+      <input type="text" name="targa" id="targa" />
+      <label for="targa">Targa</label><br />
+
+      <input type="submit" value="Cerca" onclick="Cerca()" />
+      <input type="submit" value="Autorizza" onclick="Autorizza()" />
+    </div>
+    <!--!Revoca-->
+    <div id="revoca" style="display: none">
+      <h1>Revoca</h1>
+      <input type="text" name="nome" id="nome" />
+      <label for="nome">Nome</label><br />
+
+      <input type="text" name="cognome" id="cognome" />
+      <label for="cognome">Cognome</label><br />
+
+      <input type="text" name="targa" id="targa" />
+      <label for="targa">Targa</label><br />
+
+      <input type="submit" value="Cerca" onclick="Cerca()" />
+      <input type="submit" value="Revoca" onclick="Revoca()" />
+    </div>
+    <!--!Modifica-->
+    <div id="modifica" style="display: none">
+      <h1>Modifica</h1>
+      <input type="text" name="nome" id="nome" />
+      <label for="nome">Nome</label><br />
+
+      <input type="text" name="cognome" id="cognome" />
+      <label for="cognome">Cognome</label><br />
+
+      <input type="text" name="targa" id="targa" />
+      <label for="targa">Targa</label><br />
+
+      <input type="submit" value="Cerca" onclick="Cerca()" />
+      <input type="submit" value="Modifica" onclick="Modifica()" />
+    </div>
+    <!--!Stampa-->
+    <div id="stampa" style="display: none">
+      <h1>Targhe:</h1>
+    </div>
+    <script
+      type="text/javascript"
+      src="./221203_Targhe_Tardiani_Simone.js"
+    ></script>
+  </body>
+</html>
