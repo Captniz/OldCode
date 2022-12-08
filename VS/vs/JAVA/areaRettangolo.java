@@ -1,4 +1,5 @@
-public class areaRettangolo{
+//221028_AreaRettangolo.java
+public class AreaRettangolo{
     public static void main(String[] args){
         int base = 2;
         int altezza = 4;

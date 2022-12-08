@@ -1,13 +1,17 @@
 import java.util.Scanner;
-class areaRettangolo2{
+//221028_AreaRettangoloInput.java
+class AreaRettangoloInput{
     public static void main(String[] args){
         int area = 0;
-        Scanner base = new Scanner(System.in);
-        Scanner altezza = new Scanner(System.in);
+        int base = 0;
+        int altezza = 0;
+        Scanner scn = new Scanner(System.in);
+        System.out.println("Inserisci la base: ");
+        base = scn.nextInt();
+        System.out.println("Inserisci l'altezza: ");
+        altezza = scn.nextInt();
         area = base * altezza;
 
-        print("Base: ")
-        print("\nAltezza: ")
-        System.out.println("Base = " + base + "\nAltezza = " + altezza + "\nArea = " + area);
+        System.out.println("Base: " + base + "\nAltezza: " + altezza + "\nArea: " + area);
     }
 } 

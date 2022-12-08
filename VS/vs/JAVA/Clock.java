@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 /*8>221205_clock.java
 Scrivere una classe Orologio per simulare il comportamento di un orologio. La classe contiene un costruttore parametrizzato con tre argomenti 
 * (ore, min, sec) e uno di default settato a 00:00:00. Possiede inoltre un metodo public che incrementa i secondi (potrebbe far scattare i minuti), 
@@ -11,7 +10,7 @@ public class Clock {
 	private int mm;
 	private int ss;
 	
-    ClocK(int hhh;int mmm;int sss){
+    Clock(int hhh,int mmm,int sss){
         hh=hhh;
         mm=mmm;
         ss=sss;
@@ -97,9 +96,9 @@ public class Clock {
 		System.out.format("%2d:%2d:%2d",hh,mm,ss);
 	}
     public static void main(String[] args) {
-        int hh=0,mm=0,ss=0;
         Scanner scn = new Scanner(System.in);
         Clock c = new Clock();
+        int min = 0;
         
         do{
             System.out.print("Ore:");
@@ -113,8 +112,11 @@ public class Clock {
             System.out.print("Secondi:");
         }while(c.setS(scn.nextInt())>0);
         
-        c.addM(60);
-
+        System.out.println("Secondi da aggiungere:");
+        min = scn.nextInt();
+        c.addM(min);
+        
         c.Print();
+        scn.close();
     }
 }
