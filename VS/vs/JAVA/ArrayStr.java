@@ -14,7 +14,6 @@ nel main prevedere un metodo statico per visualizzare l'array.
 
 - (più complesso) si potrebbe anche creare una classe Stringa(), una classe Stringhe() che permetta di istanziare l stringhe di lunghezza l (che contenga almeno un costruttore  e un metodo per visualizzare l'array) e una classe MainStringhe() che permetta di creare un paio di oggetti Stringhe e visualizzarle.*/
 //221201_arraystr.java
-import java.util.Scanner;
 public class ArrayStr {
     public static void main(String[] args) {
         Scanner scn = new Scanner(System.in);

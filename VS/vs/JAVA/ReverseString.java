@@ -18,5 +18,6 @@ class ReverseString{
         str = new String(TempArr);
 
         System.out.println("\n" + str);
+        scan.close();
     }
 }

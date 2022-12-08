@@ -25,6 +25,7 @@ public class Garage {
             input.nextLine();
             auto[i] = new Auto(marca, modello, cilindrata, costo, autodistruttore);
         }
+        input.close();
     }
     
     public float costoMinimo() {
@@ -37,6 +38,5 @@ public class Garage {
         return min;
     }
     public static void main(String[] args) {
-        
     }
 }

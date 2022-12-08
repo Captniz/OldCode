@@ -13,5 +13,6 @@ class AreaRettangoloInput{
         area = base * altezza;
 
         System.out.println("Base: " + base + "\nAltezza: " + altezza + "\nArea: " + area);
+        scn.close();
     }
 } 
