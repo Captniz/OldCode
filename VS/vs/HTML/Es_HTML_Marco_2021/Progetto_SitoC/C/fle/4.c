@@ -1,6 +1,6 @@
-/*77> leggere un file "numeri.txt" e vedere quante cifre [0..9] ci sono 
+/*77&gt; leggere un file "numeri.txt" e vedere quante cifre [0..9] ci sono 
 */
-#include<stdio.h>
+#include&lt;stdio.h&gt;
 int main()
 {
 	FILE *fp;
@@ -12,7 +12,7 @@ int main()
 		printf("ERRORE: file non trovato");
 	}else{
 		while((car=fgetc(fp))!=EOF){
-			if(car>='0' && car<='9'){
+			if(car&gt;='0' && car&lt;='9'){
 				ctr++;
 			}
 		}

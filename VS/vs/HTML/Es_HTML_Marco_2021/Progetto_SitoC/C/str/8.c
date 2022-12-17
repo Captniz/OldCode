@@ -1,10 +1,10 @@
-/*034> Inserire esternamente una stringa.
+/*034&gt; Inserire esternamente una stringa.
 Restituire con una funzione le vocali.
 --------
 int vocali(char [])
 */
-#include<stdio.h>
-#include<string.h>
+#include&lt;stdio.h&gt;
+#include&lt;string.h&gt;
 #define DIM 80
 
 void stringa(char []);
@@ -25,7 +25,7 @@ void stringa(char s[DIM]){
 int vocali(char s[]){
 	int c,i;
 	c=0;
-	for(i=0;i<strlen(s);i++){		
+	for(i=0;i&lt;strlen(s);i++){		
 		if(s[i]=='A' || s[i]=='E' || s[i]=='I' || s[i]=='O' || s[i]=='U' || s[i]=='a' || s[i]=='e' || s[i]=='i' || s[i]=='o' || s[i]=='u'){
 			c++;
 		}

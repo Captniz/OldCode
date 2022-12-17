@@ -1,4 +1,4 @@
-/*79> 
+/*79&gt; 
 int v[row];
 int *pv;
 pv=&v[0];
@@ -11,9 +11,9 @@ caricare, visualizzare e trovare il max
 USANDO SOLO ARITMETICA DEI PUNTATORI 
 row e col sono chieste all'utente
 */
-#include<stdio.h>
-#include<stdlib.h>
-#include<time.h>
+#include&lt;stdio.h&gt;
+#include&lt;stdlib.h&gt;
+#include&lt;time.h&gt;
 void carica_vet(int *, int);
 void visualizza_vet(int *, int);
 int max_vet(int *, int);
@@ -56,14 +56,14 @@ int main()
 }
 void carica_vet(int *p_v, int row){
 	int i;
-	for(i=0;i<row;i++){
+	for(i=0;i&lt;row;i++){
 		*p_v=rand()%50+1;
 		*p_v++;
 	}
 }
 void visualizza_vet(int *p_v, int row){
 	int i;
-	for(i=0;i<row;i++){
+	for(i=0;i&lt;row;i++){
 		printf("%4d",*p_v);
 		*p_v++;
 	}
@@ -71,8 +71,8 @@ void visualizza_vet(int *p_v, int row){
 int max_vet(int *p_v, int row){
 	int i,max;
 	max=*p_v;
-	for(i=0;i<row;i++){
-		if(*p_v>max){
+	for(i=0;i&lt;row;i++){
+		if(*p_v&gt;max){
 			max=*p_v;
 		}
 		p_v++;
@@ -81,8 +81,8 @@ int max_vet(int *p_v, int row){
 }
 void carica_mat(int *p_m, int row, int col){
 	int i,j;
-	for(i=0;i<row;i++){
-		for(j=0;j<col;j++){
+	for(i=0;i&lt;row;i++){
+		for(j=0;j&lt;col;j++){
 			*p_m=rand()%20+1;
 			p_m++;
 		}
@@ -90,8 +90,8 @@ void carica_mat(int *p_m, int row, int col){
 }
 void visualizza_mat(int *p_m, int row, int col){
 	int i,j;
-	for(i=0;i<row;i++){
-		for(j=0;j<col;j++){
+	for(i=0;i&lt;row;i++){
+		for(j=0;j&lt;col;j++){
 			printf("%4d",*p_m);
 			p_m++;
 		}
@@ -101,9 +101,9 @@ void visualizza_mat(int *p_m, int row, int col){
 int max_mat(int *p_m, int row, int col){
 	int i,j,max;
 	max=*p_m;
-	for(i=0;i<row;i++){
-		for(j=0;j<col;j++){
-			if(*p_m>max){
+	for(i=0;i&lt;row;i++){
+		for(j=0;j&lt;col;j++){
+			if(*p_m&gt;max){
 				max=*p_m;
 			}
 			p_m++;

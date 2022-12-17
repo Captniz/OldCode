@@ -52,6 +52,43 @@
       </div>
       <div class="Bright"><a href="10.html">SUCCESSIVO</a></div>
     </div>
-    <div id="text" onclick="Insert('../../../C/str/9.c' )" width="98%" /> CODICE</div><script type="text/javascript" src="../../../TestIns.js"></script>
+    <div class="text" width="98%">
+      <pre>
+        <code>
+          /*35&gt; Scrivere una funzione che calcoli una qualunque potenza maggiore o uguale a zero.
+          long int potenza(int , int);
+          */
+          #include&lt;stdio.h&gt;
+          long int potenza(int, int);
+          int main(){
+            int a,b;
+            printf("inserire la base: ");
+            scanf("%d",&a);
+            fflush(stdin);
+            do{
+              printf("inserire l'esponente: ");
+              scanf("%d",&b);
+              fflush(stdin);
+            }while(b&lt;0);
+            if(a!=0 && b!=0){
+              printf("la potenza e': %li",potenza(a,b));
+            }else{
+              printf("non definito");
+            }
+            return 0;
+          }
+          long int potenza(int a, int b){
+            long int r;
+            int i;
+            r=1;
+            for(i=0;i&lt;b;i++){
+              r=r*a;
+            }
+            return r;
+          }
+          
+        </code>
+      </pre>
+    </div>
   </body>
 </html>

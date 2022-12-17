@@ -1,6 +1,6 @@
-/*41> emulare la funzione strcat char by char*/
-#include<stdio.h>
-#include<string.h>
+/*41&gt; emulare la funzione strcat char by char*/
+#include&lt;stdio.h&gt;
+#include&lt;string.h&gt;
 #define DIM 80
 void my_strcat(char [], char []);
 int main()

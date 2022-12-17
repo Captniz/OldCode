@@ -1,4 +1,4 @@
-/*50>Dato un array v dimensionato DIM=10 
+/*50&gt;Dato un array v dimensionato DIM=10 
 ordinare gli elementi limitatamente alla posizione del max e del min.
 Se il min precede il max ordinamento crescente 
 altrimenti decrescente.
@@ -11,7 +11,7 @@ ES: 2 9 3 7 8 1
     2 9 8 7 3 1
 */
 
-#include<stdio.h>
+#include&lt;stdio.h&gt;
 #define DIM 10
 void visualizza(int []);
 int pmax(int []);
@@ -32,7 +32,7 @@ int main(){
 }
 void visualizza(int v[]){
 	int i;
-	for(i=0;i<DIM;i++){
+	for(i=0;i&lt;DIM;i++){
 		printf("%d ",v[i]);
 	}
 	putchar('\n');
@@ -40,8 +40,8 @@ void visualizza(int v[]){
 int pmax(int v[]){
 	int i,max,pmax;
 	max=v[0];
-	for(i=0;i<DIM;i++){
-		if(v[i]>max){
+	for(i=0;i&lt;DIM;i++){
+		if(v[i]&gt;max){
 			max=v[i];
 			pmax=i;
 		}
@@ -53,8 +53,8 @@ int pmax(int v[]){
 int pmin(int v[]){
 	int i,min,pmin;
 	min=v[0];
-	for(i=0;i<DIM;i++){
-		if(v[i]<min){
+	for(i=0;i&lt;DIM;i++){
+		if(v[i]&lt;min){
 			min=v[i];
 			pmin=i;
 		}
@@ -65,10 +65,10 @@ int pmin(int v[]){
 }
 void ordina(int v[],int max,int min){
 	int i,j,box;
-		if(min<max){
-			for(i=min;i<max;i++){
-				for(j=min;j<max;j++){
-					if(v[i]<v[j]){
+		if(min&lt;max){
+			for(i=min;i&lt;max;i++){
+				for(j=min;j&lt;max;j++){
+					if(v[i]&lt;v[j]){
 						box=v[i];
 						v[i]=v[j];
 						v[j]=box;
@@ -76,10 +76,10 @@ void ordina(int v[],int max,int min){
 				}
 			}
 		}else{
-			if(min>max){
-			for(i=max;i<min;i++){
-				for(j=max;j<min;j++){
-					if(v[i]>v[j]){
+			if(min&gt;max){
+			for(i=max;i&lt;min;i++){
+				for(j=max;j&lt;min;j++){
+					if(v[i]&gt;v[j]){
 						box=v[i];
 						v[i]=v[j];
 						v[j]=box;

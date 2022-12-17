@@ -1,12 +1,12 @@
-/*64> dato un array dimensionato DIM=10 di stringhe con lunghezza L=80 inserite esternamente
+/*64&gt; dato un array dimensionato DIM=10 di stringhe con lunghezza L=80 inserite esternamente
 preparare il seguente menu
 0 - escape
 n - ordina le stringhe per nome in modo crescente
 d - ordina le stringhe per lunghezza in modo crescente
 v - ordina le stringhe contenenti piu' vocali in modo crescente 
 */
-#include<stdio.h>
-#include<string.h>
+#include&lt;stdio.h&gt;
+#include&lt;string.h&gt;
 #define DIM 10
 #define L 80
 void carica(char [][L]);
@@ -52,14 +52,14 @@ int main()
 }
 void carica(char s[DIM][L]){
 	int i;
-	for(i=0;i<DIM;i++){
+	for(i=0;i&lt;DIM;i++){
 		printf("inserire %d stringa: ",i+1);
 		gets(s[i]);
 	}
 }
 void visualizza(char s[DIM][L]){
 	int i;
-	for(i=0;i<DIM;i++){
+	for(i=0;i&lt;DIM;i++){
 		puts(s[i]);
 	}
 	putchar('\n');
@@ -67,9 +67,9 @@ void visualizza(char s[DIM][L]){
 void sort1(char s[DIM][L]){
 	int i,j;
 	char box[L];
-	for(i=0;i<DIM;i++){
-		for(j=i+1;j<DIM;j++){
-			if(strcmp(s[i],s[j])>0){
+	for(i=0;i&lt;DIM;i++){
+		for(j=i+1;j&lt;DIM;j++){
+			if(strcmp(s[i],s[j])&gt;0){
 				strcpy(box,s[i]);
 				strcpy(s[i],s[j]);
 				strcpy(s[j],box);
@@ -80,9 +80,9 @@ void sort1(char s[DIM][L]){
 void sort2(char s[DIM][L]){
 	int i,j;
 	char box[L];
-	for(i=0;i<DIM;i++){
-		for(j=i+1;j<DIM;j++){
-			if(strlen(s[i])>strlen(s[j])){
+	for(i=0;i&lt;DIM;i++){
+		for(j=i+1;j&lt;DIM;j++){
+			if(strlen(s[i])&gt;strlen(s[j])){
 				strcpy(box,s[i]);
 				strcpy(s[i],s[j]);
 				strcpy(s[j],box);
@@ -94,12 +94,12 @@ void sort3(char s[DIM][L]){
 	int i,j;
 	int voc[DIM];
 	char box[L];
-	for(i=0;i<DIM;i++){
+	for(i=0;i&lt;DIM;i++){
 		voc[i]=0;
 	}
-	for(i=0;i<DIM;i++){
+	for(i=0;i&lt;DIM;i++){
 		j=0;
-		while(j<strlen(s[i])){
+		while(j&lt;strlen(s[i])){
 			if(s[i][j]=='a' || s[i][j]=='e' || s[i][j]=='i' || s[i][j]=='o' || s[i][j]=='u' ||
 		      s[i][j]=='A' || s[i][j]=='E' || s[i][j]=='I' || s[i][j]=='O' || s[i][j]=='U'){
 		      	voc[i]++;
@@ -108,9 +108,9 @@ void sort3(char s[DIM][L]){
 		}
 	}
 	int temp;
-	for(i=0;i<DIM;i++){
-		for(j=i+1;j<DIM;j++){
-			if(voc[i]>voc[j]){
+	for(i=0;i&lt;DIM;i++){
+		for(j=i+1;j&lt;DIM;j++){
+			if(voc[i]&gt;voc[j]){
 				strcpy(box,s[i]);
 				strcpy(s[i],s[j]);
 				strcpy(s[j],box);

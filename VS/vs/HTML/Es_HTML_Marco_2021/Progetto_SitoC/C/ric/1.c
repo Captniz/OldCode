@@ -1,8 +1,8 @@
-/*65>
-Dato un numero n inserito esternamente calcolare la somma dei primi N numeri pari (>0) 
+/*65&gt;
+Dato un numero n inserito esternamente calcolare la somma dei primi N numeri pari (&gt;0) 
 positivi in maniera ricorsiva.
 */
-#include<stdio.h>
+#include&lt;stdio.h&gt;
 int somma_pari(int );
 int main(){
 	int n,som;

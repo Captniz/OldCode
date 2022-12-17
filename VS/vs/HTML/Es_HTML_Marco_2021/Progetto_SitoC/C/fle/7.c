@@ -1,9 +1,9 @@
-/*81> Fare l'operazione contraria: sostituire la stringa "effe" con il carattere 'f'.
-es: caeffeeffettiera -> caffettiera 
+/*81&gt; Fare l'operazione contraria: sostituire la stringa "effe" con il carattere 'f'.
+es: caeffeeffettiera -&gt; caffettiera 
 */
-#include<stdio.h>
-#include<stdlib.h>
-#include<string.h>
+#include&lt;stdio.h&gt;
+#include&lt;stdlib.h&gt;
+#include&lt;string.h&gt;
 int main()
 {
 	FILE *fp,*fp2;
@@ -18,7 +18,7 @@ int main()
 	char s[]="effe";
 	while(fscanf(fp,"%s",buffer)!=EOF){
 		ctr=i=0;
-		while(i<strlen(buffer)){
+		while(i&lt;strlen(buffer)){
 			if(buffer[i]==s[j]){
 				ctr++;
 				i++;
@@ -30,7 +30,7 @@ int main()
 				}
 			}else{
 				i=i-ctr;
-				for(j=0;j<=ctr;j++){
+				for(j=0;j&lt;=ctr;j++){
 					fputc(buffer[i],fp2);
 					i++;
 				}

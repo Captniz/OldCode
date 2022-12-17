@@ -1,7 +1,7 @@
-/*47> Dire quale data e' maggiore tra 2 date
+/*47&gt; Dire quale data e' maggiore tra 2 date
 partendo dall'anno se a1 = a2 allora confronto mese1 con mese2 ... etc.
 */
-#include<stdio.h>
+#include&lt;stdio.h&gt;
 int controllo_data(int, int, int);
 int data_maggiore();
 int main()
@@ -25,7 +25,7 @@ int main()
 int controllo_data(int gg, int mm, int aa){
 	int bis;
 	bis=0;
-	if(gg<=0 || mm<=0 || mm>12 || aa<=0){
+	if(gg&lt;=0 || mm&lt;=0 || mm&gt;12 || aa&lt;=0){
 		return 0;
 	}
 	//anno bisestile
@@ -45,7 +45,7 @@ int controllo_data(int gg, int mm, int aa){
 		case 8:
 		case 10:
 		case 12:
-			if(gg>31){
+			if(gg&gt;31){
 				return 0;
 			}
 		break;
@@ -53,17 +53,17 @@ int controllo_data(int gg, int mm, int aa){
 		case 6:
 		case 9:
 		case 11:
-			if(gg>30){
+			if(gg&gt;30){
 				return 0;
 			}
 		break;
 		case 2:
 			if(bis==1){
-				if(gg>29){
+				if(gg&gt;29){
 					return 0;
 				}
 			}else{
-				if(gg>28){
+				if(gg&gt;28){
 					return 0;
 				}
 			}
@@ -82,17 +82,17 @@ int data_maggiore(){
 			printf("Inserisci il giorno: ");
 			scanf("%d",&gg);
 			while(getchar()!='\n');
-		}while(gg<0);
+		}while(gg&lt;0);
 		do{
 			printf("Inserisci il mese: ");
 			scanf("%d",&mm);
 			while(getchar()!='\n');
-		}while(mm<0);
+		}while(mm&lt;0);
 		do{
 			printf("Inserisci l'anno: ");
 			scanf("%d",&aa);
 			while(getchar()!='\n');
-			}while(aa<0);
+			}while(aa&lt;0);
 		err=controllo_data(gg,mm,aa);
 	}
 	//seconda data
@@ -104,35 +104,35 @@ int data_maggiore(){
 			printf("Inserisci il giorno: ");
 			scanf("%d",&gg2);
 			while(getchar()!='\n');
-		}while(gg2<0);
+		}while(gg2&lt;0);
 		do{
 			printf("Inserisci il mese: ");
 			scanf("%d",&mm2);
 			while(getchar()!='\n');
-		}while(mm2<0);
+		}while(mm2&lt;0);
 		do{
 			printf("Inserisci l'anno: ");
 			scanf("%d",&aa2);
 			while(getchar()!='\n');
-			}while(aa2<0);
+			}while(aa2&lt;0);
 		err=controllo_data(gg2,mm2,aa2);
 	}
-	if(aa>aa2){
+	if(aa&gt;aa2){
 		return 0;
 	}else{
-		if(aa<aa2){
+		if(aa&lt;aa2){
 			return 1;
 		}else{
-			if(mm>mm2){
+			if(mm&gt;mm2){
 				return 0;
 			}else{
-				if(mm<mm2){
+				if(mm&lt;mm2){
 					return 1;
 				}else{
-					if(gg>gg2){
+					if(gg&gt;gg2){
 						return 0;
 					}else{
-						if(gg<gg2){
+						if(gg&lt;gg2){
 							return 1;
 						}else{
 							return 2;

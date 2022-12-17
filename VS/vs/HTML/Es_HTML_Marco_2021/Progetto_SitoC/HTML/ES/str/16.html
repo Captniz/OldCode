@@ -49,6 +49,34 @@
       </div>
       <div class="Bright"><a href="17.html">SUCCESSIVO</a></div>
     </div>
-    <div id="text" onclick="Insert('../../../C/str/16.c' )" width="98%" /> CODICE</div><script type="text/javascript" src="../../../TestIns.js"></script>
+    <div class="text" width="98%">
+      <pre>
+        <code>
+          /*42&gt; emulare la funzione strlen char by char*/
+          #include&lt;stdio.h&gt;
+          #include&lt;string.h&gt;
+          #define DIM 80
+          int my_strlen(char []);
+          int main()
+          {
+            char s1[DIM];
+            printf("inserire stringa: ");
+            gets(s1);
+            fflush(stdin);
+            printf("la lunghezza della stringa inserita e': %d",my_strlen(s1));
+            return 0;
+          }
+          int my_strlen(char s1[DIM]){
+            int i;
+            i=0;
+            while(s1[i]!='\0'){
+              i++;
+            }
+            return i;
+          }
+          
+        </code>
+      </pre>
+    </div>
   </body>
 </html>

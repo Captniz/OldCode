@@ -51,6 +51,35 @@
       </div>
       <div class="Bright"><a href="5.html">SUCCESSIVO</a></div>
     </div>
-    <div id="text" onclick="Insert('../../../C/fle/4.c' )" width="98%" /> CODICE</div><script type="text/javascript" src="../../../TestIns.js"></script>
+    <div class="text" width="98%">
+      <pre>
+        <code>
+          /*77&gt; leggere un file "numeri.txt" e vedere quante cifre [0..9] ci sono 
+          */
+          #include&lt;stdio.h&gt;
+          int main()
+          {
+            FILE *fp;
+            char car;
+            int ctr;
+            ctr=0;
+            fp=fopen("numeri.txt","r");
+            if(fp==NULL){
+              printf("ERRORE: file non trovato");
+            }else{
+              while((car=fgetc(fp))!=EOF){
+                if(car&gt;='0' && car&lt;='9'){
+                  ctr++;
+                }
+              }
+              printf("Lettura avvenuta correttamente");
+              printf("\nCifre presenti nel file %s: %d","numeri.txt",ctr);
+            }
+            fclose(fp);
+          }
+          
+        </code>
+      </pre>
+    </div>
   </body>
 </html>

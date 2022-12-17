@@ -52,6 +52,32 @@
       </div>
       <div class="Bright"><a href="8.html">SUCCESSIVO</a></div>
     </div>
-    <div id="text" onclick="Insert('../../../C/str/7.c' )" width="98%" /> CODICE</div><script type="text/javascript" src="../../../TestIns.js"></script>
+    <div class="text" width="98%">
+      <pre>
+        <code>
+          /*33&gt; Inserire esternamente un numero di 5 cifre.
+          Demolire il numero nelle 5 cifre.
+          Caricarlo in un array DIM 5 nello stesso ordine.
+          */
+          #include &lt;stdio.h&gt;
+          #define DIM 5
+          int main(){
+              int v[DIM],n,mod,i;
+              printf("Inserisci il numero di 5 cifre: ");
+              scanf("%d",&n);
+              fflush(stdin);
+              for(i=DIM-1;i&gt;=0;i--){
+                  v[i]=n%10;
+                  n=n/10;
+              }
+              for(i=0;i&lt;DIM;i++){
+                  printf("%d ",v[i]);
+              }
+              return 0;
+          }
+          
+        </code>
+      </pre>
+    </div>
   </body>
 </html>

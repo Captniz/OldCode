@@ -1,4 +1,4 @@
-/*57> 
+/*57&gt; 
 Switch case (menu)
 0. Carica
 1. Visualizza
@@ -7,9 +7,9 @@ Switch case (menu)
 4. Insertion sort
 5. exit
 */
-#include<stdio.h>
-#include<stdlib.h>
-#include<time.h>
+#include&lt;stdio.h&gt;
+#include&lt;stdlib.h&gt;
+#include&lt;time.h&gt;
 #define DIM 10
 void carica(int []);
 void visualizza(int []);
@@ -63,13 +63,13 @@ int main()
 }
 void carica(int v[DIM]){
 	int i;
-	for(i=0;i<DIM;i++){
+	for(i=0;i&lt;DIM;i++){
 		v[i]=rand()%50+1;
 	}
 }
 void visualizza(int v[DIM]){
 	int i;
-	for(i=0;i<DIM;i++){
+	for(i=0;i&lt;DIM;i++){
 		printf("%3d",v[i]);
 	}
 	putchar('\n');
@@ -77,9 +77,9 @@ void visualizza(int v[DIM]){
 }
 void bubblesort(int v[DIM]){
 	int i,j,box;
-	for(i=0;i<DIM-1;i++){
-		for(j=i+1;j<DIM;j++){
-			if(v[i]>v[j]){
+	for(i=0;i&lt;DIM-1;i++){
+		for(j=i+1;j&lt;DIM;j++){
+			if(v[i]&gt;v[j]){
 				box=v[i];
 				v[i]=v[j];
 				v[j]=box;
@@ -90,10 +90,10 @@ void bubblesort(int v[DIM]){
 void selectionsort(int v[DIM]){
 	int i, j, imin;
 	int box;
-	for(i=0; i<(DIM-1); i++){
+	for(i=0; i&lt;(DIM-1); i++){
 		imin=i;
-		for(j=i+1;j<DIM; j++){
-			if(v[imin]>v[j]){
+		for(j=i+1;j&lt;DIM; j++){
+			if(v[imin]&gt;v[j]){
 				imin=j;
 			}
 		}
@@ -106,10 +106,10 @@ void selectionsort(int v[DIM]){
 }
 void insertionsort(int v[DIM]){
 	int i,j,min;
-	for(i=1;i<DIM;i++){
+	for(i=1;i&lt;DIM;i++){
 		min=v[i];
 		j=i-1;
-		while(min<v[j] && j>=0){
+		while(min&lt;v[j] && j&gt;=0){
 			v[j+1]=v[j];
 			j=j-1;
 		}

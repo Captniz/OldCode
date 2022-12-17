@@ -1,7 +1,7 @@
-/*46> Una volta controllato che due date sono valide trovare la differenza in giorni tra le due date.
-(Potrebbe risultare utile stabilire prima quale delle due date è maggiore).
+/*46&gt; Una volta controllato che due date sono valide trovare la differenza in giorni tra le due date.
+(Potrebbe risultare utile stabilire prima quale delle due date ï¿½ maggiore).
 */
-#include <stdio.h>
+#include &lt;stdio.h&gt;
 int max_data();
 int controllo_data();
 int main(){
@@ -18,17 +18,17 @@ int max_data(){
 			printf("Inserisci il giorno: ");
 			scanf("%d",&gg);
 			while(getchar()!='\n');
-		}while(gg<0);
+		}while(gg&lt;0);
 		do{
 			printf("Inserisci il mese: ");
 			scanf("%d",&mm);
 			while(getchar()!='\n');
-		}while(mm<0);
+		}while(mm&lt;0);
 		do{
 			printf("Inserisci l'anno: ");
 			scanf("%d",&aa);
 			while(getchar()!='\n');
-			}while(aa<0);
+			}while(aa&lt;0);
 		err=controllo_data(gg,mm,aa);
 	}
 	//seconda data
@@ -40,22 +40,22 @@ int max_data(){
 			printf("Inserisci il giorno: ");
 			scanf("%d",&gg2);
 			while(getchar()!='\n');
-		}while(gg2<0);
+		}while(gg2&lt;0);
 		do{
 			printf("Inserisci il mese: ");
 			scanf("%d",&mm2);
 			while(getchar()!='\n');
-		}while(mm2<0);
+		}while(mm2&lt;0);
 		do{
 			printf("Inserisci l'anno: ");
 			scanf("%d",&aa2);
 			while(getchar()!='\n');
-		}while(aa2<0);
+		}while(aa2&lt;0);
 		err=controllo_data(gg2,mm2,aa2);
 	}
 	//aamax
 	if(aa!=aa2){
-		if(aa>aa2){
+		if(aa&gt;aa2){
 			aamax=aa;
 			aamin=aa2;
 			mmmax=mm;
@@ -63,7 +63,7 @@ int max_data(){
 			ggmax=gg;
 			ggmin=gg2;
 	}else{
-		if(aa<aa2){
+		if(aa&lt;aa2){
 			aamax=aa2;
 			aamin=aa;
 			mmmax=mm2;
@@ -75,13 +75,13 @@ int max_data(){
 	}
 	//mese max
 	if(aa==aa2){
-		if(mm>mm2){
+		if(mm&gt;mm2){
 			mmmax=mm;
 			mmmin=mm2;
 			ggmax=gg;
 			ggmin=gg2;
 		}else{
-			if(mm<mm2){
+			if(mm&lt;mm2){
 				mmmax=mm2;
 				mmmin=mm;
 				ggmax=gg2;
@@ -91,7 +91,7 @@ int max_data(){
 	}
 	//ggmax
 	if(aa==aa2 && mm==mm2){
-		if(gg>gg2){
+		if(gg&gt;gg2){
 			ggmax=gg;
 			ggmin=gg2;
 		}else{
@@ -101,7 +101,7 @@ int max_data(){
 	}
 	//counter anni e bisestili
 	if(aa==aa2 && mm!=mm2){
-		if(mmmin<=2 && mmmax>=2){
+		if(mmmin&lt;=2 && mmmax&gt;=2){
 			if(aa%4!=0){
 			}else{
 				if(i%100==0){
@@ -115,7 +115,7 @@ int max_data(){
 	}
 	ctrgg=ctrgg+ctrbis;
 	if(aa!=aa2){
-		for(i=aamin+1;i<aamax;i++){
+		for(i=aamin+1;i&lt;aamax;i++){
 			if(i%4!=0){
 			}else{
 				if(i%100==0){
@@ -132,14 +132,14 @@ int max_data(){
 	}
 	//counter mesi
 	if(aa==aa2){
-		for(i=mmmin;i<mmmax-1;i++){
+		for(i=mmmin;i&lt;mmmax-1;i++){
 			ctrgg=ctrgg+ggmese[i];
 		}
 	}else{
-		for(i=mmmin;i<12;i++){
+		for(i=mmmin;i&lt;12;i++){
 			ctrgg=ctrgg+ggmese[i];
 		}
-		for(i=0;i<mmmax-1;i++){
+		for(i=0;i&lt;mmmax-1;i++){
 			ctrgg=ctrgg+ggmese[i];
 		}
 	}
@@ -150,7 +150,7 @@ int max_data(){
 		ctrgg=ctrgg+ggmax;
 	}
 	if(aa!=aa2){
-		if(mmmin<=2){
+		if(mmmin&lt;=2){
 			if(aa%4!=0){
 				}else{
 					if(i%100==0){
@@ -162,7 +162,7 @@ int max_data(){
 					}
 				}
 		}
-		if(mmmax>2){
+		if(mmmax&gt;2){
 			if(aa%4!=0){
 				}else{
 					if(i%100==0){
@@ -183,7 +183,7 @@ int max_data(){
 int controllo_data(int gg, int mm, int aa){
 	int bis;
 	bis=0;
-	if(gg<=0 || mm<=0 || mm>12 || aa<=0){
+	if(gg&lt;=0 || mm&lt;=0 || mm&gt;12 || aa&lt;=0){
 		return 0;
 	}
 	//anno bisestile
@@ -203,7 +203,7 @@ int controllo_data(int gg, int mm, int aa){
 		case 8:
 		case 10:
 		case 12:
-			if(gg>31){
+			if(gg&gt;31){
 				return 0;
 			}
 		break;
@@ -211,17 +211,17 @@ int controllo_data(int gg, int mm, int aa){
 		case 6:
 		case 9:
 		case 11:
-			if(gg>30){
+			if(gg&gt;30){
 				return 0;
 			}
 		break;
 		case 2:
 			if(bis==1){
-				if(gg>29){
+				if(gg&gt;29){
 					return 0;
 				}
 			}else{
-				if(gg>28){
+				if(gg&gt;28){
 					return 0;
 				}
 			}

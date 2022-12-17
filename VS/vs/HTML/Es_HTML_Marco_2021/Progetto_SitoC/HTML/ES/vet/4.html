@@ -53,6 +53,34 @@
       </div>
       <div class="Bright"><a href="5.html">SUCCESSIVO</a></div>
     </div>
-    <div id="text" onclick="Insert('../../../C/vet/4.c' )" width="98%" /> CODICE</div><script type="text/javascript" src="../../../TestIns.js"></script>
+    <div class="text" width="98%">
+      <pre>
+        <code>
+          /*10&gt; caricare un vettore let con DIM=10 con lettere maiuscole (HELP: dichiarare quindi  char let[DIM])
+          - visualizzare il numero complessivo delle vocali presenti nel vettore.
+          */
+          #include &lt;stdio.h&gt;
+          #include&lt;stdlib.h&gt;
+          #include&lt;time.h&gt;
+          #define DIM 10
+          int main()
+          {
+            char let[DIM],i;
+            int voc=0;
+            srand(time(NULL));
+            for(i=0;i&lt;DIM;i++){
+              let[i]=rand()%25+65;
+              printf("%c ", let[i]); 
+              if(let[i]=='A' || let[i]=='E' || let[i]=='I' || let[i]=='O' || let[i]=='U'){
+                voc++;
+              }
+            }
+            printf("\nVocali: %d", voc);
+            return 0;
+          }
+          
+        </code>
+      </pre>
+    </div>
   </body>
 </html>

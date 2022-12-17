@@ -1,6 +1,6 @@
-/*43> Data una stringa s contare quante cifre ci sono.*/
-#include<string.h>
-#include<stdio.h>
+/*43&gt; Data una stringa s contare quante cifre ci sono.*/
+#include&lt;string.h&gt;
+#include&lt;stdio.h&gt;
 #define DIM 80
 int main(){
 	char s[DIM],i;
@@ -9,8 +9,8 @@ int main(){
 	printf("inserisci una stringa: ");
 	gets(s);
 	fflush(stdin);
-	for(i=0;i<strlen(s);i++){
-		if(s[i]>=48 && s[i]<=57){
+	for(i=0;i&lt;strlen(s);i++){
+		if(s[i]&gt;=48 && s[i]&lt;=57){
 			c++;
 		}
 	}

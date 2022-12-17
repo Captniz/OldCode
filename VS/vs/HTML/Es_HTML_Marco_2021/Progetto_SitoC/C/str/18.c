@@ -1,11 +1,11 @@
-/*44> Data una stringa s1 e una stringa s2, la funzione 
+/*44&gt; Data una stringa s1 e una stringa s2, la funzione 
 int cerca(char [], char [])
-retistuisce l'indice d'inizio se s2 è contenuta in s1
+retistuisce l'indice d'inizio se s2 ï¿½ contenuta in s1
 altrimenti ritorna 0.
-(appena s2 è contenuta in s1 inutile procedere nella ricerca)
+(appena s2 ï¿½ contenuta in s1 inutile procedere nella ricerca)
 */
-#include<stdio.h>
-#include<string.h>
+#include&lt;stdio.h&gt;
+#include&lt;string.h&gt;
 #define DIM 80
 int cerca(char [], char []);
 int main()
@@ -29,11 +29,11 @@ int cerca(char s[], char s2[]){
 	i=0;
 	j=0;
 	flag=0;
-	while(i<strlen(s) && flag==0){
+	while(i&lt;strlen(s) && flag==0){
 		k=i;
 		flag=1;
 		j=0;
-		while(j<strlen(s2) && flag==1){
+		while(j&lt;strlen(s2) && flag==1){
 			if(s[k]==s2[j]){
 				j++;
 				k++;

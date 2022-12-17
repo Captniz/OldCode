@@ -1,8 +1,8 @@
-/*3> Dati due numeri "m" e "n", visualizzare, contare e sommare i numeri che sono divisori di entrambi.
+/*3&gt; Dati due numeri "m" e "n", visualizzare, contare e sommare i numeri che sono divisori di entrambi.
 Esempio con m=20, n=30 
 1 2 5 10 conteggio 4, somma 18*/
 
-#include<stdio.h>
+#include&lt;stdio.h&gt;
 
 int main()
 {
@@ -15,7 +15,7 @@ int main()
 	printf("secondo numero: ");
 	scanf("%d",&n);
 	fflush(stdin);
-	for(div=1;(div<=m) && (div<=n);div++){
+	for(div=1;(div&lt;=m) && (div&lt;=n);div++){
 		if((m%div==0) && (n%div==0)){
 			conteggio=conteggio+1;
 			somma=somma+div;

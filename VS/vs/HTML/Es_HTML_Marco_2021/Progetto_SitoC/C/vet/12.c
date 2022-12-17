@@ -1,17 +1,17 @@
-/*024> Caricare due vettori v e v2 con DIM=10 con numeri random [1..100].
+/*024&gt; Caricare due vettori v e v2 con DIM=10 con numeri random [1..100].
 Un terzo vettore v3 con DIM=10 contiene il max tra v e v2 di ogni posizione. 
 Visualizzare v, v2 e v3 con la griglia semplice.
 .......
 carica(v)
 carica(v2)
 carica-max(v,v2,v3)
-visualizza-frame(v)  // potete passare un 2° parametro
-visualizza-frame(v2) // potete passare un 2° parametro
-visualizza-frame(v3) // potete passare un 2° parametro
+visualizza-frame(v)  // potete passare un 2ï¿½ parametro
+visualizza-frame(v2) // potete passare un 2ï¿½ parametro
+visualizza-frame(v3) // potete passare un 2ï¿½ parametro
 */
-#include<stdio.h>
-#include<stdlib.h>
-#include<time.h>
+#include&lt;stdio.h&gt;
+#include&lt;stdlib.h&gt;
+#include&lt;time.h&gt;
 #define DIM 10
 void carica (int []);
 void carica_max (int [], int [], int []);
@@ -31,14 +31,14 @@ int main()
 
 void carica (int v[DIM]){
     int i;
-    for(i=0; i<DIM; i++){
+    for(i=0; i&lt;DIM; i++){
         v[i]=rand()%100+1;
     }
 }
 void carica_max (int v[DIM], int v2[DIM], int v3[DIM]){
     int i;
-    for (i=0;i<DIM;i++){
-        if(v[i]>v2[i]){
+    for (i=0;i&lt;DIM;i++){
+        if(v[i]&gt;v2[i]){
             v3[i]=v[i];
         }else{
             v3[i]=v2[i];
@@ -47,17 +47,17 @@ void carica_max (int v[DIM], int v2[DIM], int v3[DIM]){
 }
 void visualizza_frame(int v[DIM]){
     int i=0;
-    for (i=0;i<DIM;i++){
+    for (i=0;i&lt;DIM;i++){
         printf(" %c%c%c",196,196,196);
     }
     printf("\n");
-    for (i=0;i<DIM;i++){
+    for (i=0;i&lt;DIM;i++){
         putchar(179);
         printf("%3d",v[i]);
     }
     putchar(179);
     printf("\n");
-    for (i=0;i<DIM;i++){
+    for (i=0;i&lt;DIM;i++){
         printf(" %c%c%c",196,196,196);
     }
     printf("\n");

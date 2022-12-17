@@ -1,7 +1,7 @@
-/*75> copiare un file "prova.txt" su un altro file "provacopy.txt"
+/*75&gt; copiare un file "prova.txt" su un altro file "provacopy.txt"
 */
-#include<stdio.h>
-#include<string.h>
+#include&lt;stdio.h&gt;
+#include&lt;string.h&gt;
 int main()
 {
 	FILE *fp,*fp2;

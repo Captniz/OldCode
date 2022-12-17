@@ -1,4 +1,4 @@
-/*54> Data una stringa s caricata contestualmente (contenente solo lettere e spazi per ipotesi)
+/*54&gt; Data una stringa s caricata contestualmente (contenente solo lettere e spazi per ipotesi)
 eliminare gli spazi e caricare in una seconda stringa s2
 convertire s2 tutto in minuscole
 ordinare s2 in modo crescente
@@ -8,8 +8,8 @@ s2="vADoalmaRe"
 s2="vadoalmare"
 s2="aaadelmorv"
 */
-#include<stdio.h>
-#include<string.h>
+#include&lt;stdio.h&gt;
+#include&lt;string.h&gt;
 #define DIM 80
 void space(char [DIM]);
 void conv(char [DIM]);
@@ -27,9 +27,9 @@ int main(){
 }
 void space(char s[DIM]){
 	int i,j;
-	for(i=0;i<strlen(s);i++){
+	for(i=0;i&lt;strlen(s);i++){
 		if(s[i]==32){
-			for(j=i;j<strlen(s);j++)
+			for(j=i;j&lt;strlen(s);j++)
 				s[j]=s[j+1];			
 		}
 	}
@@ -37,7 +37,7 @@ void space(char s[DIM]){
 void conv(char s[DIM]){
 	int i;
 	for(i=0;s[i]!='\0';i++){
-		if(s[i]>=65 && s[i]<=90){
+		if(s[i]&gt;=65 && s[i]&lt;=90){
 			s[i]=s[i]+32;
 		}
 	}
@@ -46,8 +46,8 @@ void sort(char s[DIM]){
 	int i,j,box,flag;
 	do{
 		flag=0;
-		for(i=0;i<strlen(s)-1;i++){
-			if(s[i]>s[i+1]){
+		for(i=0;i&lt;strlen(s)-1;i++){
+			if(s[i]&gt;s[i+1]){
 				box=s[i];
 				s[i]=s[i+1];
 				s[i+1]=box;

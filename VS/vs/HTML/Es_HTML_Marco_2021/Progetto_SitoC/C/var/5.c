@@ -1,10 +1,10 @@
-/*5> Dato un numero, contare quanti suoi divisori sono potenze di 2.
+/*5&gt; Dato un numero, contare quanti suoi divisori sono potenze di 2.
 Esempio: 16
 2 4 8 16 		
 Esempio: 25
 (nessuno) 		*/
 
-#include<stdio.h>
+#include&lt;stdio.h&gt;
 
 int main(){
 	int Numero,div,i;
@@ -14,7 +14,7 @@ int main(){
 	scanf("%d",&Numero);
 	fflush(stdin);
 	
-	for(i=2;i<=Numero;i=i*2){
+	for(i=2;i&lt;=Numero;i=i*2){
 		if(Numero%i==0){
 			div++;
 			printf("%d",i);

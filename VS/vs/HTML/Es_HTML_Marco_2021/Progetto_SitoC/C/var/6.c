@@ -1,6 +1,6 @@
-/*6> inserire dei numeri e visualizzare i due maggiori (0 to end)*/
+/*6&gt; inserire dei numeri e visualizzare i due maggiori (0 to end)*/
 
-#include<stdio.h>
+#include&lt;stdio.h&gt;
 int main()
 {
 	int n,max1=0,max2=0;
@@ -10,11 +10,11 @@ int main()
 		scanf("%d",&n);
 		fflush(stdin);
 		
-		if(n>max1){
+		if(n&gt;max1){
 			max2=max1;
 			max1=n;
 		}else{
-			if(n>max2){
+			if(n&gt;max2){
 				max2=n;
 			}
 		}	

@@ -1,9 +1,9 @@
-/*31> emulare la funzione:
+/*31&gt; emulare la funzione:
 strlen(s)     Resituisce la lunghezza di s
 --------------
 l=lunghezza(s) */
-#include<stdio.h>
-#include<string.h>
+#include&lt;stdio.h&gt;
+#include&lt;string.h&gt;
 #define DIM 80
 int MyStrlen(char []);
 int main()

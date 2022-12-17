@@ -1,7 +1,7 @@
-/*29> data una stringa s1, caricare il reverse di s1 in s2.
+/*29&gt; data una stringa s1, caricare il reverse di s1 in s2.
 visualizzare le 2 stringhe.*/
-#include<stdio.h>
-#include<string.h>
+#include&lt;stdio.h&gt;
+#include&lt;string.h&gt;
 #define DIM 80
 void MyStrcpyReverse(char [], char []);
 int main(){
@@ -13,7 +13,7 @@ int main(){
 
 void MyStrcpyReverse(char s1[DIM], char s2[DIM]) {
     int i;
-    for(i=1;i<=strlen(s2);i++){
+    for(i=1;i&lt;=strlen(s2);i++){
         s1[i-1]=s2[strlen(s2)-i];
     }
     s1[strlen(s2)]='\0';

@@ -1,8 +1,8 @@
-/*30> emulare la funzione:
+/*30&gt; emulare la funzione:
 strcat(s1, s2)   Concatena s2 dopo s1
 visualizzare le 2 stringhe. */
-#include<stdio.h>
-#include<string.h>
+#include&lt;stdio.h&gt;
+#include&lt;string.h&gt;
 #define DIM 80
 void MyStrcat(char [],char []);
 int main(){
@@ -15,7 +15,7 @@ int main(){
 void MyStrcat(char s1[DIM],char s2[DIM]){
     int i,BaseLength;
     BaseLength=strlen(s1);
-    for(i=0;i<strlen(s2);i++){
+    for(i=0;i&lt;strlen(s2);i++){
         s1[i+BaseLength]=s2[i];
     }
 }

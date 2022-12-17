@@ -1,8 +1,8 @@
-/*28> Emulare la funzione:
+/*28&gt; Emulare la funzione:
 strcpy(s1, s2)   Copia s2 in s1
 visualizzare le 2 stringhe.*/
-#include<stdio.h>
-#include<string.h>
+#include&lt;stdio.h&gt;
+#include&lt;string.h&gt;
 #define DIM 80
 void MyStrcpy(char [], char []);
 int main(){
@@ -16,7 +16,7 @@ int main(){
 }
 void MyStrcpy(char s1[DIM], char s2[DIM]) {
     int i;
-    for(i=0;i<strlen(s2);i++){
+    for(i=0;i&lt;strlen(s2);i++){
         s1[i]=s2[i];
     }
     s1[i]='\0';

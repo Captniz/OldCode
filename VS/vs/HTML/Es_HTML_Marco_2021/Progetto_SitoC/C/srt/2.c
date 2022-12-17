@@ -1,4 +1,4 @@
-/*55> Ci sono 2 gare di 10 atleti con punteggio [1..50] 
+/*55&gt; Ci sono 2 gare di 10 atleti con punteggio [1..50] 
 ordinate gara1 e gara2 in modo decrescente
 scrivere gli atleti che hanno realizzato i 3 migliori tempi tenendo conto delle due gare
 
@@ -16,9 +16,9 @@ ordinamento gara 2
 4 45, 4 41, 2 21 
 (cioe' l'atleta4 si piazza al primo posto con 45 e al secondo posto con 41, terzo l'atleta2 con 21)
 */
-#include<stdio.h>
-#include<stdlib.h>
-#include<time.h>
+#include&lt;stdio.h&gt;
+#include&lt;stdlib.h&gt;
+#include&lt;time.h&gt;
 #define DIM 10
 void gara(int [],int []);
 void sort(int [],int []);
@@ -40,7 +40,7 @@ int main(){
 }
 void gara(int g[DIM], int a[DIM]){
 	int i;
-	for(i=0;i<DIM;i++){
+	for(i=0;i&lt;DIM;i++){
 		g[i]=rand()%50+1;
 		a[i]=i+1;
 		printf("%2d%3d, ",a[i],g[i]);
@@ -51,8 +51,8 @@ void sort(int g[DIM],int a[DIM]){
 	int i,box,box2,flag,flag2;
 	do{
 		flag=0;
-		for(i=0;i<DIM-1;i++){
-			if(g[i]<g[i+1]){
+		for(i=0;i&lt;DIM-1;i++){
+			if(g[i]&lt;g[i+1]){
 				box=g[i];
 				g[i]=g[i+1];
 				g[i+1]=box;
@@ -63,7 +63,7 @@ void sort(int g[DIM],int a[DIM]){
 			}
 		}
 	}while(flag==1);
-	for(i=0;i<DIM;i++){
+	for(i=0;i&lt;DIM;i++){
 		printf("%2d%3d, ",a[i],g[i]);
 	}
 	putchar('\n');
@@ -73,8 +73,8 @@ void top3(int g1[DIM],int g2[DIM],int a[DIM],int a2[DIM]){
 	int gcomp[DIM];
 	int acomp[DIM];
 	i=0;
-	for(c=0;c<3;c++){
-		if(g1[i]>g2[j]){
+	for(c=0;c&lt;3;c++){
+		if(g1[i]&gt;g2[j]){
 			gcomp[c]=g1[i];
 			acomp[c]=a[i];
 			i++;
@@ -84,7 +84,7 @@ void top3(int g1[DIM],int g2[DIM],int a[DIM],int a2[DIM]){
 			j++;
 		}
 	}
-	for(i=0;i<c;i++){
+	for(i=0;i&lt;c;i++){
 		printf("%2d%3d, ",acomp[i],gcomp[i]);
 	}
 }

@@ -1,9 +1,9 @@
-/*48> inserire un array di stringhe dimensionato DIM
+/*48&gt; inserire un array di stringhe dimensionato DIM
 cercare la stringa se esiste o se non esiste
 Esce con Enter
 */
-#include<stdio.h>
-#include<string.h>
+#include&lt;stdio.h&gt;
+#include&lt;string.h&gt;
 #define DIM 5
 int main()
 {
@@ -11,7 +11,7 @@ int main()
 	char s[20];
 	char c;
 	int i,flag;
-	for(i=0;i<DIM;i++){
+	for(i=0;i&lt;DIM;i++){
 		printf("inserire parole: ");
 		gets(parole[i]);
 		fflush(stdin);
@@ -23,7 +23,7 @@ int main()
 		fflush(stdin);
 		i=0;
 		c=0;
-		while(i<DIM && flag==1){
+		while(i&lt;DIM && flag==1){
 			if(strcmp(parole[i],s)==0){
 				printf("parola trovata. \n");
 				printf("continuare? (enter to esc space to continue)");

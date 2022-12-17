@@ -1,8 +1,8 @@
-/*4> Dato un numero, contare quanti divisori pari e quanti divisori dispari ha.
+/*4&gt; Dato un numero, contare quanti divisori pari e quanti divisori dispari ha.
 Esempio: 16
 Dispari: 1 			
 Pari: 2 4 8 16 		*/
-#include<stdio.h>
+#include&lt;stdio.h&gt;
 
 int main()
 {
@@ -12,7 +12,7 @@ int main()
     printf("Numero?:");
     scanf("%d",&n);
 	fflush(stdin);
-    for (i=1; i<=n; i++){
+    for (i=1; i&lt;=n; i++){
         if (n%i==0){
             if (i%2==0){
                 printf("\n%d e' pari",i);

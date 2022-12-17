@@ -1,8 +1,8 @@
-/*70> Algoritmo ricorsivo per la ricerca di un intero in un vettore
+/*70&gt; Algoritmo ricorsivo per la ricerca di un intero in un vettore
 */
-#include<stdio.h>
-#include<stdlib.h>
-#include<time.h>
+#include&lt;stdio.h&gt;
+#include&lt;stdlib.h&gt;
+#include&lt;time.h&gt;
 #define DIM 10
 void carica(int []);
 void visualizza(int []);
@@ -25,19 +25,19 @@ int main()
 }
 void carica(int v[DIM]){
 	int i;
-	for(i=0;i<DIM;i++){
+	for(i=0;i&lt;DIM;i++){
 		v[i]=rand()%20+1;
 	}
 }
 void visualizza(int v[DIM]){
 	int i;
-	for(i=0;i<DIM;i++){
+	for(i=0;i&lt;DIM;i++){
 		printf("%4d",v[i]);
 	}
 	putchar('\n');
 }
 int ricerca(int v[DIM],int i, int n){
-	if(i>=DIM)
+	if(i&gt;=DIM)
 		return 0;
 	if(v[i]==n)
 		return 1;

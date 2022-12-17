@@ -1,8 +1,8 @@
-/*66> Calcolare il massimo di un vettore v dimensionato DIM con procedimento ricorsivo.
+/*66&gt; Calcolare il massimo di un vettore v dimensionato DIM con procedimento ricorsivo.
 */
-#include<stdio.h>
-#include<stdlib.h>
-#include<time.h>
+#include&lt;stdio.h&gt;
+#include&lt;stdlib.h&gt;
+#include&lt;time.h&gt;
 #define DIM 5
 void carica(int []);
 void visualizza(int []);
@@ -21,13 +21,13 @@ int main()
 }
 void carica(int v[DIM]){
 	int i;
-	for(i=0;i<DIM;i++){
+	for(i=0;i&lt;DIM;i++){
 		v[i]=rand()%50+1;
 	}
 }
 void visualizza(int v[DIM]){
 	int i;
-	for(i=0;i<DIM;i++){
+	for(i=0;i&lt;DIM;i++){
 		printf("%4d",v[i]);
 	}
 }
@@ -35,7 +35,7 @@ int massimo(int v[DIM], int max, int i){
 	if(i==DIM){
 		return max;
 	}else{
-		if(v[i]>max){
+		if(v[i]&gt;max){
 			max=massimo(v,v[i],i+1);
 		}else{
 			max=massimo(v,max,i+1);

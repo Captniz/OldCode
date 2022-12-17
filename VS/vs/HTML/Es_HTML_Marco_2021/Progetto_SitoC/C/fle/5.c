@@ -1,8 +1,8 @@
-/*78> Creare un file "ricordi.old" tutto minuscolo.
+/*78&gt; Creare un file "ricordi.old" tutto minuscolo.
 Cambiare il primo carattere di ogni paragrafo in maiuscolo 
 (paragrafo: si va a capo dopo il punto).
 */
-#include<stdio.h>
+#include&lt;stdio.h&gt;
 int main()
 {
 	FILE *fp;
@@ -17,7 +17,7 @@ int main()
 		while((car=getchar())!='\n'){
 			if(maiusc==1){
 				fputc('\n',fp);
-				if(car>='a' && car<='z'){
+				if(car&gt;='a' && car&lt;='z'){
 					car=car-32;
 					maiusc=0;
 				}

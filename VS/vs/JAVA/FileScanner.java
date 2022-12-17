@@ -2,6 +2,7 @@ import java.util.*;
 import java.io.*;
 
 class FileScanner{
+    //                                      v IMPORTANTISSIMO
     public static void main(String[] args) throws IOException {
         Scanner fle = new Scanner(new File("input.txt"));
         int ctr=0;

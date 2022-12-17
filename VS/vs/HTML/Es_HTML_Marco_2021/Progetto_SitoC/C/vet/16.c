@@ -1,9 +1,9 @@
-/*63> dato un vettore numerico v dimensionato DIM=20 con caricamento random [1..9] 
-visualizzare la cifra che presenta più occorrenze
+/*63&gt; dato un vettore numerico v dimensionato DIM=20 con caricamento random [1..9] 
+visualizzare la cifra che presenta piï¿½ occorrenze
 */
-#include<stdio.h>
-#include<stdlib.h>
-#include<time.h>
+#include&lt;stdio.h&gt;
+#include&lt;stdlib.h&gt;
+#include&lt;time.h&gt;
 #define DIM 20
 void carica(int []);
 void visualizza(int []);
@@ -23,22 +23,22 @@ int main()
 }
 void carica(int v[DIM]){
 	int i;
-	for(i=0;i<DIM;i++){
+	for(i=0;i&lt;DIM;i++){
 		v[i]=rand()%9+1;
 	}
 }
 void visualizza(int v[DIM]){
 	int i;
-	for(i=0;i<DIM;i++){
+	for(i=0;i&lt;DIM;i++){
 		printf("%3d",v[i]);
 	}
 	putchar('\n');
 }
 void sort(int v[DIM]){
 	int i,j,box;
-	for(i=0;i<DIM-1;i++){
-		for(j=i+1;j<DIM;j++){
-			if(v[i]>v[j]){
+	for(i=0;i&lt;DIM-1;i++){
+		for(j=i+1;j&lt;DIM;j++){
+			if(v[i]&gt;v[j]){
 				box=v[i];
 				v[i]=v[j];
 				v[j]=box;
@@ -49,10 +49,10 @@ void sort(int v[DIM]){
 int occorrenze(int v[DIM]){
 	int i,j,c,max,pos;
 	int occ[DIM];
-	for(i=0;i<DIM;i++){
+	for(i=0;i&lt;DIM;i++){
 		j=i+1;
 		c=1;
-		while(j<DIM){
+		while(j&lt;DIM){
 			if(v[i]==v[j]){
 				c++;
 			}
@@ -62,8 +62,8 @@ int occorrenze(int v[DIM]){
 	}
 	max=occ[0];
 	pos=0;
-	for(i=1;i<DIM;i++){
-		if(occ[i]>max){
+	for(i=1;i&lt;DIM;i++){
+		if(occ[i]&gt;max){
 			max=occ[i];
 			pos=i;
 		}

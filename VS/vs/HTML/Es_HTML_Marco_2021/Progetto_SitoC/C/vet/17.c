@@ -1,10 +1,10 @@
-/*72> ADT simulato di uno stack mediante un array 
+/*72&gt; ADT simulato di uno stack mediante un array 
 simuliamo DIM = 5
-    printf("\n1 -> Aggiungi el" );
-    printf("\n2 -> Estrai el");
-    printf("\n3 -> Svuota stack");
-    printf("\n4 -> Visualizza stack");
-    printf("\n0 -> Esc");
+    printf("\n1 -&gt; Aggiungi el" );
+    printf("\n2 -&gt; Estrai el");
+    printf("\n3 -&gt; Svuota stack");
+    printf("\n4 -&gt; Visualizza stack");
+    printf("\n0 -&gt; Esc");
 
 primitive:
 void push(element, stack);
@@ -17,9 +17,9 @@ void clear(stack)
 NB: i controlli: ad es. prima di estrarre un el lo stack deve averne almeno uno
 prima di aggiungere un el lo stack non deve essere pieno ... etc
 */
-#include<stdio.h>
-#include<stdlib.h>
-#include<string.h>
+#include&lt;stdio.h&gt;
+#include&lt;stdlib.h&gt;
+#include&lt;string.h&gt;
 #define DIM 10
 void Push(int v[DIM],int n);
 int Pop(int v[DIM]);
@@ -76,7 +76,7 @@ int main(){
 
 void Push(int v[DIM],int n){
     int i;
-    for(i=(DIM-1);i>0;i--){
+    for(i=(DIM-1);i&gt;0;i--){
         v[i]=v[i-1];
     }
     v[0]=n;
@@ -84,7 +84,7 @@ void Push(int v[DIM],int n){
 int Pop(int v[DIM]){
     int i,temp;
     temp=v[0];
-    for(i=1;i<DIM;i++){
+    for(i=1;i&lt;DIM;i++){
         v[i-1]=v[i];
     }
     v[DIM-1]=0;
@@ -108,13 +108,13 @@ int Top(int v[DIM]){
 }
 void clear(int v[DIM]){
     int i;
-    for(i=0;i<DIM;i++){
+    for(i=0;i&lt;DIM;i++){
         v[i]=0;
     }
 }
 int menu(int *e, int v[DIM], int n){
     int i;
-    for(i=0;i<50;i++){
+    for(i=0;i&lt;50;i++){
         putchar('\n');
     }
     switch (*e){
@@ -125,7 +125,7 @@ int menu(int *e, int v[DIM], int n){
         printf("!!!STACK NON PRONTO A ESEGUIRE L'OPERAZIONE!!!\n");
         break;
     case 3:
-        for(i=0;i<DIM;i++){
+        for(i=0;i&lt;DIM;i++){
             printf("%3d\n",v[i]);
         }
         break;
@@ -135,7 +135,7 @@ int menu(int *e, int v[DIM], int n){
     default:
         break;
 	}
-    printf("\n1 -> Aggiungi el\n2 -> Estrai el\n3 -> Svuota stack\n4 -> Visualizza stack\n0 -> Esc\nOpzione:" );
+    printf("\n1 -&gt; Aggiungi el\n2 -&gt; Estrai el\n3 -&gt; Svuota stack\n4 -&gt; Visualizza stack\n0 -&gt; Esc\nOpzione:" );
     scanf("%d", &i);
     fflush(stdin);
     *e=0;

@@ -1,14 +1,14 @@
-/*59>
+/*59&gt;
 Caricare un vet v DIM=20 con numeri random a piacere.
 Visualizzare v.
-Ordinare la prima metà di v e poi la seconda metà di v.
-Alla fine v risulterà ordinato.
+Ordinare la prima metï¿½ di v e poi la seconda metï¿½ di v.
+Alla fine v risulterï¿½ ordinato.
 Visualizzare nuovamente v.
 */
 #define DIM 20
-#include<stdio.h>
-#include<time.h>
-#include<stdlib.h>
+#include&lt;stdio.h&gt;
+#include&lt;time.h&gt;
+#include&lt;stdlib.h&gt;
 void carica(int v[DIM]);
 void visualizza(int v[DIM]);
 void sort(int v[DIM],int start, int end);
@@ -24,17 +24,17 @@ int main(){
 }
 void carica(int v[DIM]){
     int i=0;
-    for(i=0;i<DIM;i++){
+    for(i=0;i&lt;DIM;i++){
         v[i]=rand()%100+1;
     }
 }
 void visualizza(int v[DIM]){
     int i=0;
-    for(i=0;i<DIM/2;i++){
+    for(i=0;i&lt;DIM/2;i++){
         printf("%4d",v[i]);
     }
     putchar('/');
-    for (i=i;i<DIM;i++){
+    for (i=i;i&lt;DIM;i++){
         printf("%4d",v[i]);
     }
     
@@ -42,9 +42,9 @@ void visualizza(int v[DIM]){
 }
 void sort(int v[DIM],int start, int end){
     int box,i,j;
-    for(i=start;i<end-1;i++){
-        for(j=i+1;j<end;j++){
-            if(v[i]>v[j]){
+    for(i=start;i&lt;end-1;i++){
+        for(j=i+1;j&lt;end;j++){
+            if(v[i]&gt;v[j]){
                box=v[i];
                v[i]=v[j];
                v[j]=box;

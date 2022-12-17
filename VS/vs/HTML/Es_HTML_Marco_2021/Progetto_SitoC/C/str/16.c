@@ -1,6 +1,6 @@
-/*42> emulare la funzione strlen char by char*/
-#include<stdio.h>
-#include<string.h>
+/*42&gt; emulare la funzione strlen char by char*/
+#include&lt;stdio.h&gt;
+#include&lt;string.h&gt;
 #define DIM 80
 int my_strlen(char []);
 int main()

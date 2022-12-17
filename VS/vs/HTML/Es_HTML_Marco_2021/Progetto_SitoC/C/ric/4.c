@@ -1,8 +1,8 @@
-/*69> Algoritmo ricorsivo per la visualizzazione di un vettore di interi
+/*69&gt; Algoritmo ricorsivo per la visualizzazione di un vettore di interi
 */
-#include<stdio.h>
-#include<stdlib.h>
-#include<time.h>
+#include&lt;stdio.h&gt;
+#include&lt;stdlib.h&gt;
+#include&lt;time.h&gt;
 #define DIM 10
 int visualizza(int [],int );
 int main(){

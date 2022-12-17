@@ -1,7 +1,7 @@
-/*74> leggere un file "prova.txt" e visualizzarlo 
+/*74&gt; leggere un file "prova.txt" e visualizzarlo 
 */
-#include<stdio.h>
-#include<string.h>
+#include&lt;stdio.h&gt;
+#include&lt;string.h&gt;
 int main()
 {
 	FILE *fp;

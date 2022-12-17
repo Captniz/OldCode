@@ -1,9 +1,9 @@
-/*32> data una stringa s1, copiare in una stringa s2 mettendo le vocali alla fine 
-(sia MAIUSCOLE che minuscole! - ovviamente la lunghezza di s2 è uguale a quella di s)
-es: "Mio nonno" -> "M nnniooo"
+/*32&gt; data una stringa s1, copiare in una stringa s2 mettendo le vocali alla fine 
+(sia MAIUSCOLE che minuscole! - ovviamente la lunghezza di s2 ï¿½ uguale a quella di s)
+es: "Mio nonno" -&gt; "M nnniooo"
 */
-#include<stdio.h>
-#include<string.h>
+#include&lt;stdio.h&gt;
+#include&lt;string.h&gt;
 int carica_cons(char [], char [], char [], int);
 void carica_voc(char [], char [], char [], int);
 void visualizza(char []);
@@ -23,7 +23,7 @@ int main()
 }
 int carica_cons(char s[], char v[], char s2[], int k){
 	int i,j,flag;
-	for(i=0;i<strlen(s);i++){
+	for(i=0;i&lt;strlen(s);i++){
 		flag=0;
 		j=0;
 		do{
@@ -31,7 +31,7 @@ int carica_cons(char s[], char v[], char s2[], int k){
 				flag=1;
 			}
 			j++;
-		}while(j<strlen(v));
+		}while(j&lt;strlen(v));
 		if(flag==0){
 			s2[k]=s[i];
 			k++;
@@ -41,7 +41,7 @@ int carica_cons(char s[], char v[], char s2[], int k){
 }
 void carica_voc(char s[], char v[], char s2[], int k){
 	int i,j;
-	for(i=0;i<strlen(s);i++){
+	for(i=0;i&lt;strlen(s);i++){
 		j=0;
 		do{
 			if(s[i]==v[j]){
@@ -49,7 +49,7 @@ void carica_voc(char s[], char v[], char s2[], int k){
 				k++;
 			}
 			j++;
-		}while(j<strlen(v));
+		}while(j&lt;strlen(v));
 	}
 	s2[k]='\0';
 }

@@ -1,7 +1,7 @@
-/*38> emulare la funzione strncpy char by char*/
+/*38&gt; emulare la funzione strncpy char by char*/
 
-#include<string.h>
-#include<stdio.h>
+#include&lt;string.h&gt;
+#include&lt;stdio.h&gt;
 #define DIM 80
 
 void my_strncpy(char [], char [], int );
@@ -16,14 +16,14 @@ int main(){
 		printf("numero: ");
 		scanf("%d",&n);
 		fflush(stdin);
-	}while(n>strlen(s1) || n<0);
+	}while(n&gt;strlen(s1) || n&lt;0);
 	my_strncpy(s1,s2,n);
 	return 0;
 }
 
 void my_strncpy(char s1[DIM], char s2[DIM], int n){
 	int i;
-	for(i=0;i<n;i++){
+	for(i=0;i&lt;n;i++){
 		s2[i]=s1[i];
 	}
 	s2[n]='\0';

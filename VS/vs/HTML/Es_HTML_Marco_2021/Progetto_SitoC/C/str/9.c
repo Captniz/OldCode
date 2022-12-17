@@ -1,7 +1,7 @@
-/*35> Scrivere una funzione che calcoli una qualunque potenza maggiore o uguale a zero.
+/*35&gt; Scrivere una funzione che calcoli una qualunque potenza maggiore o uguale a zero.
 long int potenza(int , int);
 */
-#include<stdio.h>
+#include&lt;stdio.h&gt;
 long int potenza(int, int);
 int main(){
 	int a,b;
@@ -12,7 +12,7 @@ int main(){
 		printf("inserire l'esponente: ");
 		scanf("%d",&b);
 		fflush(stdin);
-	}while(b<0);
+	}while(b&lt;0);
 	if(a!=0 && b!=0){
 		printf("la potenza e': %li",potenza(a,b));
 	}else{
@@ -24,7 +24,7 @@ long int potenza(int a, int b){
 	long int r;
 	int i;
 	r=1;
-	for(i=0;i<b;i++){
+	for(i=0;i&lt;b;i++){
 		r=r*a;
 	}
 	return r;

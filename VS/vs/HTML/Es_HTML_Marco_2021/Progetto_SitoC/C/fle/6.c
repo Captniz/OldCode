@@ -1,8 +1,8 @@
-/*80> Dato un file si testo "prova.txt" riversare il file su un secondo file "prova2.txt",
+/*80&gt; Dato un file si testo "prova.txt" riversare il file su un secondo file "prova2.txt",
 ma al posto della 'f' va scritta la stringa "effe".
-es: caffettiera -> caeffeeffettiera
+es: caffettiera -&gt; caeffeeffettiera
 */
-#include<stdio.h>
+#include&lt;stdio.h&gt;
 int main()
 {
 	FILE *fp,*fp2;

@@ -1,4 +1,4 @@
-/*83> Gestione di un'anagrafica "anagrafica.dat"
+/*83&gt; Gestione di un'anagrafica "anagrafica.dat"
 (cognome, nome, indirizzo,eta)
 1. Inserimento 
 2. Modifica
@@ -7,9 +7,9 @@
 5. Visualizzazione  
 0. Fine
 */
-#include<stdio.h>
-#include<stdlib.h>
-#include<string.h>
+#include&lt;stdio.h&gt;
+#include&lt;stdlib.h&gt;
+#include&lt;string.h&gt;
 #define DIM 100
 struct persone{
 	char cognome[30];
@@ -146,7 +146,7 @@ int inserimento(FILE *fp){
 }
 void copia(struct persone v[DIM], int dim, FILE *fp){
 	int i;
-	for(i=0;i<dim;i++){
+	for(i=0;i&lt;dim;i++){
 		fprintf(fp,"%s %s %s %d\n",v[i].cognome,v[i].nome,v[i].indirizzo,v[i].eta);
 	}
 }
@@ -203,7 +203,7 @@ void modifica(struct persone v[DIM], int dim){
 		printf("\ninserire nome: ");
 		gets(nome);
 		fflush(stdin);
-		for(i=0;i<dim;i++){
+		for(i=0;i&lt;dim;i++){
 			if((strcmp(cognome,v[i].cognome)==0) && (strcmp(nome,v[i].nome)==0)){
 				printf("\nnominativo trovato\n");
 				printf("\ninserire nuovo indirizzo: ");
@@ -254,7 +254,7 @@ void cancellazione(FILE *fp){
 		fseek(fp,0,2);
 		posfin=ftell(fp);
 		fseek(fp,pos,0);
-		for(i=pos;i<posfin;i++){
+		for(i=pos;i&lt;posfin;i++){
 			fputc(' ',fp);
 		}
 		printf("\nricercare un altro nominativo (y/n)? ");
@@ -265,7 +265,7 @@ void cancellazione(FILE *fp){
 int conta_eta(int eta){
 	int ctr;
 	ctr=1;
-	while(eta>0){
+	while(eta&gt;0){
 		eta=eta/10;
 		ctr++;
 	}

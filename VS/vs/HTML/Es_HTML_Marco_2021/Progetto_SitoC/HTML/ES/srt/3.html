@@ -55,6 +55,60 @@
       </div>
       <div class="Bright"><a href="4.html">SUCCESSIVO</a></div>
     </div>
-    <div id="text" onclick="Insert('../../../C/srt/3.c' )" width="98%" /> CODICE</div><script type="text/javascript" src="../../../TestIns.js"></script>
+    <div class="text" width="98%">
+      <pre>
+        <code>
+          /*56&gt; ordina-stringhe  
+          - Scrivere un programma che ordini in modo crescente e con un algoritmo in-place un array di
+          DIM stringhe inserite esternmente, visualizzando il risultato dell'ordinamento sullo schermo. 
+          Si assuma che ogni stringa abbia una lunghezza L non superiore a 80 caratteri.*/
+          #include&lt;stdio.h&gt;
+          #include&lt;string.h&gt;
+          #define DIM 5
+          #define L 80
+          void InputStringhe(char ms[][L]);
+          void VisualizzaStringhe(char ms[][L]);
+          void OrdinaStringhe(char ms[][L]);
+          int main(){
+              char ms[DIM][L];
+              int i,j;
+              InputStringhe(ms);
+              OrdinaStringhe(ms);
+              VisualizzaStringhe(ms);
+              return 0;
+          }
+          
+          void InputStringhe(char ms[DIM][L]){
+              int i;
+              for(i=0;i&lt;DIM;i++){
+                  printf("Stringa %d:",i+1);
+                  gets(ms[i]);
+                  fflush(stdin);
+              }
+          }
+          void VisualizzaStringhe(char ms[DIM][L]){
+              int i;
+              printf("\n");
+              for(i=0;i&lt;DIM;i++){
+                   printf("Stringa %d:%s\n",i+1,ms[i]);
+              }
+          }
+          void OrdinaStringhe(char ms[DIM][L]){
+              char box[L];
+              int i,j;
+              for(i=0;i&lt;DIM-1;i++){
+                  for(j=i+1;j&lt;DIM;j++){
+                      if(strcmp(ms[i],ms[j])&gt;0){
+                          strcpy(box,ms[i]);
+                          strcpy(ms[i],ms[j]);
+                          strcpy(ms[j],box);
+                      }
+                  }
+              }
+          }
+          
+        </code>
+      </pre>
+    </div>
   </body>
 </html>

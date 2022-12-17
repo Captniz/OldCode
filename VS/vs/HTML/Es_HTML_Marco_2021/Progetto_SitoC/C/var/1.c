@@ -1,5 +1,5 @@
-/*1> calcola l'area del rettangolo*/
-#include <stdio.h>
+/*1&gt; calcola l'area del rettangolo*/
+#include &lt;stdio.h&gt;
 int main()
 {
     int b,h,area;

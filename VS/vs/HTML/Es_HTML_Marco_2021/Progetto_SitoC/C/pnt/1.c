@@ -1,12 +1,12 @@
-/*67> puntatori e ricorsione
+/*67&gt; puntatori e ricorsione
 ==========================
 Scrivere la funzione ricorsiva:
 int count_char(char *str, char c, int) // + facile
 int count_char(char *str, char c) // + difficile
 che conta il numero di occorrenze del carattere c nella stringa str. 
 */
-#include<stdio.h>
-#include<string.h>
+#include&lt;stdio.h&gt;
+#include&lt;string.h&gt;
 void carica(char []);
 void visualizza(char []);
 int count_char(char *, char );

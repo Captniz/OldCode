@@ -204,3 +204,13 @@ object {
   margin-bottom: 2%;
   text-align: center;
 }
+
+.text {
+  background-color: #f6f6f6;
+  color: #111111;
+  padding: 1%;
+  margin: 2%;
+  width: 100%;
+  font-size: 24px;
+  font-weight: bold;
+}

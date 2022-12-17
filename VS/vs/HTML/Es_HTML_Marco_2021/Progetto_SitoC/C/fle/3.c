@@ -1,7 +1,7 @@
-/*76> appendere "file2.txt" a "file1.txt" in un "fileall.txt" 
+/*76&gt; appendere "file2.txt" a "file1.txt" in un "fileall.txt" 
 */
-#include<stdio.h>
-#include<string.h>
+#include&lt;stdio.h&gt;
+#include&lt;string.h&gt;
 int main()
 {
 	FILE *fp1,*fp2,*fp3;
