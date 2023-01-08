@@ -247,9 +247,9 @@ class Gruppo{
                 }                    
             }
             if (persone>=3){                                                                        //SE PERSONE >= 3   
-                p->addIncassi(((playTime*0.10)-((playTime*0.10)/4)));                                      //AGGIUNGI INCASSI -> (0.10 * TEMPO DI GIOCO - 25% DI SCONTO)
+                p->addIncassi(((persone*playTime*0.10)-((persone*playTime*0.10)/4)));                       //AGGIUNGI INCASSI -> (PERSONE * 0.10 * TEMPO DI GIOCO - 25% DI SCONTO)
             }else{                                                                                  //ALTRIMENTI                      
-                p->addIncassi((playTime*0.10));                                                            //AGGIUNGI INCASSI -> (0.10 * TEMPO DI GIOCO)                   
+                p->addIncassi((persone*playTime*0.10));                                                     //AGGIUNGI INCASSI -> (PERSONE * 0.10 * TEMPO DI GIOCO)                   
             }
             p->removePersone(persone);                                                               //RIMUOVI PERSONE DAL NUMERO DI PERSONE IN PISTA
             cout<<"Un gruppo e' uscito!"<<endl;                                                     //MESSAGGIO DI USCITA GRUPPO
