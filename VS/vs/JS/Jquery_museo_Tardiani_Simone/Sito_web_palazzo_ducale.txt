@@ -1,0 +1,39 @@
+Realizzare il sito web del  museo del palazzo Ducale di Mantova
+
+HOME PAGE
+=========
+La pagina principale deve contenere :
+
+-nell'intestazione: il logo e il nome del museo
+
+-nella parte centrale
+   1 sezione che visualizza un video di un tour virtuale al museo
+   1 sezione contente una breve descrizione del museo 
+   1 sezione contente i link a due sale del museo : 
+	la camera degli sposi
+        la camera dei giganti
+                                                     
+-a piè di pagina l'indirizzo del Museo e i contatti (telefono ed email)
+
+
+2 PAGINE (1 per la camera degli sposi, 1 per la camera dei giganti)
+==================================================================
+-per ogni pagina (relativa ad una camera) dovete visualizzare:
+	-come intestazione: il logo del museo e il nome della camera 
+        -nella parte centrale 4 foto della camera  
+        -in basso un link per tornare alla HOME PAGE
+
+SPECIFICHE DI IMPLEMENTAZIONE:
+==============================
+Il sito dovrà essere realizzato 
+separando HTML e CSS 
+
+Requisiti minimi CSS:
+Personalizzare
+	carattere dimensione e colore di : <h1> <h2> <p>   
+	colore dei link (visitato/non visitato)
+        colore di sfondo della home page e delle 2 pagine delle camere 
+        (FYI il colore dello sfondo del logo è: rgba(174,15,11,255) pari a #ae0f0b  in Hex  )
+	
+ 
+

@@ -11,8 +11,6 @@
 //*Il programma oltre a questo calcola e stampa il totale dei costi e degli introiti della pista, con opportune funzioni che forniscano l’output.
 //*Il programma stampa anche quante persone sono nella pista e quali paia di scarpe sono occupate e quali disponibili.*/
 
-//!APPUNTO PER IL PROF : TECNICAMENTE DATO CHE NON USO DAVVERO IL TEMPO REALE POICHE' RICHIEDEREBBE USARE IL THREADING SE NON SBAGLIO O COMUNQUE LA DIVISIONE IN PIU PROCESSI E POSSIBILE CHE ALCUNI GRUPPI FACCIANO ATTIVITA' PIU TEMPO O COSE DEL GENERE, QUESTO E' CAUSATO DAL TIMER FISSATO DI 1Min PER IL CONTROLLO DELLE ENTRATE E USCITE, QUINDI NON E' UN PROBLEMA MA UNA COSA CHE SI PUO' FARE PER EVITARE CHE I GRUPPI FACCINO ATTIVITA' PIU TEMPO DEL NECESSARIO
-
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
@@ -20,7 +18,7 @@
 #include <vector>                                                                                  
 using namespace std;
 
-//TUTTE QUESTE VARIABILI SONO GLOBALI PERCHE' SONO UTILIZZATE IN PIU' CLASSI MA SOPRATTUTO LE HO USATE PER EVITARE DI DOVERLE CAMBIARE NELLE VARIE CLASSI SE DEVO FARE UNA DIMOSTRAZIONE SCOLASTICA DEL PROGRAMMA
+//TUTTE QUESTE VARIABILI SONO GLOBALI NON PERCHE' SONO UTILIZZATE IN PIU' CLASSI MA PIU' CHE ALTRO LE HO USATE PER EVITARE DI DOVERLE CAMBIARE NELLE VARIE CLASSI SE DEVO FARE UNA DIMOSTRAZIONE DEL PROGRAMMA
 time_t timeInSec;                                                                                   //VARIABILE PER TEMPO
 const int nPattiniXTaglia = 5;                                                                      //NUMERO PATTINI X TAGLIA
 const int nTaglie = 15;                                                                             //NUMERO TAGLIE
@@ -197,13 +195,16 @@ class Gruppo{
     int *taglie;                                                                                    //TAGLIE DEL GRUPPO             
     Pattino **pattini;                                                                              //PATTINI DEL GRUPPO
     long long tempoInizio;                                                                          //TEMPO INIZIO ATTIVITA'
+    int modificatoreTempo;
 
     public:
         Gruppo(){
+            srand(time(NULL));
             this->persone = 0;
             this->pattini = NULL;
             this->taglie = NULL;
             this->tempoInizio = 0;
+            this->modificatoreTempo = (rand() % 15 + 15)/timeMultiplier;  
         }
         Gruppo(int persone){
             srand(time(NULL));
@@ -214,6 +215,7 @@ class Gruppo{
             }
             this->pattini = new Pattino *[persone];             
             this->tempoInizio = 0;
+            this->modificatoreTempo = ((rand() % 15 + 15)*60/timeMultiplier);
         } 
         void MettInPista(Pista *p, vector <Gruppo> &gruppiInPista, vector <Gruppo> &gruppiInCoda){  
         //ASKS : Pista p, vector <Gruppo> &gruppiInPista, vector <Gruppo> &gruppiInCoda
@@ -265,6 +267,9 @@ class Gruppo{
         int getPersone(){
             return persone;
         }
+        int getModTempo(){
+            return modificatoreTempo;
+        }
 };
 
 void printInfo(Pista pista, vector<Gruppo> gruppiInPista, vector<Gruppo> gruppiInCoda){
@@ -282,11 +287,11 @@ void printInfo(Pista pista, vector<Gruppo> gruppiInPista, vector<Gruppo> gruppiI
     cout << "Guadagno: " << pista.getIncassi()-pista.getSpese() << endl;
     cout << "Gruppi in pista: " << endl;
     for(int i = 0; i < gruppiInPista.size(); i++){
-        cout << "Gruppo " << i+1 << ": " << gruppiInPista[i].getPersone() << " persone" << endl;
+        cout << "Gruppo " << i+1 << ": " << gruppiInPista[i].getPersone() << " persone" << /*"|" << (gruppiInPista[i].getModTempo()+playTime*60/timeMultiplier) << */endl;
     }
     cout << "Gruppi in coda: " << endl;
     for(int i = 0; i < gruppiInCoda.size(); i++){
-        cout << "Gruppo " << i+1 << ": " << gruppiInCoda[i].getPersone() << " persone" << endl;
+        cout << "Gruppo " << i+1 << ": " << gruppiInCoda[i].getPersone() << " persone" << /*"|" << (gruppiInCoda[i].getModTempo()+playTime*60/timeMultiplier) << */endl;
     }
     cout << "----------------------------------------" << endl;
 }
@@ -326,7 +331,7 @@ int main(){
         codaActual = gruppiInPista.size();                                                          //AGGIORNA NUMERO DI GRUPPI IN CODA ATTUALMENTE -> EVITA ERRORI DI LETTURA DELL ARRAY
         ctrl = 0;                                                                                   //RESET CONTATORE                              
         for(int i=0;i < codaActual;i++){                                                            //PER OGNI GRUPPO IN CODA
-            if((gruppiInPista[ctrl].getTempoInizio() + (playTime*60/timeMultiplier)) >= (long long)time(&timeInSec)){     //SE IL TEMPO DI ATTIVITA' E' FINITO
+            if((gruppiInPista[ctrl].getTempoInizio() + (playTime*60/timeMultiplier)) < (long long)time(&timeInSec)){     //SE IL TEMPO DI ATTIVITA' E' FINITO
                 gruppiInPista[ctrl].EsciDallaPista(&pista);                                              //FA USCIRE IL GRUPPO
                 gruppiInPista.erase(gruppiInPista.begin()+ctrl);                                        //RIMUOVI IL GRUPPO DAL VETTORE
             }else{                                                                                  //ALTRIMENTI:
