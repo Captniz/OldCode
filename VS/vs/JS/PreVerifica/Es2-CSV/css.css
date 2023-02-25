@@ -1,0 +1,18 @@
+#div1{
+    height: 29%;
+    width: 100%;   
+}
+
+#div2{
+    height: 70%;
+    width: 100%;
+}
+
+div{
+    border: solid 1px;
+    margin: 3px;
+}
+
+input{
+    margin: 10px;
+}
