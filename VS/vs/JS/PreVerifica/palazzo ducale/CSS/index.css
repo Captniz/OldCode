@@ -1,0 +1,93 @@
+:root{
+    --primarion:#ae0f0b;
+    --sfondo:rgb(192, 192, 192);
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    font-family:'Times New Roman', Times, serif;
+    background-color: var(--sfondo);
+}
+.testogiallo{
+	color: yellow;
+}
+.intestazione{
+    background-color: var(--primarion);
+    width: 100%;
+}
+
+.logo{
+    margin: 1% 0% 1% 5%;
+}
+
+.titolo-intestazione{
+    font-size: 2.5em;
+    color: white;
+    text-align: right;
+    font-weight: 300;
+    padding: 0% 2% 0% 5%;
+}
+
+.video-descrizione{
+    width: 100%;
+    margin: 5% 0% 0% 0%;
+}
+
+.video-descrizione td{
+    width: 50%;
+}
+
+.footer{
+    background-color: var(--primarion);
+    padding: 1% 2% 2% 3%;
+    color: white;
+    font-size: 125%;
+}
+
+.titoletto{
+    font-weight: 900;
+    color: var(--primarion);
+    font-size: 2em;
+}
+
+.descrizione{
+    font-size: 150%;
+    padding: 0% 4% 3% 2%;
+    text-align: justify;
+}
+
+.video{
+    width: 96%;
+    padding: 0% 2% 0% 2%;
+    border-left: 2px solid #ae0f0b;
+}
+
+.camere{
+    width: 100%;
+    padding: 5% 0% 5% 0%;
+}
+
+.camere td{
+    width: 50%;
+}
+
+.titoletti{
+    text-align: center;
+    font-size: 2em;
+    font-weight: 200;
+    color: var(--primarion);
+}
+
+.camere img{
+    width: 60%;
+    margin: 0% 20% 0% 20%;
+    transition-duration: 0.2s;
+    cursor: pointer;
+}
+.camere img:hover{
+    width: 65%;
+    margin: 0% 17.5% 0% 17.5%;
+}

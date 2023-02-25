@@ -4,10 +4,6 @@ public class Overloading {
         Persona p = new Persona();
         Scanner scn = new Scanner(System.in);
         String tmp = "";
-
-        try{
-
-        }catch()
     }
 }
 class Persona {

@@ -1,0 +1,38 @@
+<head> </head>
+<body>
+  <!-- 
+		FORM con campo INPUT di tipo FILE 
+   -->
+  <form id="myForm">
+    <input type="file" id="mioFile"/>
+  </form>
+  <button onclick="leggiFile()">Leggi</button>
+  <script>
+        function leggiFile(){
+			const myFile = document.getElementById("mioFile");
+	   
+			/*
+			creiamo un'istanza dell'oggetto FileReader, 
+			assegnamo un gestore all'evento onload 
+			che invoca il metodo readAsText() passandogli l'oggetto file da leggere. 
+			Al termine del caricamento del file viene generato l'evento load, 
+			in corrispondenza del quale accediamo al contenuto del file 
+			tramite la proprietà result di target messo a disposizione dall'oggetto event. 
+			Il metodo readAsText(), quindi, ci consente di accedere al contenuto di un file interpretandolo come testo. 
+			*/
+			const input = myFile.files[0]; // files è l'array dei file selezionati
+			// se eseguite console.log(input);
+            // potete vedere che input non è un nome di file ma un oggetto che contiene diverse info
+			const reader = new FileReader();
+			  
+			reader.readAsText(input);
+			  
+			reader.onload = function (e) {
+			const text = e.target.result;
+			//Qui avete a disposizione nella costante text il contenuto del file
+			document.write(text);
+			};
+		}
+
+  </script>
+</body>

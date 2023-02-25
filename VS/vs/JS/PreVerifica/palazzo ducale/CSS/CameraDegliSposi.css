@@ -1,0 +1,76 @@
+:root{
+    --primarion:#ae0f0b;
+    --sfondo:rgb(192, 192, 192);
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    font-family:'Times New Roman', Times, serif;
+    background-color: var(--sfondo);
+}
+
+.intestazione{
+    background-color: var(--primarion);
+    width: 100%;
+}
+
+.logo{
+    margin: 1% 0% 1% 5%;
+}
+
+.titolo-intestazione{
+    font-size: 2.5em;
+    color: white;
+    text-align: right;
+    font-weight: 300;
+    padding: 0% 2% 0% 5%;
+}
+
+.centrale{
+    margin: 5% 0% 0% 0%;
+    width: 100%;
+}
+.centrale td{
+    width: 50%;
+}
+.centrale img{
+    width: 80%;
+    height: 100%;
+    margin: 0% 10% 5% 10%;
+    transition-duration: 0.2s;
+}
+.centrale img:hover{
+    width: 90%;
+    margin: 0% 5% 5% 5%;
+    box-shadow: 0px 0px 80px var(--primarion);
+}
+
+.home{
+    font-size: 3em;
+    width: 25%;
+    height: 10%;
+    color: var(--primarion);
+    margin: 0% 37.2% 5% 37.5%;
+    background-color: transparent;
+    border-top: transparent;
+    border-bottom: transparent;
+    border-left: 5px solid var(--primarion);
+    border-right: 3px solid var(--primarion);
+    transition-duration: 0.2s;
+}
+.home:hover{
+    width: 50%;
+    margin: 0% 25% 5% 25%;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.273);
+}
+
+.footer{
+    background-color: var(--primarion);
+    padding: 1% 2% 2% 3%;
+    color: white;
+    font-size: 125%;
+}

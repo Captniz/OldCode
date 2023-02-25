@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Palazzo Ducale</title>
+        <link rel="stylesheet" href="CSS/index.css">
+        <link rel="stylesheet" href="CSS/index.css">
+        <script type="text/javascript" src="./RESOURCES/jquery.js"></script>
+    </head>
+    <body>
+        <table class="intestazione">
+            <tr>
+                <td><img src="IMG/logo_palazzo_ducale.jpg" class="logo"></td>
+                <td class="titolo-intestazione">Palazzo Ducale</td>
+            </tr>
+            <tr style="display: flex;">
+                <td><input type="button" value="ES1" onclick="es1()"></td>
+                <td><input type="button" value="ES2" onclick="es2()"></td>
+                <td><input type="button" value="ES3" onclick="es3()"></td>
+            </tr>
+        </table>
+        <div class="centrale">
+            <table class="video-descrizione">
+                <tr>
+                    <td class="descrizione">
+                            <p class="titoletto">Storia del Palazzo</p>
+                            Il Palazzo Ducale di Mantova, noto anche come reggia dei Gonzaga, è uno dei principali edifici storici cittadini.
+                            Dal 1308 è stata la residenza ufficiale dei signori di Mantova, i Bonacolsi, e quindi la residenza principale dei Gonzaga, signori, marchesi ed infine duchi della città virgiliana.
+                            Ospitava il Gonzaga dominante del tempo, sua moglie, il figlio legittimo primogenito e gli altri figli legittimi sino alla maggiore età nonché gli ospiti importanti[3].
+                            Assunse la denominazione di Palazzo Reale durante la dominazione austriaca a partire dall'epoca di Maria Teresa d'Austria regnante.
+                            Ogni duca ha voluto aggiungere un'ala per sé e per le proprie opere d'arte, il risultato è un'area di più di 35.000 m² che ne fanno una delle regge più estese d'Europa[4] dopo i palazzi del Vaticano, il Palazzo del Louvre, la Reggia di Versailles, la Reggia di Caserta, la Reggia di Venaria Reale, il Palazzo Buckingham, il Castello di Fontainebleau, il Palazzo d'Inverno o ancora il Palazzo Reale di Stoccolma. Ha più di 500 stanze[5] e racchiude 7 giardini e 8 cortili.[6] 
+                    </td>
+                    <td>
+                        <video class="video" src="IMG/Palazzo_ducale.mp4" loop autoplay muted></video>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <table class="camere">
+            <tr>
+                <td>
+                    <p class="titoletti">CAMERA DEGLI SPOSI</p>
+                    <a href='HTML/CameraDegliSposi.html'><img src="IMG/Camera-degli-Sposi1.jpg" class="camerasposi"></a>
+                </td>
+                <td>
+                    <p class="titoletti">STANZA DEI GIGANTI</p>
+                    <a href='HTML/StanzaDeiGiganti.html'><img src="IMG/sala_dei_giganti2.jpg" class="stanzagiganti"></a>
+                </td>
+            </tr>
+        </table>
+        <div class="footer">
+            Complesso Museale di Palazzo Ducale<br>
+            Piazza Sordello, 40 - 46100 Mantova<br>
+            tel. +39 0376 352100<br>
+            pal-mn@cultura.gov.it<br>
+        </div>
+    </body>
+    <script>
+        function es1(){
+            $("video").remove()
+            $("img").remove()
+        }
+        function es2(){
+            $("td").each( function(){
+                if($(this).html().includes("Gonzaga")){
+                    $(this).css("color", "yellow")
+                    $(this).css("fontSize", "30px")
+                }
+            })
+        }
+        function es3(){
+            $("body a").prop("href", "https://mantovaducale.beniculturali.it/it/")
+        }
+    </script>
+</html>

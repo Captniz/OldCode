@@ -1,0 +1,16 @@
+
+replace()
+=========
+
+Syntax
+string.replace(searchValue, newValue)
+
+Parameters
+
+searchValue 	Required	The value, or regular expression, to search for.
+newValue 	Required	The new value (to replace with).
+
+Return Value
+
+Type 	Description
+A string	A new string where the specified value(s) has been replaced.

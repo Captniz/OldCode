@@ -1,0 +1,66 @@
+
+==============================
+230225_jquery_cognomenome.zip> 
+==============================
+
+-scaricate il sito del palazzo ducale di Mantova in allegato a questo esercizio
+-aggiungete nell'intestazione del sito 3 bottoni denominati "ES1", "ES2", "ES3"
+
+-ES1 lancia la funzione JS es1()
+ es1() tramite i selettori Jquery mostrera' una versione del sito senza VIDEO e Immagini
+
+-ES2 lancia la funzione JS es2()
+ es2() tramite i selettori e i metodi di jquery e di manipolazione delle stringhe di JS
+ cambierà il colore del testo in giallo e la dimensione del font a 30px 
+ di tutti i contenuti dei tag <TD> che contengono la parola "Gonzaga"
+
+-ES3 lancia la funzione JS es3()
+ es3() tramite i selettori e i metodi di jquery  rimpiazzerà tutti i link del sito
+ ,nei tag contenuti nel body,  con l'indirizzo https://mantovaducale.beniculturali.it/it/
+
+
+==============================
+230225_jscsv_cognomenome.html> 
+==============================
+
+Realizzate una pagina HTML+CSS+JS
+con due DIV orizzontali sovrapposti:
+
+DIV1 (Altezza 30% della pagina HTML )
+--------------------------------------
+l'interfaccia per la lettura di un file da JS
+e
+altri 3 campi di INPUT di tipo text:DATA_INIZIO, DATA FINE, TESTO
+un bottone denominato "CERCA"
+
+DIV2 (altezzza 70% della pagina HTML)
+--------------------------------------
+che conterrà il risultato delle interrogazioni 
+ottenute mediante le seguenti operazioni:
+
+-solo una volta ,contestualmente alla lettura del file "spaggiari_4CIIN.csv", memorizzate i dati in una matrice JS
+
+-se il bottone CERCA viene premuto la funzione cerca() JS
+ visualizzate in formato HTML TABLE le note che 
+ soddisfano i 3 campi di INPUT: DATA_INIZIO, DATA FINE, TESTO
+ NOTA1
+ "data_inizio" e "data_fine" sono espresse nel formato "YYYY-MM-DD"
+ NOTA2
+ filtrate solo per i campi di INPUT valorizzati 
+ esempio
+ -se i 3 campi di input sono vuoti -> visualizzate tutte le note
+ -se solo il campo TESTO contiene una stringa visualizzate tutte le righe contenti quel testo NO CASE SENSITIVE
+ -se solo i campi DATA_INIZIO, DATA FINE contengono delle stringhe visualizzate solo le righe che hanno 
+ la stessa DATA_INIZIO e la stessa  DATA FINE
+ -se sono stati inseriti tutti i 3 campi di input visualizzerete tutte le righe che contengono il testo specificato in TESTO
+  (NO CASE SENSITIVE) e che abbiano la stessa DATA_INIZIO e la stessa  DATA FINE
+
+
+
+
+
+
+ 
+ 
+
+    
