@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<HTML>
+	<HEAD>
+		<TITLE>Tabelle con rowspan e colspan</TITLE>
+		<META charset="UTF-8">
+		<script type="text/javascript" src="./jquery.js"></script>
+	</HEAD>
+	<BODY>	
+		<input type="button" value="es1" onclick="es1()">
+		<input type="button" value="es2" onclick="es2()">
+		<input type="button" value="es3" onclick="es3()">
+		<H3>Check Box</H3>
+			<input type="checkbox" id="id_bianco" value="bianco">
+			<label for="id_bianco" name="FermiCol">Bianco</label><br>
+				
+			<input type="checkbox" name="Finale" id="id_rosso" value="rosso">
+			<label for="id_rosso">Rosso</label><br>
+			
+			<input type="checkbox" name="colori" id="id_verde" value="verde">
+			<label for="id_verde">Verde</label><br>
+	    <H3>Prima Tabella</H3>
+		<TABLE  width="50%" border="3" cellpadding="10" cellspacing="10">
+			<TBODY>
+				</TH><TH width="25%">Bianchi</TH><TH width="25%">Rossi</TH><TH width="25%">Verdi</TH></TR>
+				<TR><TD>10</TD><TD>8</TD><TD>0</TD></TR>
+				<TR><TD>8</TD><TD>3</TD><TD>5</TD></TR>
+				<TR><TD>8</TD><TD>6</TD><TD>2</TD></TR>
+				<TR><TD>9</TD><TD>8</TD><TD>1</TD></TR>
+				<TR><TD>10</TD><TD>5</TD><TD>1</TD></TR>
+			</TBODY>
+		</TABLE>
+		<BR>
+		<H3>Seconda Tabella</H3>
+		<TABLE name="FermiTabLiceo" border="3" >
+			<TR> 
+				<TD> <I>Nominativo</I> </TD> <TD>Ich</TD> <TD>du</TD> <TD>er</TD> <TD>es</TD> <TD>sie</TD>
+			</TR>
+			<TR>
+				<TD> <I>Accusativo</I></TD> <TD>mich</TD> <TD>dich</TD> <TD>ihn</TD> <TD>es</TD> <TD>sie</TD>
+			</TR> 
+			<TR> 
+				<TD> <I>Dativo</I></TD> <TD>mir</TD> <TD>dir</TD> <TD>ihm</TD> <TD>ihm</TD> <TD>ihr</TD>
+			</TR>
+		</TABLE> 
+		<script>
+			colored = false;
+			function es1(){
+				//MI SONO SCORDATO DELL' ESISTENZA DI EVEN E ODD MA VA UGUALE
+				$("tr").each(function (){
+					if(!colored){
+						$(this).css("background-color","grey")
+						colored=true;
+					}else{
+						colored=false;
+					}
+				});
+			}
+			function es2(){
+				$("*").each(function (){
+					$(this).attr("name")
+					if($(this).attr("name")!=undefined && $(this).attr("name").charAt(0)=="F"){
+						$(this).attr("name", ("new" + $(this).attr("name")))
+					}
+				});
+			}
+			function es3(){
+				$(":checked").each(function (){
+					iden = $(this).attr("id")
+					
+					$("label").each(function (){
+						if($(this).attr("for") == iden){
+							$(this).css("background-color","yellow")
+						}
+					})
+				});
+			}
+		</script>
+</HTML>
