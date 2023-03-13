@@ -7,18 +7,8 @@
 using namespace std;
 
 int main(){
-    vector <int> vettore;
-    int i;
-
-    for(i=0;i<10;i++){
-        vettore.push_back(i);
-    }
-    vettore.erase(vettore.begin());
-    vettore.erase(vettore.begin());
-
-    for(i=0;i<10;i++){
-        cout<<vettore[i]<<endl;
-    }
-    cout<<vettore.size()<<endl;
+    int a[3] = {1,2,3};
+    cout<<a[2]<<endl;
+    cout<<2[a]<<endl;
     return 0;
 }

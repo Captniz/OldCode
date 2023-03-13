@@ -21,6 +21,8 @@
 					for(var i=0;i<10;i++){
 						ar[i] = ar[i].split(",")
 					}
+					
+					//CORREZZIONE
 					var tmp=0;
 					var flag = false;
 					for(var i=0;i<10;i++){
@@ -31,22 +33,27 @@
 								flag = false;
 							}
 						}
+						/*CORREZIONE
+						if(flag){
+							tmp=0;
+						}
+						*/
+						//FINE CORREZIONE
 						for(var j=0;j<10;j++){
 							if(ar[i][j]%2!=0){
 								ar[i][j]=tmp;
 							}
 						}
 					}
-					
+
 					//! PER QUALCHE MOTIVO NON FA NULLA CON QUESTO FOR
 					for(let x=0;x<10;x++){
 						for(let i=0;i<9;i++){
 							for(let j=(i+1);j<10;j++){
-								if(ar[i][x]>ar[j][x]){
-									tmp=ar[i][x];
-									ar[i][x]=ar[j][x];
+								if(ar[i][x]*1>ar[j][x]*1){
+									tmp=ar[i][x]*1;
+									ar[i][x]=ar[j][x]*1;
 									ar[j][x]=tmp;
-			
 								}
 							}
 						}
