@@ -1,0 +1,1 @@
+This folder contains OPS (Olimpiadi Problem Solving -> Problem Solving Challenges) programs
