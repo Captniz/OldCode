@@ -1,4 +1,4 @@
-# Rep_1 <img src="logo.png" align="right" height="40px" /> <!-- omit in toc -->
+# General Code <img src="logo.png" align="right" height="40px" /> <!-- omit in toc -->
 
 ## 🔠 Index <!-- omit in toc -->
 
