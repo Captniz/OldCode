@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.back{
+    height: 5vh;
+    height: 30vh;
+    width: 10vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(200,200,200,0.2);
+    color: rgba(0,0,0,0.5);
+}
+.next{
+    height: 30vh;
+    width: 10vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(200,200,200,0.2);
+    color: rgba(0,0,0,0.5);
+}
+
+.img{
+    width: 50vw;
+}
