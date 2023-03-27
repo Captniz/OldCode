@@ -19,9 +19,9 @@ This is a repository for all my projects, made for storing my code and my files 
 >
 > > My Unity projects...
 >
-> 📂VisualStudio
+> 📂CODE
 >
-> > My ViusalStudio (**_general programs_**) projects...
+> > My **_general programs_** of any programming language, mostly excercises...
 
 ---
 
