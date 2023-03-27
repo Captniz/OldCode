@@ -59,6 +59,7 @@ public class PreVerifica2 {
                 }
                 res.revalidate();
                 res.repaint();
+                w.repaint();
                 w.refresh();
             }
         };
@@ -80,6 +81,7 @@ public class PreVerifica2 {
                 }
                 res.revalidate();
                 res.repaint();
+                w.repaint();
                 w.refresh();
             }
         };
@@ -101,6 +103,7 @@ public class PreVerifica2 {
                 }
                 res.revalidate();
                 res.repaint();
+                w.repaint();
                 w.refresh();
             }
         };
