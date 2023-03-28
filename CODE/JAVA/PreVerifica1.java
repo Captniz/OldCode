@@ -64,7 +64,6 @@ class Pane extends JPanel {
             g2.fillOval(hit.x, hit.y, 5, 5);
         }
     }
-    
 }
 
 class Button extends JButton {
