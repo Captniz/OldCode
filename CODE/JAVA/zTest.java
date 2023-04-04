@@ -1,19 +1,29 @@
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
+import java.io.*;
 
 public class zTest {
 
     public static void main(String[] args) {
-        Queue<Integer> q = new LinkedList<>();
-        Stack<Integer> s = new Stack<>();
-        q.add(1);
-        q.add(2);
-        q.add(3);
-        System.out.println(q);
-        while(!q.isEmpty()){
-            s.add(q.poll());
+        String tmp = "";
+        try {
+            BufferedReader cin = new BufferedReader(new FileReader("input.txt"));
+            try {
+                tmp = cin.readLine();
+                System.out.println(Integer.parseInt(tmp));
+
+                tmp = cin.readLine();
+                while (tmp != null) {
+                    System.out.println(Integer.parseInt(tmp));
+                    tmp = cin.readLine();
+                }
+
+            } catch (Exception e) {
+                System.out.println("Il file è vuoto");
+            }
+        } catch (Exception e) {
+            System.out.println("Non c'è il file ");
         }
-        System.out.println(s);
     }
 }
