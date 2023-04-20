@@ -4,26 +4,12 @@ import java.util.Stack;
 import java.io.*;
 
 public class zTest {
-
     public static void main(String[] args) {
-        String tmp = "";
-        try {
-            BufferedReader cin = new BufferedReader(new FileReader("input.txt"));
-            try {
-                tmp = cin.readLine();
-                System.out.println(Integer.parseInt(tmp));
-
-                tmp = cin.readLine();
-                while (tmp != null) {
-                    System.out.println(Integer.parseInt(tmp));
-                    tmp = cin.readLine();
-                }
-
-            } catch (Exception e) {
-                System.out.println("Il file è vuoto");
+       int[] a = {10,2,4,5,6};
+       //contqxtualy load a queue
+         Queue<Integer> q = new LinkedList<Integer>();
+            for(int i=0; i<a.length; i++) {
+                q.add(a[i]);
             }
-        } catch (Exception e) {
-            System.out.println("Non c'è il file ");
-        }
     }
 }
