@@ -3,36 +3,33 @@ import java.util.*;
 //Make a program with two threads. One adds up the first 500 numbers, the other adds up the last 500 numbers. The main thread should wait for the two threads to finish, and then print the sum of the first 500 numbers, the sum of the last 500 numbers, and the total sum.
 public class Threading {
     public static void main(String[] args) {
-        ThreadAdd addr1 = new ThreadAdd(0);
-        Thread t1 = new Thread(addr1);
+        int[] arr = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+        RunnableFind find1 = new RunnableFind(arr, 3);
+        Thread t1 = new Thread(find1);
         t1.start();
-        ThreadAdd addr2 = new ThreadAdd(addr1.getN());
-        Thread t2 = new Thread(addr2);
-        t2.start();
         try {
-            t1.join(500);
-            t2.join(500);
-        } catch (Exception e) {
-            System.out.println(e);
+            t1.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
-        System.out.println(addr2.getN());
     }
 }
 
-class ThreadAdd implements Runnable {
+class RunnableFind implements Runnable {
+    int[] arr;
     int n;
 
-    public ThreadAdd(int n) {
+    public RunnableFind(int[] arr, int n) {
+        this.arr = arr;
         this.n = n;
     }
 
     public void run() {
-        for (int i = 0; i < 500; i++) {
-            n++;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == n) {
+                System.out.println("Found " + n + " at index " + i);
+                break;
+            }
         }
-    }
-
-    public int getN() {
-        return n;
     }
 }
