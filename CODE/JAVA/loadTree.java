@@ -17,21 +17,19 @@ public class loadTree {
     }
 }
 
-// Modello L - root - R : standard
-
-/*
- * Metodi primitivi:
- * - find(int) : Object -> Restituisce o il nodo in se o il livello del nodo
- * - insert(?) : ? -> Aggiunge un nodo
- * - delete(?) : ? -> Rimuove un nodo e mantiene l'ordine
- *
- * Metodi non primitivi:
- * - print(Node) : void -> Stampa l'albero con il modello "L - Root - R"
- * - printCool(Node) : void -> Stampa l'albero con il modello "L - Root - R",
- * con una grafica decente.
- **/
-
 class Node {
+    // Tree model -> L - ROOT - R : (Standard)
+    /*
+     * Primitive methods:
+     * - find(int) : Object -> Returns the node with the specified value.
+     * - insert(int) : void -> Inserts a node with the specified value.
+     * - insert(Node) : void -> Inserts a node, (Must have aleady a value assigned).
+     * - delete(void) : void -> Deletes the node and re-attaches his child nodes.
+     *
+     * Non-primitive methods:
+     * - print() : void -> Prints the tree in order.
+     **/
+
     // ##############################################
     // # ATTRIBUTES #
     // ##############################################
@@ -82,7 +80,7 @@ class Node {
      * Summary:
      * Find a node given the specified value, does not support multiple nodes with
      * the same value.
-     * Can be used on any node but bare in mind that it will only search node and
+     * Can be used on any node but bare in mind that it will only search the node and
      * its childs, so its always better to use it on the root.
      * Parameters:
      * - int val -> Value to find in the tree
@@ -170,7 +168,7 @@ class Node {
     /*
      * Method Insert() -> Node
      * Summary:
-     * Insert a node in the tree.
+     * Insert a node in the tree, the node must aleady have a value assigned.
      * !SHOULD BE USED ONLY ON THE ROOT! Using this method on other nodes will
      * result in the node possibly being inserted in the wrong place.
      * Parameters:
@@ -207,6 +205,8 @@ class Node {
      * Summary:
      * Print the tree starting from the left side to the right, resulting in an
      * ascending ordered print.
+     * Can be used on any node but bare in mind that it will only print the node and
+     * its childs, so its always better to use it on the root.
      */
     public void print() {
         if (this.lx != null) {
