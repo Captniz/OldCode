@@ -32,11 +32,26 @@ public class loadTree {
  **/
 
 class Node {
+    // ##############################################
+    // # ATTRIBUTES #
+    // ##############################################
+
+    // Value of the node
     int value;
+    // Child node to the left
     Node lx;
+    // Child node to the right
     Node rx;
+    // The node itself
     Node self;
 
+    // ##############################################
+    // # CONSTRUCTORS #
+    // ##############################################
+
+    /*
+     * Empty constructor
+     */
     public Node() {
         value = 0;
         lx = null;
@@ -44,6 +59,13 @@ class Node {
         self = this;
     }
 
+    /*
+     * Parametered constructor
+     * Summary:
+     * Gives a value to the node.
+     * Parameters:
+     * - int val -> Value of the node
+     */
     public Node(int val) {
         value = val;
         lx = null;
@@ -51,28 +73,59 @@ class Node {
         self = this;
     }
 
+    // ##############################################
+    // # PRIMITIVES #
+    // ##############################################
+
+    /*
+     * Method Find()
+     * Summary:
+     * Find a node given the specified value, does not support multiple nodes with
+     * the same value.
+     * Can be used on any node but bare in mind that it will only search node and
+     * its childs, so its always better to use it on the root.
+     * Parameters:
+     * - int val -> Value to find in the tree
+     * Returns:
+     * - Node tmp -> Node found in the tree with the value in input
+     */
     public Node find(int val) {
         Node tmp;
+        // If the value of this node is equal to the value we are searching for, return
+        // the node itself.
         if (this.value == val) {
             return self;
         }
+        // If there is a node to the left, search it with the find method ( Recursive )
         if (this.lx != null) {
             tmp = lx.find(val);
             if (tmp != null) {
                 return tmp;
             }
         }
+        // Once there are no more nodes to the left check each right branch
         if (this.rx != null) {
             tmp = rx.find(val);
             if (tmp != null) {
                 return tmp;
             }
         }
+        // Return null if failed
         return null;
     }
 
+    /*
+     * Method Delete()
+     * Summary:
+     * Deletes the node and re-attaches his child nodes to
+     * the tree, does not support multiple nodes with
+     * the same value.
+     * Can be used on any node, including the root.
+     */
     public void delete() {
+        // Get the value of the branch to the right and put it in this node
         this.setValue(this.rx.getValue());
+        // !Da qui in poi fa talmente shifo che ho vergogna ha spiegarlo, funziona
         Node[] attachments = { this.rx.getRx(), this.rx.getLx(), this.lx };
         this.rx = null;
         this.lx = null;
@@ -80,11 +133,23 @@ class Node {
         for (Node node : attachments) {
             this.insert(node);
         }
+        return;
     }
 
+    /*
+     * Method Insert() -> Value
+     * Summary:
+     * Insert a node in the tree giving only the value of the node.
+     * !SHOULD BE USED ONLY ON THE ROOT! Using this method on other nodes will
+     * result in the node possibly being inserted in the wrong place.
+     * Parameters:
+     * - int val -> Value of the node to insert in the tree
+     */
     public void insert(int val) {
-        // Used only on the root
+        // Check the value of the current node, and determine if it should go to the
+        // left ( lesser ) or to the right ( greater ).
         if (this.value > val) {
+            // If the child node of the side determined is not present, insert the node.
             if (this.lx == null) {
                 this.setLx(new Node(val));
             } else {
@@ -97,12 +162,25 @@ class Node {
                 rx.insert(val);
             }
         }
+        // This is the only case where the node is not inserted, because it already
+        // exists.
         return;
     }
 
+    /*
+     * Method Insert() -> Node
+     * Summary:
+     * Insert a node in the tree.
+     * !SHOULD BE USED ONLY ON THE ROOT! Using this method on other nodes will
+     * result in the node possibly being inserted in the wrong place.
+     * Parameters:
+     * - Node val -> Node to insert in the tree
+     */
     public void insert(Node val) {
-        // Used only on the root
+        // Check the value of the current node, and determine if it should go to the
+        // left ( lesser ) or to the right ( greater ).
         if (this.value > val.getValue()) {
+            // If the child node of the side determined is not present, insert the node.
             if (this.lx == null) {
                 this.setLx(val);
             } else {
@@ -115,9 +193,21 @@ class Node {
                 rx.insert(val);
             }
         }
+        // This is the only case where the node is not inserted, because it already
+        // exists.
         return;
     }
 
+    // ##############################################
+    // # NOT-PRIMITIVES #
+    // ##############################################
+
+    /*
+     * Method Print()
+     * Summary:
+     * Print the tree starting from the left side to the right, resulting in an
+     * ascending ordered print.
+     */
     public void print() {
         if (this.lx != null) {
             this.lx.print();
@@ -129,49 +219,31 @@ class Node {
         return;
     }
 
-    public void printCool(Queue<Node> queue) {
-        // Print in a pyramid the binTree
-        // TODO:
-        Queue<Node> nextQueue = new LinkedList<Node>();
-        Node tmp;
-        while (!queue.isEmpty()) {
-            tmp = queue.remove();
-            System.out.print(tmp.getValue() + " ");
-            if (tmp.lx != null) {
-                nextQueue.add(tmp.lx);
-            }
-            if (tmp.rx != null) {
-                nextQueue.add(tmp.rx);
-            }
-        }
-        if (!nextQueue.isEmpty()) {
-            System.out.println();
-            printCool(nextQueue);
-        }
-        return;
-    }
+    // ##############################################
+    // # GETTERS & SETTERS #
+    // ##############################################
 
-    public int getValue() {
+    private int getValue() {
         return value;
     }
 
-    public void setValue(int value) {
+    private void setValue(int value) {
         this.value = value;
     }
 
-    public Node getLx() {
+    private Node getLx() {
         return lx;
     }
 
-    public void setLx(Node lx) {
+    private void setLx(Node lx) {
         this.lx = lx;
     }
 
-    public Node getRx() {
+    private Node getRx() {
         return rx;
     }
 
-    public void setRx(Node rx) {
+    private void setRx(Node rx) {
         this.rx = rx;
     }
 }
