@@ -3,8 +3,8 @@ import java.rmi.NoSuchObjectException;
 import java.util.*;
 
 public class BinTree {
-    // Tree model -> L - ROOT - R : (Standard)
     /*
+     * Tree model -> L - ROOT - R : (Standard)
      * Primitive methods:
      * - find(int) : Object -> Returns the node with the specified value.
      * - insert(int) : void -> Inserts a node with the specified value.
@@ -69,7 +69,7 @@ public class BinTree {
      * Deletes a node given its value and re-attaches his child nodes to
      * the tree, does not support multiple nodes with the same value.
      * Exceptions:
-     * - NoSuchElementException -> If the value is not found
+     * - NoSuchElementException -> If the node is the root and it has no childs
      */
     public void delete(int value) {
         root.find(value).delete();
@@ -92,6 +92,7 @@ public class BinTree {
      * Summary:
      * Insert a node in the tree, the node must aleady have a value assigned.
      * If a node is already present it will do nothing.
+     * !SHOULDN'T BE USED! Use the other Insert() method instead.
      * Parameters:
      * - Node val -> Node to insert in the tree
      */
@@ -115,6 +116,20 @@ public class BinTree {
 }
 
 class Node {
+    /*
+     * Summary:
+     * Single node of the tree.
+     * Primitive methods:
+     * - find(int) : Object -> Returns the node with the specified value.
+     * - insert(int) : void -> Inserts a node with the specified value.
+     * - insert(Node) : void -> Inserts a node, (Must have aleady a value assigned).
+     * - delete(void) : void -> Deletes the node and re-attaches his child nodes.
+     *
+     * Non-primitive methods:
+     * - print() : void -> Prints the tree in order.
+     **/
+
+
     // ##############################################
     // # ATTRIBUTES #
     // ##############################################
@@ -205,28 +220,47 @@ class Node {
      * the tree, does not support multiple nodes with
      * the same value.
      * Can be used on any node, including the root.
+     * Exceptions:
+     * - NoSuchElementException -> If the node is the root and it has no childs
      */
     public void delete() {
         if (rx != null) {
             // Get the value of the branch to the right and put it in this node
             setValue(rx.getValue());
-            Node[] attachments = { rx.getRx(), rx.getLx(), lx };
+
+            Queue<Node> queue = new LinkedList<Node>();
+            if (rx.getRx() != null) {
+                queue.add(rx.getRx());
+            }
+            if (rx.getLx() != null) {
+                queue.add(rx.getLx());
+            }
+            if (lx != null) {
+                queue.add(lx);
+            }
             rx = null;
             lx = null;
 
-            for (Node node : attachments) {
-                insert(node);
+            while (!queue.isEmpty()) {
+                insert(queue.remove());
             }
             return;
         } else if (lx != null) {
             // Get the value of the branch to the left and put it in this node
             setValue(lx.getValue());
-            Node[] attachments = { lx.getRx(), lx.getLx() };
+
+            Queue<Node> queue = new LinkedList<Node>();
+            if (lx.getRx() != null) {
+                queue.add(lx.getRx());
+            }
+            if (lx.getLx() != null) {
+                queue.add(lx.getLx());
+            }
             rx = null;
             lx = null;
 
-            for (Node node : attachments) {
-                insert(node);
+            while (!queue.isEmpty()) {
+                insert(queue.remove());
             }
             return;
         } else {
@@ -238,7 +272,7 @@ class Node {
                 }
                 return;
             }
-            throw new NoSuchElementException("Cannot delete root node");
+            throw new NoSuchElementException("Cannot delete last root node");
         }
     }
 
@@ -354,9 +388,5 @@ class Node {
 
     private void setRx(Node rx) {
         this.rx = rx;
-    }
-
-    public Node getFather() {
-        return father;
     }
 }
