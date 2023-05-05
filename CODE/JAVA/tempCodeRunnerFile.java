@@ -1,2 +1,2 @@
 
-public class loadTree {
+    public static void main(String[] args) {

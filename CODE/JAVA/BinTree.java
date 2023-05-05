@@ -1,5 +1,3 @@
-import java.io.*;
-import java.rmi.NoSuchObjectException;
 import java.util.*;
 
 public class BinTree {
@@ -12,7 +10,7 @@ public class BinTree {
      * - delete(void) : void -> Deletes the node and re-attaches his child nodes.
      *
      * Non-primitive methods:
-     * - print() : void -> Prints the tree in order.
+     * - visitaSimmetrica() : void -> Prints the tree in ascending order.
      **/
 
     // ##############################################
@@ -105,13 +103,31 @@ public class BinTree {
     // ##############################################
 
     /*
-     * Method Print()
+     * Method visitaSimmetrica()
      * Summary:
      * Print the tree starting from the left side to the right, resulting in an
      * ascending ordered print.
      */
-    public void print() {
-        root.print();
+    public void visitaSimmetrica() {
+        root.visitaSimmetrica();
+    }
+
+    /*
+     * Method visitaAnticipata()
+     * Summary:
+     * Prints first the root node, then the left node and finally the right node.
+     */
+    public void visitaAnticipata() {
+        root.visitaAnticipata();
+    }
+
+    /*
+     * Method visitaPosticipata()
+     * Summary:
+     * Prints first the left node, then the right node and finally the root node.
+     */
+    public void visitaPosticipata() {
+        root.visitaPosticipata();
     }
 }
 
@@ -126,9 +142,8 @@ class Node {
      * - delete(void) : void -> Deletes the node and re-attaches his child nodes.
      *
      * Non-primitive methods:
-     * - print() : void -> Prints the tree in order.
+     * - visitaSimmetrica() : void -> Prints the tree in ascending order.
      **/
-
 
     // ##############################################
     // # ATTRIBUTES #
@@ -344,22 +359,65 @@ class Node {
     // ##############################################
 
     /*
-     * Method Print()
+     * Method visitaSimmetrica()
      * Summary:
      * Print the tree starting from the left side to the right, resulting in an
      * ascending ordered print.
      * Can be used on any node but bare in mind that it will only print the node and
      * its childs, so its always better to use it on the root.
      */
-    public void print() {
+    public void visitaSimmetrica() {
         if (lx != null) {
-            lx.print();
+            lx.visitaSimmetrica();
         }
         System.out.print(value + " ");
         if (rx != null) {
-            rx.print();
+            rx.visitaSimmetrica();
         }
         return;
+    }
+
+    /*
+     * Method visitaAnticipata()
+     * Summary:
+     * Prints first the root node, then the left node and finally the right node.
+     * Can be used on any node but bare in mind that it will only print the node and
+     * its childs, so its always better to use it on the root.
+     */
+    public void visitaAnticipata() {
+        System.out.print(value + " ");
+        if (lx != null) {
+            lx.visitaAnticipata();
+        }
+        if (rx != null) {
+            rx.visitaAnticipata();
+        }
+        return;
+    }
+
+    /*
+     * Method visitaPosticipata()
+     * Summary:
+     * Print the tree starting from the left side to the right, resulting in an
+     * ascending ordered print.
+     * Can be used on any node but bare in mind that it will only print the node and
+     * its childs, so its always better to use it on the root.
+     * 
+     */
+    public void visitaPosticipata() {
+        if (lx != null) {
+            lx.visitaPosticipata();
+        } else {
+            System.out.print(value + " ");
+            return;
+        }
+        if (rx != null) {
+            rx.visitaPosticipata();
+        } else {
+            System.out.print(value + " ");
+            return;
+        }
+        System.out.print(value + " ");
     }
 
     // ##############################################
