@@ -1,15 +1,13 @@
-
 public class MainTree {
     public static void main(String[] args) {
-        BinTree tree = new BinTree(10);
+        BinaryTree tree = new BinaryTree(10);
+
         tree.insert(15);
-        tree.insert(12);
-        tree.insert(17);
         tree.insert(5);
-        tree.insert(3);
+        tree.insert(2);
         tree.insert(7);
+        tree.insert(17);
 
-        tree.visitaPosticipata();
-
+        tree.stampaLinee();
     }
 }

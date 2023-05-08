@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class BinTree {
+public class BinaryTree {
     /*
      * Tree model -> L - ROOT - R : (Standard)
      * Primitive methods:
@@ -17,7 +17,8 @@ public class BinTree {
     // # ATTRIBUTES #
     // ##############################################
 
-    Node root;
+    private Node root;
+    private int height;
 
     // ##############################################
     // # CONSTRUCTORS #
@@ -26,7 +27,7 @@ public class BinTree {
     /*
      * Empty constructor
      */
-    public BinTree() {
+    public BinaryTree() {
         root = new Node();
     }
 
@@ -37,7 +38,7 @@ public class BinTree {
      * Parameters:
      * - int val -> Value of the root
      */
-    public BinTree(int rootValue) {
+    public BinaryTree(int rootValue) {
         root = new Node(rootValue, null);
     }
 
@@ -82,7 +83,8 @@ public class BinTree {
      * - int val -> Value of the node to insert in the tree
      */
     public void insert(int value) {
-        root.insert(value);
+        height = root.insert(value);
+        return;
     }
 
     /*
@@ -95,7 +97,8 @@ public class BinTree {
      * - Node val -> Node to insert in the tree
      */
     public void insert(Node value) {
-        root.insert(value);
+        height = root.insert(value);
+        return;
     }
 
     // ##############################################
@@ -128,6 +131,55 @@ public class BinTree {
      */
     public void visitaPosticipata() {
         root.visitaPosticipata();
+    }
+
+    /*
+     * Method stampaPiramide()
+     * Summary:
+     * Prints the tree in an ordered pyramid.
+     */
+    public void stampaPiramide() {
+        Queue<Node> queue = new LinkedList<Node>();
+        queue.add(root);
+        int ctr = 1;
+        int ctrh = 0;
+        for (int i = 0; i < height; i++) {
+            System.out.print(" ");
+        }
+        while (!queue.isEmpty()) {
+            ctr--;
+            Node tmp = queue.remove();
+
+            System.out.print(tmp.value + " ");
+            for (int i = 0; i < (height - ctrh); i++) {
+                System.out.print(" ");
+            }
+
+            if (tmp.lx != null) {
+                queue.add(tmp.lx);
+            }
+            if (tmp.rx != null) {
+                queue.add(tmp.rx);
+            }
+
+            if (ctr == 0) {
+                ctrh++;
+                ctr = queue.size();
+                System.out.println();
+                for (int i = 0; i < (height - ctrh); i++) {
+                    System.out.print(" ");
+                }
+            }
+        }
+    }
+
+    /*
+     * Method stampaLinee()
+     * Summary:
+     * Prints the tree in an ordered pyramid.
+     */
+    public void stampaLinee() {
+        root.stampaLinee(root, 0);
     }
 }
 
@@ -214,12 +266,12 @@ class Node {
         // the node itself.
         if (value == val) {
             return self;
-        } else if (val > getValue() && getRx() != null) {
+        } else if (val > value && rx != null) {
             try {
                 return rx.find(val);
             } catch (NoSuchElementException e) {
             }
-        } else if (getLx() != null) {
+        } else if (lx != null) {
             try {
                 return lx.find(val);
             } catch (NoSuchElementException e) {
@@ -238,17 +290,18 @@ class Node {
      * Exceptions:
      * - NoSuchElementException -> If the node is the root and it has no childs
      */
+    // !NON PENSO SIA IL METODO MIGLIORE MA VA!
     public void delete() {
         if (rx != null) {
             // Get the value of the branch to the right and put it in this node
-            setValue(rx.getValue());
+            value = rx.value;
 
             Queue<Node> queue = new LinkedList<Node>();
-            if (rx.getRx() != null) {
-                queue.add(rx.getRx());
+            if (rx.rx != null) {
+                queue.add(rx.rx);
             }
-            if (rx.getLx() != null) {
-                queue.add(rx.getLx());
+            if (rx.lx != null) {
+                queue.add(rx.lx);
             }
             if (lx != null) {
                 queue.add(lx);
@@ -262,14 +315,14 @@ class Node {
             return;
         } else if (lx != null) {
             // Get the value of the branch to the left and put it in this node
-            setValue(lx.getValue());
+            value = lx.value;
 
             Queue<Node> queue = new LinkedList<Node>();
-            if (lx.getRx() != null) {
-                queue.add(lx.getRx());
+            if (lx.rx != null) {
+                queue.add(lx.rx);
             }
-            if (lx.getLx() != null) {
-                queue.add(lx.getLx());
+            if (lx.lx != null) {
+                queue.add(lx.lx);
             }
             rx = null;
             lx = null;
@@ -280,10 +333,10 @@ class Node {
             return;
         } else {
             if (father != null) {
-                if (father.getRx().getValue() == getValue()) {
-                    father.setRx(null);
+                if (father.rx.value == value) {
+                    father.rx = null;
                 } else {
-                    father.setLx(null);
+                    father.lx = null;
                 }
                 return;
             }
@@ -301,24 +354,26 @@ class Node {
      * Parameters:
      * - int val -> Value of the node to insert in the tree
      */
-    public void insert(int val) {
+    public int insert(int val) {
         // Check the value of the current node, and determine if it should go to the
         // left ( lesser ) or to the right ( greater ).
         if (value > val) {
             // If the child node of the side determined is not present, insert the node.
             if (lx == null) {
-                setLx(new Node(val, self));
+                lx = new Node(val, self);
+                return 1;
             } else {
-                lx.insert(val);
+                return lx.insert(val) + 1;
             }
         } else if (value < val) {
             if (rx == null) {
-                setRx(new Node(val, self));
+                rx = new Node(val, self);
+                return 1;
             } else {
-                rx.insert(val);
+                return rx.insert(val) + 1;
             }
         }
-        return;
+        return 1;
     }
 
     /*
@@ -332,26 +387,28 @@ class Node {
      * Parameters:
      * - Node val -> Node to insert in the tree
      */
-    public void insert(Node val) {
+    public int insert(Node val) {
         // Check the value of the current node, and determine if it should go to the
         // left ( lesser ) or to the right ( greater ).
-        if (value > val.getValue()) {
+        if (value > val.value) {
             // If the child node of the side determined is not present, insert the node.
             if (lx == null) {
-                setLx(val);
+                lx = val;
+                return 1;
             } else {
-                lx.insert(val);
+                return lx.insert(val) + 1;
             }
-        } else if (value < val.getValue()) {
+        } else if (value < val.value) {
             if (rx == null) {
-                setRx(val);
+                rx = val;
+                return 1;
             } else {
-                rx.insert(val);
+                return rx.insert(val) + 1;
             }
         }
         // This is the only case where the node is not inserted, because it already
         // exists.
-        return;
+        return 1;
     }
 
     // ##############################################
@@ -420,31 +477,23 @@ class Node {
         System.out.print(value + " ");
     }
 
-    // ##############################################
-    // # GETTERS & SETTERS #
-    // ##############################################
-
-    public int getValue() {
-        return value;
-    }
-
-    private void setValue(int value) {
-        this.value = value;
-    }
-
-    private Node getLx() {
-        return lx;
-    }
-
-    private void setLx(Node lx) {
-        this.lx = lx;
-    }
-
-    private Node getRx() {
-        return rx;
-    }
-
-    private void setRx(Node rx) {
-        this.rx = rx;
+    /*
+     * Method stampaLinee()
+     * Summary:
+     * Prints the tree in an ordered pyramid.
+     */
+    public void stampaLinee(Node curr, int space) {
+        System.out.print(space + "| ");
+        for (int i = 0; i < space; i++) {
+            System.out.print(" ");
+        }
+        System.out.print("└");
+        System.out.print(curr.value + "\n");
+        if (curr.lx != null) {
+            stampaLinee(curr.lx, space + 1);
+        }
+        if (curr.rx != null) {
+            stampaLinee(curr.rx, space + 1);
+        }
     }
 }
