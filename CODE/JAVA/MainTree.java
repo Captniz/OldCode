@@ -9,7 +9,7 @@ public class MainTree {
         tree.insert(17);
 
         tree.find(5);
-        tree.stampaLinee();
+        tree.stampaPiramide();
         tree.delete(5);
         tree.stampaLinee();
     }

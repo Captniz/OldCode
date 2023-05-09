@@ -14,11 +14,11 @@ public class BinaryTree {
          * Non-primitive methods:
          * - visitaSimmetrica() : void -> Prints the tree in ascending order.
          **/
-    
+
         // ##############################################
         // # ATTRIBUTES #
         // ##############################################
-    
+
         // data of the node
         int data;
         // Child node to the left
@@ -27,11 +27,11 @@ public class BinaryTree {
         Node right;
         // The father node
         Node father;
-    
+
         // ##############################################
         // # CONSTRUCTORS #
         // ##############################################
-    
+
         /*
          * Empty constructor
          */
@@ -41,7 +41,7 @@ public class BinaryTree {
             right = null;
             father = null;
         }
-    
+
         /*
          * Parametered constructor
          * Summary:
@@ -55,11 +55,11 @@ public class BinaryTree {
             right = null;
             father = fath;
         }
-    
+
         // ##############################################
         // # PRIMITIVES #
         // ##############################################
-    
+
         /*
          * Method Find()
          * Summary:
@@ -93,7 +93,7 @@ public class BinaryTree {
             }
             throw new NoSuchElementException("Node not found");
         }
-    
+
         /*
          * Method Delete()
          * Summary:
@@ -109,7 +109,7 @@ public class BinaryTree {
             if (right != null) {
                 // Get the data of the branch to the right and put it in this node
                 data = right.data;
-    
+
                 Queue<Node> queue = new LinkedList<Node>();
                 if (right.right != null) {
                     queue.add(right.right);
@@ -122,7 +122,7 @@ public class BinaryTree {
                 }
                 right = null;
                 left = null;
-    
+
                 while (!queue.isEmpty()) {
                     insert(queue.remove());
                 }
@@ -130,7 +130,7 @@ public class BinaryTree {
             } else if (left != null) {
                 // Get the data of the branch to the left and put it in this node
                 data = left.data;
-    
+
                 Queue<Node> queue = new LinkedList<Node>();
                 if (left.right != null) {
                     queue.add(left.right);
@@ -140,7 +140,7 @@ public class BinaryTree {
                 }
                 right = null;
                 left = null;
-    
+
                 while (!queue.isEmpty()) {
                     insert(queue.remove());
                 }
@@ -157,7 +157,7 @@ public class BinaryTree {
                 throw new NoSuchElementException("Cannot delete last root node");
             }
         }
-    
+
         /*
          * Method Insert() -> data
          * Summary:
@@ -189,7 +189,7 @@ public class BinaryTree {
             }
             return 1;
         }
-    
+
         /*
          * Method Insert() -> Node
          * Summary:
@@ -224,11 +224,11 @@ public class BinaryTree {
             // exists.
             return 1;
         }
-    
+
         // ##############################################
         // # NOT-PRIMITIVES #
         // ##############################################
-    
+
         /*
          * Method visitaSimmetrica()
          * Summary:
@@ -247,7 +247,7 @@ public class BinaryTree {
             }
             return;
         }
-    
+
         /*
          * Method visitaAnticipata()
          * Summary:
@@ -265,7 +265,7 @@ public class BinaryTree {
             }
             return;
         }
-    
+
         /*
          * Method visitaPosticipata()
          * Summary:
@@ -290,7 +290,7 @@ public class BinaryTree {
             }
             System.out.print(data + " ");
         }
-    
+
         /*
          * Method stampaLinee()
          * Summary:

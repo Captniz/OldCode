@@ -23,17 +23,9 @@ public class EsTree {
                 }
 
                 // Main
-                int sums[] = tree.sum();
-
                 tree.stampaLinee();
                 System.out.println();
-                if (sums[0] > sums[1]) {
-                    System.out.println("Left is greater");
-                } else if (sums[0] < sums[1]) {
-                    System.out.println("Right is greater");
-                } else {
-                    System.out.println("The branches are Equal");
-                }
+                System.out.println(tree.depth());
 
             } catch (Exception e) {
                 System.out.print("File vuoto");
@@ -111,6 +103,27 @@ class TreeCounter {
                 stampaLinee(curr.right, space + 1);
             }
         }
+
+        public int depth(int currDepth) {
+            int leftDepth = 0;
+            int rightDepth = 0;
+
+            if (left == null && right == null) {
+                return currDepth+1;
+            }
+            if (left != null) {
+                leftDepth = left.depth(currDepth + 1);
+            }
+            if (right != null) {
+                rightDepth = right.depth(currDepth + 1);
+            }
+
+            if (leftDepth > rightDepth) {
+                return leftDepth;
+            } else {
+                return rightDepth;
+            }
+        }
     }
 
     private Node root;
@@ -126,6 +139,10 @@ class TreeCounter {
             root.insert(data);
         }
         return;
+    }
+
+    public int depth() {
+        return root.depth(0);
     }
 
     public void stampaLinee() {
