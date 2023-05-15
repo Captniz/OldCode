@@ -2,6 +2,8 @@ var v = new Array(10);
 var str = "";
 var ctr = 0;
 
+alert(parseInt(Math.random() * 10));
+
 for (var i = 0; i < 10; i++) {
   v[i] = new Array(10);
 }

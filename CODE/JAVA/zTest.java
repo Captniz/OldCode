@@ -5,11 +5,23 @@ import java.io.*;
 
 public class zTest {
     public static void main(String[] args) {
-       int[] a = {10,2,4,5,6};
-       //contqxtualy load a queue
-         Queue<Integer> q = new LinkedList<Integer>();
-            for(int i=0; i<a.length; i++) {
-                q.add(a[i]);
-            }
+        num a = new num();
+        num b = a;
+        System.out.println(a.getA());
+        b = null;
+        System.out.println(a.getA());
+    }
+}
+
+class num {
+    int a;
+    num(){
+        a = 100;
+    }
+    public int getA() {
+        return a;
+    }
+    public void setA(int a) {
+        this.a = a;
     }
 }

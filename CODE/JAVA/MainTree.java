@@ -8,9 +8,6 @@ public class MainTree {
         tree.insert(7);
         tree.insert(17);
 
-        tree.find(5);
-        tree.stampaPiramide();
-        tree.delete(5);
         tree.stampaLinee();
     }
 }
