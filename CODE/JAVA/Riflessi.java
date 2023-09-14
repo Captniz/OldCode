@@ -51,6 +51,7 @@ public class Riflessi {
 
         f.refresh();
     }
+
 }
 
 class Fin extends JFrame {
@@ -79,7 +80,6 @@ class Fin extends JFrame {
     }
 
     public void refresh() {
-        setVisible(false);
         setVisible(true);
     }
 
