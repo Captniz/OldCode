@@ -1,1 +1,1 @@
-    public static void main(String[] args) {
+Thread.sleep(rnd.nextInt(1000));

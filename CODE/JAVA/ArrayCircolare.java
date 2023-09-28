@@ -1,14 +1,13 @@
 import java.util.Random;
 
 public class ArrayCircolare {
-
     public static void main(String[] args) {
-        final int DIM = 10;
-        Buffer buffer = new Buffer(DIM);
-        Semaphore P = new Semaphore(0);
-        Semaphore V = new Semaphore(DIM);
+        final int DIM = 10;                    
+        Buffer buffer = new Buffer(DIM);        
+        Semaphore P = new Semaphore(0);       
+        Semaphore V = new Semaphore(DIM);       
 
-        Producer p = new Producer(buffer, P, V);
+        Producer p = new Producer(buffer, P, V);    
         Consumer c = new Consumer(buffer, P, V);
 
         p.start();
@@ -17,10 +16,10 @@ public class ArrayCircolare {
 }
 
 class Buffer {
-    public int N;
-    public int B[];
-    public int in;
-    public int out;
+    public int N;       //Dimensione del buffer
+    public int B[];     //Buffer
+    public int in;      //Indice di inserimento
+    public int out;     //Indice di estrazione
 
     Buffer(int DIM) {
         N = DIM;
@@ -49,7 +48,7 @@ class Buffer {
 }
 
 class Semaphore {
-    private int permits;
+    private int permits;        //Numero di permessi
 
     public Semaphore(int v) {
         permits = v;
@@ -77,8 +76,8 @@ class Semaphore {
 
 class Producer extends Thread {
     private Buffer buffer;
-    private Semaphore P;
-    private Semaphore V;
+    private Semaphore P;        
+    private Semaphore V;        
     Random r = new Random();
 
     public Producer(Buffer b, Semaphore p, Semaphore v) {
