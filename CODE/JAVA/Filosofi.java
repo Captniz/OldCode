@@ -1,6 +1,6 @@
 import java.util.Random;
 
-public class ArrayCircolare2 {
+public class Filosofi {
     public static void main(String[] args) {
         final int DIM = 5;
         Semaphore sem[] = new Semaphore[DIM];

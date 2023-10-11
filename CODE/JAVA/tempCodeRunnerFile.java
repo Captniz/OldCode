@@ -1,1 +1,1 @@
-Thread.sleep(rnd.nextInt(1000));
+getValue

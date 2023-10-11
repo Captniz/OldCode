@@ -1,0 +1,21 @@
+Nella rete ho deciso di usare meno switch possibile e di usare le VLAN in modo da garantire un 
+costo ridotto della rete, cercando comunque di acconentare le richieste di flessibilità, 
+scalabilità, fault-security e sicurezza:
+
+Flessibilità:
+- Ogni router ha sette porte, in modo da poter collegare agltri host a piacimento senza avere un 
+numero di porte esagerato
+
+Scalabilità:
+- Oltre ad avere porte aggiuntive sugli switch, ho disposto 2 switch centrali in modo da soddisfare 
+anche la richiesta del sistema a stella estesa; per espandere la rete basta collegare un ulteriore
+switch a quelli centrali
+
+Fault security:
+- Sono presenti due switch centrali al posto di un singolo, ogni switch esterno è collegato
+ad entrambi in modo da garantire che la rottura di un cavo non comporti l'isolamento della
+sezione dal resto della rete
+
+Sicurezza:
+- Tutte le sezioni sono isolate da VLAN, comprese le telecamere, in modo da isolare i domini di 
+brodcast ed evitare il ricevimento di pacchetti indesiderati da altri pc
