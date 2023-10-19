@@ -9,10 +9,21 @@ public class RipassoFile {
             FileWriter output = new FileWriter("output.txt");
             FileReader input = new FileReader("input.txt");
             char c = (char) input.read();
+            String num = "0";
+            int sum = 0;
             while (c != (char) -1) {
                 c = (char) input.read();
-                output.write(c);
+                try {
+                    Integer.parseInt(String.valueOf(c));
+                    num += c;
+                } catch (Exception e) {
+                    if (num != "") {
+                        sum += Integer.parseInt(String.valueOf(num));
+                        num = "";
+                    }
+                }
             }
+            output.write(String.valueOf(sum));
             input.close();
             output.close();
         } catch (IOException e) {
