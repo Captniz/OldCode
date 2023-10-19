@@ -1,21 +1,36 @@
+import java.io.OutputStream;
+import java.io.PrintWriter;
 import java.net.*;
 import java.util.*;
 
 public class ServerServer {
     public static void main(String[] args) {
-        try {
-            ServerSocket s = new ServerSocket(5862);
-            Scanner scn = new Scanner(System.in);
-            Socket sock = s.accept();
+        final int PORT = 5862;
+        Socket ClientSocket;
+        ServerSocket ServerSocket;
+        PrintWriter ClientStreamOut;
+        Scanner scn = new Scanner(System.in);
 
-            String txt = "Connesso";
-            sock.getOutputStream().write(txt.getBytes());
+        System.out.println("Server started ...");
+
+        try {
+            ServerSocket = new ServerSocket(PORT);
+            
+            ClientSocket = ServerSocket.accept();
+            System.out.println("Client connected !");
+            
+            String txt = "Server connected !";
+            ClientStreamOut = new PrintWriter(ClientSocket.getOutputStream());
+            ClientStreamOut.println(txt);
+
             while (txt != "exit") {
+                System.out.println("Text: ");
                 txt = scn.nextLine();
-                sock.getOutputStream().write(txt.getBytes());
+                ClientStreamOut.println(txt);
             }
+
             scn.close();
-            s.close();
+            ClientSocket.close();
         } catch (Exception e) {
             System.out.println("Errore Server");
         }
