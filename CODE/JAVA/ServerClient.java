@@ -1,7 +1,6 @@
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.*;
-import java.util.*;
 
 public class ServerClient {
     
@@ -15,6 +14,7 @@ public class ServerClient {
 
         try {
             ServerSocket = new Socket(IP, PORT);
+            System.out.println("Client connected !");
             ServerStreamIn = new BufferedReader(new InputStreamReader(ServerSocket.getInputStream()));
 
             String txt = ServerStreamIn.readLine();
@@ -23,7 +23,10 @@ public class ServerClient {
                 txt = ServerStreamIn.readLine();
             }
 
+            ServerSocket.close();
+            ServerStreamIn.close();
             System.out.println("Client disconnected !");
+            
         } catch (Exception e) {
             System.out.println("Errore Server");
         }
