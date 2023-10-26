@@ -1,4 +1,3 @@
-import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.net.*;
 import java.util.*;
@@ -20,7 +19,7 @@ public class ServerServer {
             System.out.println("Client connected !");
             
             String txt = "Server connected !";
-            ClientStreamOut = new PrintWriter(ClientSocket.getOutputStream());
+            ClientStreamOut = new PrintWriter(ClientSocket.getOutputStream(),true);
             ClientStreamOut.println(txt);
 
             while (txt != "exit") {
@@ -29,6 +28,8 @@ public class ServerServer {
                 ClientStreamOut.println(txt);
             }
 
+            ServerSocket.close();
+            ClientStreamOut.close();
             scn.close();
             ClientSocket.close();
         } catch (Exception e) {
@@ -37,3 +38,4 @@ public class ServerServer {
 
     }
 }
+
