@@ -1,4 +1,3 @@
-package es_tre;
 import java.util.*;
 import java.io.*;
 
@@ -8,7 +7,7 @@ public class es_tre {
        Libro[] libri;
        
         try {
-            BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\5ciin-17\\Documents\\NetBeansProjects\\es_tre\\src\\es_tre\\input.txt"));
+            BufferedReader br = new BufferedReader(new FileReader("input.txt"));
             String tmp = "";
             int ctr = 0;
             tmp = br.readLine();
@@ -19,7 +18,7 @@ public class es_tre {
             br.close();
        
             libri = new Libro[ctr];
-            Scanner sc = new Scanner(new File("C:\\Users\\5ciin-17\\Documents\\NetBeansProjects\\es_tre\\src\\es_tre\\input.txt"));
+            Scanner sc = new Scanner(new File("input.txt"));
             
             for(int i=0;i<ctr;i++){
                 libri[i] = new Libro(Integer.parseInt(sc.next()),sc.next(),Float.parseFloat(sc.next()));
