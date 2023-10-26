@@ -1,0 +1,11 @@
+1 aaa 4.5
+2 bbb 6.0
+3 ccc 7.3
+4 ddd 5.1
+5 eee 4.4
+6 fff 6.2
+7 ggg 3.9
+8 hhh 5.4
+9 iii 7.0
+10 lll 7.2
+11 mmm 5.8
