@@ -1,34 +1,61 @@
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.util.*;
 import java.net.*;
 
 public class ServerClient {
-    
+
     public static void main(String[] args) {
         final String IP = "127.0.0.1";
         final int PORT = 5862;
-        Socket ServerSocket;
-        BufferedReader ServerStreamIn;
-        
-        System.out.println("Client connecting ...");
+        Socket serverSocket;
+        PrintWriter serverStreamOut;
+        BufferedReader serverStreamIn;
+        Scanner scn = new Scanner(System.in);
 
         try {
-            ServerSocket = new Socket(IP, PORT);
-            System.out.println("Client connected !");
-            ServerStreamIn = new BufferedReader(new InputStreamReader(ServerSocket.getInputStream()));
+            System.out.println("Nome:");
+            String txt = scn.nextLine();
 
-            String txt = ServerStreamIn.readLine();
-            while (txt != "exit") {
-                System.out.println(txt);
-                txt = ServerStreamIn.readLine();
+            serverSocket = new Socket(IP, PORT);
+            serverStreamOut = new PrintWriter(serverSocket.getOutputStream(), true);
+            serverStreamIn = new BufferedReader(new InputStreamReader(serverSocket.getInputStream()));
+            System.out.println("Client connecting ...");
+
+            MsgReciever msg = new MsgReciever(serverStreamIn);
+            msg.start();
+
+            serverStreamOut.println(txt);
+
+            for (;;) {
+                txt = scn.nextLine();
+                serverStreamOut.println(txt);
             }
 
-            ServerSocket.close();
-            ServerStreamIn.close();
-            System.out.println("Client disconnected !");
-            
         } catch (Exception e) {
             System.out.println("Errore Server");
+        }
+    }
+}
+
+class MsgReciever extends Thread {
+    BufferedReader serverStreamIn;
+
+    MsgReciever(BufferedReader serverStreamIn) {
+        this.serverStreamIn = serverStreamIn;
+    }
+
+    @Override
+    public void run() {
+        String txt;
+        for (;;) {
+            try {
+                txt = serverStreamIn.readLine();
+                System.out.println(txt);
+            } catch (Exception e) {
+                System.out.println("Errore Server");
+            }
         }
     }
 }
