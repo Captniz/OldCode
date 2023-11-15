@@ -31,10 +31,18 @@ public class ServerClient {
             for (;;) {
                 txt = scn.nextLine();
                 serverStreamOut.println(txt);
+                if (txt.equals("exit")) {
+                    System.out.println("{[[disconnected !]]}");
+                    serverSocket.close();
+                    serverStreamIn.close();
+                    serverStreamOut.close();
+                    return;
+                }
             }
 
         } catch (Exception e) {
             System.out.println("Errore Server");
+            return;
         }
     }
 }
@@ -55,6 +63,7 @@ class MsgReciever extends Thread {
                 System.out.println(txt);
             } catch (Exception e) {
                 System.out.println("Errore Server");
+                return;
             }
         }
     }
