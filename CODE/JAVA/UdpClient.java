@@ -12,7 +12,7 @@ public class UdpClient {
         Scanner scn;
         DatagramSocket ds;
 
-        ds = new DatagramSocket(PORT);
+        ds = new DatagramSocket();
         scn = new Scanner(System.in);
 
         System.out.println("Msg:");

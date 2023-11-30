@@ -20,7 +20,7 @@ public class ServerClient {
 
             serverSocket = new Socket(IP, PORT);
             serverStreamOut = new PrintWriter(serverSocket.getOutputStream(), true);
-            serverStreamIn = new BufferedReader(new InputStreamReader(serverSocket.getInputStream()));
+            serverStreamIn = new BufferedReader(new InputStreamReader(serverSocket.getInputStream())); 
             System.out.println("Client connecting ...");
 
             MsgReciever msg = new MsgReciever(serverStreamIn);

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Crea l'entità messaggio che ha un mittente, un destinatario, una data, un oggetto e del testo.
+-->
+
+
+<messaggio>
+    <mittente>Luca</mittente>
+    <destinatario>Marco</destinatario>
+    <data>12/12/2012</data>
+    <oggetto>Prova</oggetto>
+    <testo>Testo di prova</testo>
+</messaggio>
+
+<!--
+    Crea l'entità Rubrica caratterizzata da un contatto, composto da nome, cognome e telefono. Inserisci due contatti
+-->
+
+<rubrica>
+    <contatto>
+        <nome>Luca</nome>
+        <cognome>Verdi</cognome>
+        <telefono>123456789</telefono>
+    </contatto>
+    <contatto>
+        <nome>Marco</nome>
+        <cognome>Bianchi</cognome>
+        <telefono>987654321</telefono>
+    </contatto>
+</rubrica>

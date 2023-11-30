@@ -3,8 +3,7 @@ import java.net.*;
 public class UdpServer {
     public static void main(String[] args) throws Exception {
         final int PORT = 4000;
-        final InetAddress IP = InetAddress.getByName("localhost");
-        DatagramSocket socket = new DatagramSocket(PORT, IP);
+        DatagramSocket socket = new DatagramSocket(PORT);
 
         System.out.println("Server started");
 
