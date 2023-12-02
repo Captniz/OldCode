@@ -1,0 +1,97 @@
+<!--Per l’implementazione del sito di un’emittente televisiva, si vuole usare l’XML per descrivere l’entità
+programmazione del giorno, a parole così definita: “una programmazione è caratterizzata da una data e da un
+elenco di programmi, per ognuno dei quali è necessario specificare l’ora di inizio e di fine, il titolo, il genere (film,
+intrattenimento, informazione, ecc.) e, nel caso dei film, il pubblico a cui si rivolge (T = tutti, BA = bambini solo con
+adulti e A= adulti). Alcuni programmi possono essere inseriti all’interno di altri, cosa di cui si deve tenere
+conto nella scelta della strutturazione da adottare. Si definiscano dei tag e degli attributi opportuni in
+grado di caratterizzare l’entità, e si usino poi per rappresentare 
+
+la programmazione del 28 novembre 2003, formata dai seguenti programmi: 
+dalle 8 alle 8:30 il telegiornale; 
+dalle 8:30 alle 12:30 il programma di intrattenimento “Buongiorno!’, 
+con un intermezzo dalle 10:00 alle 10:15 per il programma “Gli astri”, dedicato all’astrologia; 
+dalle 12:30 alle 13:30 il telegiornale; 
+dalle 13:30 alle 15:30 il film per tutta la famiglia “Biancaneve e i sette nani”; 
+dalle 15:30 alle 19:30 “Pomeriggio insieme”, un programma di intrattenimento per ragazzi, 
+con un intermezzo dalle 17:00 alle 17:30 per il telegiornale; 
+dalle 19:30 alle 20:30 il telegiornale; 
+dalle 20:30 alle 23:00 il film sconsigliato ai bambini “Il conte Dracula”; 
+dalle 23:00 alle 23:30 il telegiornale.-->
+
+<sito>
+    <programmazione>
+        <data>28 novembre 2003</data>
+        <programmi>
+            <programma>
+                <oraInizio>8:00</oraInizio>
+                <oraFine>8:30</oraFine>
+                <titolo>Telegiornale</titolo>
+                <genere>Informazione</genere>
+                <pubblico>T</pubblico>
+            </programma>
+            <programma>
+                <oraInizio>8:30</oraInizio>
+                <oraFine>12:30</oraFine>
+                <titolo>Buongiorno!</titolo>
+                <genere>Intrattenimento</genere>
+                <pubblico>T</pubblico>
+            </programma>
+            <programma>
+                <oraInizio>10:00</oraInizio>
+                <oraFine>10:15</oraFine>
+                <titolo>Gli astri</titolo>
+                <genere>Altro</genere>
+                <pubblico>T</pubblico>
+            </programma>
+            <programma>
+                <oraInizio>12:30</oraInizio>
+                <oraFine>13:30</oraFine>
+                <titolo>Telegiornale</titolo>
+                <genere>Informazione</genere>
+                <pubblico>T</pubblico>
+            </programma>
+            <programma>
+                <oraInizio>13:30</oraInizio>
+                <oraFine>15:30</oraFine>
+                <titolo>Biancaneve e i sette nani</titolo>
+                <genere>Film</genere>
+                <pubblico>T</pubblico>
+            </programma>
+            <programma>
+                <oraInizio>15:30</oraInizio>
+                <oraFine>19:30</oraFine>
+                <titolo>Pomeriggio insieme</titolo>
+                <genere>Intrattenimento</genere>
+                <pubblico>R</pubblico>
+            </programma>
+            <programma>
+                <oraInizio>17:00</oraInizio>
+                <oraFine>17:30</oraFine>
+                <titolo>Telegiornale</titolo>
+                <genere>Informazione</genere>
+                <pubblico>T</pubblico>
+            </programma>
+            <programma>
+                <oraInizio>19:30</oraInizio>
+                <oraFine>20:30</oraFine>
+                <titolo>Telegiornale</titolo>
+                <genere>Informazione</genere>
+                <pubblico>T</pubblico>
+            </programma>
+            <programma>
+                <oraInizio>20:30</oraInizio>
+                <oraFine>23:00</oraFine>
+                <titolo>Il conte Dracula</titolo>
+                <genere>Film</genere>
+                <pubblico>A</pubblico>
+            </programma>
+            <programma>
+                <oraInizio>23:00</oraInizio>
+                <oraFine>23:30</oraFine>
+                <titolo>Telegiornale</titolo>
+                <genere>Informazione</genere>
+                <pubblico>T</pubblico>
+            </programma>
+        </programmi>
+    </programmazione>
+</sito>

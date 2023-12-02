@@ -29,3 +29,13 @@
         <telefono>987654321</telefono>
     </contatto>
 </rubrica>
+
+<!--
+    Crea l’entità ricetta caratterizzata da un titolo, vari ingredienti composti da nome e quantità, dalle istruzioni di preparazione. Inserire una ricetta con 3 ingredienti.
+-->
+
+<ricetta>
+        <titolo>Caffe</titolo>
+        <ingredienti>Caffe - Abbastanza , Acqua - Fino alla valvola, Basta</ingredienti>
+        <istruzioni>Metti l'acqua e il caffe' nella mocca, mettila sul fuoco</istruzioni>
+</ricetta>

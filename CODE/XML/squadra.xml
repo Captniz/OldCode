@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<libreria>
+    <libro>
+        <titolo>La Bibbia II - L'impero romano colpisce ancora</titolo>
+        <edizione>Seconda</edizione>
+        <autori>
+            <autore id="1">Gesu</autore>
+            <autore id="2">I dodici apostoli</autore>
+        </autori>
+        <codice>2</codice>
+        <editore>Lo scriba in piazza</editore>
+        <anno>32 DC</anno>
+        <prezzo>33$</prezzo>
+        <sconto>
+            <valore>33%</valore>
+            <periodo>Fino all'apocalisse circa</periodo>
+        </sconto>
+        <disponibili>1</disponibili>
+    </libro>
+</libreria>
