@@ -1,0 +1,85 @@
+# Protocolli:
+
+## HTTP
+- Settare il server DNS con un ANAME (www.xxx.com)
+
+## SMTP
+- Settare il server DNS o con CNAME o direttamente con il dominio
+- Settare il server locale con gli account delle mail
+- Settare il computer singolo (!IMPORTANTE! il nome è irrilevante ma l'email deve essere: [nome_account]@[dominio])
+
+## DHCP
+- Setta il server ( IP, Default getaway, DNS )
+- Accendi il servizio
+- Crea il profilo
+- Attiva il DHCP sui PC
+
+## RIP
+- Imposta ogni router 
+- (Basta mettere l'IP delle reti)
+
+## DNS
+- Impostare il server DNS
+- Dare il DNS a tutti gli altri PC
+- Impostare i record:
+- - A RECORD: | www.x.com | 192.168.0.1
+- - CNAM: | www.x.com | www.y.com
+
+## FTP
+- Setta il server FTP con un account
+- Da terminale PC esegui il comando 'ftp [ip/url]'
+
+## ACL (FIREWALL)
+- Router>enable
+- Router#configure terminal
+- Router(config)#access-list 1 deny 192.168.1.1 0.0.0.0
+- Router(config)#access-list 1 permit any
+- Router(config)#interface fastEthernet0/1
+- Router(config-if)#ip access-group 1 out
+- Router(config-if)#/‘Z
+
+# Hardware:
+
+## DMZ
+- Solo teorico nella relazione
+
+## VLAN
+- Imposta il DB delle VLAN sugli switch
+- Imposta in ogni porta la VLAN
+- Per ogni VLAN cambia l'IP dei PC all'interno
+
+## NAT
+- Router>enable
+- Router#configure terminal
+- Router{config)#interface fastEthernet0/0
+- Router(config-if)#ip nat inside
+- Router(config-if}#no shutdown
+- Router(config-if)#exit
+- Router(config)#interface fastEthernet0/1
+- Router(config-if)#ip nat outside
+- Router(config-if)#no shutdown
+- Router(config-if)#ip nat inside source static 192.168.1.1 200.100.50.254
+- Router(config-if)#exit
+- Router(config)#do wr
+- Router{config)#exit
+
+
+# Schema della relazione
+
+## SCOPO
+- La consegna
+
+## OBBIETTIVI
+- Obbiettivi specifici della consegna o generali (ES: Sicurezza, Costi contenuti, Tolleranza ai guasti, Etc...)
+
+## STRUTTURA
+- Foto / Lista componenti
+
+## RETE
+- Spiegazione per parti delle scelte applicate nella creazione della rete
+- Spiegazione nel semi-specifico del funzionamento delle scelte applicate (Es. Numero di IP disponibile, Nome del dominio, Etc...)
+- Foto opzionali
+
+## CONCLUSIONE
+- Puramente opzionale
+- Riassunto
