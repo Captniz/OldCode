@@ -1,0 +1,50 @@
+INSERT INTO xxx VALUES ();
+
+Alterazioni e creazioni:>
+
+DROP DATABASE IF EXISTS xxx;
+CREATE DATABASE xxx;
+\c xxx
+TRUNCATE xxx;
+
+ALTER TABLE xxx ... 
+... ADD xxx integer;
+... DROP xxx;
+... ALTER xxx TYPE integer;
+... DROP CONSTRAINT xxx_pkey;
+
+UPDATE xxx ...
+... SET xxx = yyy WHERE ...
+DELETE FROM xxx WHERE yyy = zzz;
+
+Queries:>
+
+SELECT * FROM xxx ...
+SELECT DISTINCT ...
+SELECT xxx AS yyy ...
+... xxx, funz(yyy) FROM zzz GROUP BY xxx...
+... ORDER BY xxx ASC/DESC; 
+... WHERE ...
+... LIKE ...
+... BETWEEN xxx AND yyy;
+... HAVING funz() = 1;
+... LIMIT x;
+... OFFSET x;
+... FROM xxx FULL/INNER/CROSS/RIGHT/LEFT JOIN xxx ON yyy = zzz;
+... NATURAL JOIN ...
+... JOIN xxx USING(yyy);
+
+
+Queries nidificate:>
+
+SELECT * FROM x WHERE x.y IN (SELECT * FROM y);
+
+
+Funzioni:>
+
+COUNT()
+AVG()
+MAX()
+MIN()
+SUM()
+EXTRACT(MONTH FROM data)
