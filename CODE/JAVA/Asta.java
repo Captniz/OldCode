@@ -10,12 +10,15 @@ public class Asta {
 
     public static void main(String[] args) {
         Server server = new Server();
-        Client client;
+        Client[] client = new Client[3];
         server.start();
 
+        client[0] = new Client("Piero");
+        client[1] = new Client("Giovanni");
+        client[2] = new Client("Giacomo");
+
         for (int i = 0; i < 3; i++) {
-            client = new Client();
-            client.start();
+            client[i].start();
         }
     }
 }
@@ -27,10 +30,10 @@ class Client extends Thread {
     int budget;
     int bias;
 
-    public Client() {
+    public Client(String name) {
         try {
             Random rand = new Random();
-
+            this.setName(name);
             clientSocket = new Socket(Asta.IP, Asta.PORT);
             clientStreamOut = new PrintWriter(clientSocket.getOutputStream(), true);
             clientStreamIn = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
@@ -97,6 +100,7 @@ class Server extends Thread {
             while (manager.getClientLength() < 3) {
                 System.out.println("Aspettando i client...");
                 Thread.sleep(1000);
+                System.out.println("\n---------\n");
             }
 
             for (;;) {
