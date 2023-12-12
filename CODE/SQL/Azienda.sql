@@ -53,38 +53,30 @@ INSERT INTO forniture VALUES('6','AZX200',1000);
 INSERT INTO forniture VALUES('6','AZX300',2500);
 INSERT INTO forniture VALUES('6','AZX400',2000);
 
-SELECT a_nome, colore, peso AS pesetto FROM articoli WHERE a_cod='AZX100';
-SELECT * FROM articoli WHERE colore='Rosso';
-SELECT a_nome, a_nome AS nomino, a_nome FROM articoli WHERE colore='Rosso';
-SELECT forniture.a_cod , fornitori.f_cod, forniture.quantita, fornitori.nome FROM fornitori, forniture WHERE fornitori.f_cod = forniture.f_cod;
-SELECT a_cod , f_cod, quantita FROM forniture;
-SELECT fornitori.nome FROM fornitori, forniture WHERE forniture.quantita > 2500 AND fornitori.f_cod = forniture.f_cod;
-SELECT DISTINCT articoli.a_nome FROM articoli, fornitori, forniture WHERE forniture.f_cod = '1' AND forniture.a_cod = articoli.a_cod;
-SELECT * FROM articoli WHERE articoli.a_cod IN (SELECT forniture.a_cod FROM forniture WHERE forniture.f_cod = '1')
---Articoli venduti a firenze (nome,colore)
-SELECT a_nome, colore FROM articoli WHERE citta='Firenza';
---Quante sono le forniture di firenze
-SELECT COUNT(a_cod) AS numero FROM forniture WHERE a_cod IN (SELECT a_cod FROM articoli WHERE citta='Firenza');
---Citta con articoli di colore rosso
-SELECT DISTINCT citta FROM articoli WHERE colore='Rosso';
---Cont le right di articoli
-SELECT COUNT(a_cod) AS numeroTuple FROM articoli;
---Elenco di fornitori con almeno un articolo
-SELECT DISTINCT * FROM fornitori;
---Media delle forniture con codice 1
-SELECT AVG(quantita) AS mediaForn FROM forniture;
---Nome e peso dell oggetto di peso massimo di colore rosso
-SELECT a_nome, MAX(peso) FROM articoli WHERE colore='Rosso' GROUP BY a_nome;
-SELECT a_cod, SUM(quantita) FROM forniture GROUP BY a_cod;
--- ???? cosa fa HAVING
-SELECT a_cod FROM forniture GROUP BY a_cod HAVING COUNT(*) > 1;
---- ???? Come trovo solo quello col massimo di un dato 
-
-
 
 --VERIFICA:
+SELECT * FROM articoli WHERE a_cod IN (SELECT a_cod FROM forniture WHERE f_cod = '1');
+
+SELECT COUNT(*) FROM forniture WHERE a_cod IN (SELECT a_cod FROM articoli WHERE citta = 'Firenze');
+
+SELECT * FROM articoli LEFT JOIN forniture ON articoli.a_cod = forniture.a_cod OFFSET 9; 
+
+SELECT DISTINCT fornitori.nome FROM fornitori JOIN forniture ON fornitori.f_cod = forniture.f_cod ORDER BY fornitori.nome DESC;
+
+-------
+
+SELECT forniture.f_cod, SUM(forniture.quantita) FROM forniture GROUP BY forniture.f_cod HAVING SUM(forniture.quantita) > 3000;
+
+SELECT fornitori.nome,fornitori.f_cod,articoli.a_nome,articoli.a_cod, forniture.quantita FROM fornitori,forniture,articoli WHERE fornitori.f_cod AND articoli.a_cod IN (SELECT a_cod, f_cod FROM forniture WHERE quantita > 3000);
+
 SELECT fornitori.nome,articoli.a_nome,forniture.quantita FROM fornitori,forniture,articoli WHERE forniture.a_cod = articoli.a_cod AND fornitori.f_cod = forniture.f_cod AND forniture.f_cod = '1';
 
+SELECT fornitori.f_cod, fornitori.nome, fornitori.citta, forniture.quantita FROM fornitori, forniture WHERE forniture.f_cod = fornitori.f_cod AND forniture.quantita = MAX(forniture.quantita);
+
 SELECT fornitori.f_cod, fornitori.nome, fornitori.citta, forniture.quantita FROM fornitori, forniture WHERE forniture.f_cod = fornitori.f_cod AND forniture.quantita IN (SELECT MAX(quantita) FROM forniture);
+
+ciao;
+
+SELECT fornitori.f_cod, fornitori.nome, fornitori.citta, COUNT(articoli.*) FROM fornitori, articoli GROUP BY fornitori.f_cod ORDER BY COUNT(articoli.*) DESC LIMIT 1;
 
 SELECT forniture.f_cod, fornitori.nome, fornitori.citta, COUNT(forniture.*) FROM fornitori, forniture GROUP BY forniture.f_cod ORDER BY COUNT(forniture.*) DESC LIMIT 1;
