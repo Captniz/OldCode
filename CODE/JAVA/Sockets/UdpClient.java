@@ -3,7 +3,6 @@ import java.net.*;
 import java.util.*;
 
 public class UdpClient {
-
     public static void main(String[] args) throws Exception {
 
         final int PORT = 4000;
