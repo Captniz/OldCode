@@ -67,16 +67,10 @@ SELECT DISTINCT fornitori.nome FROM fornitori JOIN forniture ON fornitori.f_cod 
 
 SELECT forniture.f_cod, SUM(forniture.quantita) FROM forniture GROUP BY forniture.f_cod HAVING SUM(forniture.quantita) > 3000;
 
-SELECT fornitori.nome,fornitori.f_cod,articoli.a_nome,articoli.a_cod, forniture.quantita FROM fornitori,forniture,articoli WHERE fornitori.f_cod AND articoli.a_cod IN (SELECT a_cod, f_cod FROM forniture WHERE quantita > 3000);
+SELECT fornitori.nome,fornitori.f_cod,articoli.a_nome,articoli.a_cod, forniture.quantita FROM fornitori JOIN forniture ON fornitori.f_cod = forniture.f_cod JOIN articoli ON articoli.a_cod = forniture.a_cod WHERE forniture.quantita;
 
-SELECT fornitori.nome,articoli.a_nome,forniture.quantita FROM fornitori,forniture,articoli WHERE forniture.a_cod = articoli.a_cod AND fornitori.f_cod = forniture.f_cod AND forniture.f_cod = '1';
-
-SELECT fornitori.f_cod, fornitori.nome, fornitori.citta, forniture.quantita FROM fornitori, forniture WHERE forniture.f_cod = fornitori.f_cod AND forniture.quantita = MAX(forniture.quantita);
+SELECT fornitori.nome,articoli.a_nome,forniture.quantita FROM fornitori JOIN forniture ON fornitori.f_cod = forniture.f_cod JOIN articoli ON articoli.a_cod = forniture.a_cod WHERE fornitori.f_cod = '1';
 
 SELECT fornitori.f_cod, fornitori.nome, fornitori.citta, forniture.quantita FROM fornitori, forniture WHERE forniture.f_cod = fornitori.f_cod AND forniture.quantita IN (SELECT MAX(quantita) FROM forniture);
-
-ciao;
-
-SELECT fornitori.f_cod, fornitori.nome, fornitori.citta, COUNT(articoli.*) FROM fornitori, articoli GROUP BY fornitori.f_cod ORDER BY COUNT(articoli.*) DESC LIMIT 1;
 
 SELECT forniture.f_cod, fornitori.nome, fornitori.citta, COUNT(forniture.*) FROM fornitori, forniture GROUP BY forniture.f_cod ORDER BY COUNT(forniture.*) DESC LIMIT 1;
