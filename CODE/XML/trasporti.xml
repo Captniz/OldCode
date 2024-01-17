@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trasporti-pubblici>
+    <linee>
+        <linee-bus>
+            <nome>Bus 1</nome>
+            <tipo>express</tipo>
+            <fermate>
+                <fermata nome="Fermata A">
+                    <orario>08:00</orario>
+                </fermata>
+                <fermata nome="Fermata B">
+                    <orario>08:15</orario>
+                </fermata>
+            </fermate>
+        </linee-bus>
+
+        <linee-tram>
+            <nome>Tram 2</nome>
+            <tipo>notte</tipo>
+            <fermate>
+                <fermata nome="Fermata A">
+                    <orario>22:00</orario>
+                </fermata>
+                <fermata nome="Fermata B">
+                    <orario>22:15</orario>
+                </fermata>
+            </fermate>
+        </linee-tram>
+
+        <linee-treno>
+            <nome>Train A</nome>
+            <tipo>espressa</tipo>
+            <fermate>
+                <fermata nome="Stazione 1">
+                    <orario>07:45</orario>
+                </fermata>
+                <fermata nome="Stazione 2">
+                    <orario>08:00</orario>
+                </fermata>
+            </fermate>
+        </linee-treno>
+    </linee>
+
+    <eventi>
+        <evento>
+            <tipo>fallimento-linea</tipo>
+            <line>Bus 1</line>
+            <descrizione>Guasto tecnico sulla linea Bus 1</descrizione>
+        </evento>
+        <evento>
+            <tipo>chiusura-fermata</tipo>
+            <line>Tram 2</line>
+            <fermata>fermata Y</fermata>
+            <descrizione>Chiusura temporanea della fermata fermata Y sulla linea Tram 2</descrizione>
+        </evento>
+    </eventi>
+</trasporti-pubblici>
+

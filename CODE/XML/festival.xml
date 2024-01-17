@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+<programma>
+    <giorno date="2024-07-01">
+        <mattino>
+            <evento>
+                <ora>10:00</ora>
+                <stage>Main Stage</stage>
+                <artista>
+                    <nome>artista A</nome>
+                    <desc>Descrizione breve dell'artista A.</desc>
+                    <albums>
+                        <album>
+                            <titolo>Album 1</titolo>
+                            <anno>2020</anno>
+                            <tracce_principali>
+                                <traccia>Song 1</traccia>
+                                <traccia>Song 2</traccia>
+                            </tracce_principali>
+                        </album>
+                    </albums>
+                </artista>
+                <genere>Rock</genere>
+            </evento>
+        </mattino>
+
+        <pomeriggio>
+            <evento>
+                <ora>15:30</ora>
+                <stage>Acoustic Stage</stage>
+                <artista>
+                    <nome>artista B</nome>
+                    <desc>Descrizione breve dell'artista B.</desc>
+                    <albums>
+                        <album>
+                            <titolo>Album X</titolo>
+                            <anno>2018</anno>
+                            <tracce_principali>
+                                <traccia>Song A</traccia>
+                                <traccia>Song B</traccia>
+                            </tracce_principali>
+                        </album>
+                    </albums>
+                </artista>
+                <genere>Folk</genere>
+            </evento>
+        </pomeriggio>
+
+        <venditori>
+            <venditore>
+                <nome>Food Truck 1</nome>
+                <tipo>Food</tipo>
+            </venditore>
+            <venditore>
+                <nome>Merchandise Booth</nome>
+                <tipo>Merchandise</tipo>
+                <sponsor>True Merch Co.</sponsor>
+            </venditore>
+        </venditori>
+
+        <workshops>
+            <workshop>
+                <tipo>Musica</tipo>
+                <ora>12:00</ora>
+                <location>Workshop Area 1</location>
+            </workshop>
+            <workshop>
+                <tipo>Teatro</tipo>
+                <ora>16:00</ora>
+                <location>Workshop Area 2</location>
+            </workshop>
+        </workshops>
+    </giorno>
+
+    <giorno date="2024-07-02">
+    </giorno>
+</programma>
