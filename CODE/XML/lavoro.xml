@@ -1,0 +1,58 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="lavoro">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element type="xs:string" name="titolo"/>
+        <xs:element type="xs:string" name="desc"/>
+        <xs:element name="skills">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="skill" maxOccurs="4" minOccurs="0"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="location">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="compagnia"/>
+              <xs:element type="xs:string" name="citta"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element type="xs:short" name="salario"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
+
+<?xml version="1.0" encoding="UTF-8"?>
+<lavoro>
+    <titolo>
+        Webmaster
+    </titolo>
+    <desc>
+        We are looking for a Webmaster to oversee
+        the management of our company's website. The Webmaster will be responsible for working with other staff members to collect information for the website, and for creating and maintaining the web pages.
+    </desc>
+    <skills>
+        <skill>
+            Basic writing
+        </skill>
+        <skill>
+            Good communication
+        </skill>
+        <skill>
+            Unix
+        </skill>
+        <skill>
+            HTML
+        </skill>
+    </skills>
+
+    <location>
+        <compagnia>Società</compagnia>
+        <citta>Città</citta>
+    </location>
+    
+    <salario>1000</salario>
+</lavoro>

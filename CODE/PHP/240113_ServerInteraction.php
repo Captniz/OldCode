@@ -13,22 +13,23 @@
     $user = 'postgres';
     $password = '5130';
 
-    
     $connectionString = "host={$host} port={$port} dbname={$dbname} user={$user} password={$password}";
-    echo $connectionString;
 
     $conn = pg_connect($connectionString);
 
     if (!$conn) {
-        echo "Failed to connect to PostgreSQL server.";
+        die('Connessione al database fallita.' . pg_last_error());
     }else{
-        echo "<br>Fatto";
-        $query = "SELECT * FROM fornitori";
-        $result = pg_query($conn, $query);
-        $resultt = pg_fetch_assoc($result);
-        echo "<br>{$resultt['nome']}<br>";
+        echo "<br>Connessione riuscita.<br>";
     }
-    // Perform database operations here
+
+    echo "<br>Lista fornitori:<br>";
+
+    $query = "SELECT * FROM fornitori";
+    $query_r = pg_query($conn, $query);
+    while($result = pg_fetch_assoc($query_r)){
+        echo "<br>{$result['f_cod']} {$result['nome']} {$result['citta']}<br>";
+    }
 
     pg_close($conn);
 ?>

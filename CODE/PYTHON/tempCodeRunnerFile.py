@@ -1,1 +1,1 @@
-print("You lose!")
+float

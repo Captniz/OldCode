@@ -1,0 +1,66 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="pianoDiStudio">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="studente">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element type="xs:string" name="nome" />
+                            <xs:element type="xs:string" name="cognome" />
+                            <xs:element type="xs:byte" name="matricola" />
+                            <xs:element type="xs:string" name="dataNascita" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="anno" maxOccurs="unbounded" minOccurs="0">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="corso" maxOccurs="unbounded" minOccurs="0">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element type="xs:string" name="nomeCorso" />
+                                        <xs:element type="xs:byte" name="voto" minOccurs="0" />
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                        <xs:attribute type="xs:byte" name="anno" />
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
+
+<?xml version="1.0" encoding="UTF-8"?>
+<pianoDiStudio>
+    <studente>
+        <nome>Nome</nome>
+        <cognome>Cognome</cognome>
+        <matricola>30</matricola>
+        <dataNascita>20012-12-12</dataNascita>
+    </studente>
+
+    <anno anno="1">
+        <corso>
+            <nomeCorso>Corso 1</nomeCorso>
+            <voto>27</voto>
+        </corso>
+        <corso>
+            <nomeCorso>Corso 2</nomeCorso>
+            <voto>30</voto>
+        </corso>
+    </anno>
+
+    <anno anno="2">
+        <corso>
+            <nomeCorso>Corso 3</nomeCorso>
+            <voto>28</voto>
+        </corso>
+        <corso>
+            <nomeCorso>Corso 4</nomeCorso>
+        </corso>
+    </anno>
+
+</pianoDiStudio>
