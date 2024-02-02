@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalogo>
+    <libro>
+        <titolo>Il Signore degli Anelli</titolo>
+        <autore>J.R.R. Tolkien</autore>
+        <genere>Fantasy</genere>
+        <anno>1954</anno>
+    </libro>
+    <libro>
+        <titolo>1984</titolo>
+        <autore>George Orwell</autore>
+        <genere>Distopico</genere>
+        <anno>1949</anno>
+    </libro>
+    <libro>
+        <titolo>Orgoglio e Pregiudizio</titolo>
+        <autore>Jane Austen</autore>
+        <genere>Classico</genere>
+        <anno>1813</anno>
+    </libro>
+    <libro>
+        <titolo>Il Grande Gatsby</titolo>
+        <autore>F. Scott Fitzgerald</autore>
+        <genere>Fiction</genere>
+        <anno>1925</anno>
+    </libro>
+    <libro>
+        <titolo>Guerra e Pace</titolo>
+        <autore>Lev Tolstoj</autore>
+        <genere>Classico</genere>
+        <anno>1869</anno>
+    </libro>
+    <libro>
+        <titolo>Moby Dick</titolo>
+        <autore>Herman Melville</autore>
+        <genere>Avventura</genere>
+        <anno>1851</anno>
+    </libro>
+    <libro>
+        <titolo>L'ombra del vento</titolo>
+        <autore>Carlos Ruiz Zafón</autore>
+        <genere>Mistero</genere>
+        <anno>2001</anno>
+    </libro>
+    <libro>
+        <titolo>Il Codice Da Vinci</titolo>
+        <autore>Dan Brown</autore>
+        <genere>Thriller</genere>
+        <anno>2003</anno>
+    </libro>
+    <libro>
+        <titolo>La Fattoria degli Animali</titolo>
+        <autore>George Orwell</autore>
+        <genere>Satira</genere>
+        <anno>1945</anno>
+    </libro>
+    <libro>
+        <titolo>Il Piccolo Principe</titolo>
+        <autore>Antoine de Saint-Exupéry</autore>
+        <genere>Fiaba</genere>
+        <anno>1943</anno>
+    </libro>
+    <libro>
+        <titolo>Il Gattopardo</titolo>
+        <autore>Giuseppe Tomasi di Lampedusa</autore>
+        <genere>Storico</genere>
+        <anno>1958</anno>
+    </libro>
+    <libro>
+        <titolo>Cent'anni di Solitudine</titolo>
+        <autore>Gabriel García Márquez</autore>
+        <genere>Realismo Magico</genere>
+        <anno>1967</anno>
+    </libro>
+    <!-- ciao -->
+</catalogo>
