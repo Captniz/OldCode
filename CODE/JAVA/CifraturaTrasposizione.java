@@ -45,9 +45,10 @@ public class CifraturaTrasposizione {
             }
 
             fileWriter.write(finalCrypted);
-
+            
             fileReader.close();
             fileWriter.close();
+
         } catch (Exception e) {
             e.printStackTrace();
         }

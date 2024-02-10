@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>LIBRERIA</title>
+    <title>LEZIONE</title>
 </head>
 <body>
 <?php
@@ -41,6 +41,8 @@
     }
 
     getForniture($conn);
+    pg_query($conn,"INSERT INTO forniture VALUES (1,'AZX900',1200)");
+    echo pg_last_error($conn);
 
     #FUNZIONI
     function createUser($conn, $username, $password){
