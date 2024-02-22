@@ -1,4 +1,4 @@
-package Sockets;
+package Sockets.WebServer;
 import java.net.ServerSocket;
 import java.net.Socket;
 

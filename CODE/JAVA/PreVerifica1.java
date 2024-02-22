@@ -1,4 +1,7 @@
 import javax.swing.*;
+
+import Sockets.XmlServer.Window;
+
 import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package Sockets;
+package Sockets.WebServer;
 public class WebClient {
     
 }
