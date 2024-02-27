@@ -8,7 +8,7 @@ import javax.xml.parsers.*;
 import org.w3c.dom.*;
 import org.xml.sax.*;
 
-public class ProgettoServerXML {
+public class ProgettoClientXML {
     //Playlist online + immagine e suono
     public static void main(String[] args) {
         try {
