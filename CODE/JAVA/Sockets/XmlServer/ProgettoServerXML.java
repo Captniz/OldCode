@@ -182,3 +182,22 @@ class ClientManager extends Thread {
         return;
     }
 }
+
+class WindowManager {
+    MyWindow window;
+
+    WindowManager() {
+        window = new MyWindow();
+    }
+
+}
+
+class MyWindow extends javax.swing.JFrame {
+    public MyWindow() {
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Server");
+        setResizable(false);
+        setSize(new java.awt.Dimension(400, 300));
+        setVisible(true);
+    }
+}
