@@ -11,7 +11,7 @@
                 <followers>20.000</followers>
                 <language>English</language>
                 <metadata>
-                    <ip>127.0.0.1</ip>
+                    <streamPath>127.0.0.1</streamPath>
                     <imagePath></imagePath>
                 </metadata>
             </streamer>
@@ -21,7 +21,7 @@
                 <content>Italian</content>
                 <language>English</language>
                 <metadata>
-                    <ip>127.0.0.1</ip>
+                    <streamPath>127.0.0.1</streamPath>
                     <imagePath></imagePath>
                 </metadata>
             </streamer>
@@ -37,7 +37,7 @@
                 <content>Webcam</content>
                 <language>English</language>
                 <metadata>
-                    <ip>127.0.0.1</ip>
+                    <streamPath>127.0.0.1</streamPath>
                     <imagePath></imagePath>
                 </metadata>
             </streamer>
@@ -47,7 +47,7 @@
                 <content>Italian</content>
                 <language>English</language>
                 <metadata>
-                    <ip>127.0.0.1</ip>
+                    <streamPath>127.0.0.1</streamPath>
                     <imagePath></imagePath>
                 </metadata>
             </streamer>

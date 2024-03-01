@@ -8,9 +8,9 @@ import javax.xml.parsers.*;
 import org.w3c.dom.*;
 
 /**
-* Server for a streaming service. It manages the clients and the data they
-* request.
-*/
+ * Server for a streaming service. It manages the clients and the data they
+ * request.
+ */
 public class ProgettoServerXML {
 
     // Static & Global variables
@@ -30,7 +30,7 @@ public class ProgettoServerXML {
 
                 clients.add(new ClientManager(clientSocket));
                 // TODO: start client manager
-                //TODO: PER INFO CONTROLLA CHATGPT 26/02
+                // TODO: PER INFO CONTROLLA CHATGPT 26/02
             }
 
         } catch (Exception e) {
@@ -41,7 +41,8 @@ public class ProgettoServerXML {
     /**
      * Removes a client from the list of active clients in the streaming service.
      * 
-     * @param name <code>String<code/> containing the name of the client to be removed
+     * @param name <code>String</code> containing the name of the client to be
+     *             removed
      */
     public static void clearClients(String name) {
 
@@ -75,8 +76,10 @@ class XMLmanager {
     /**
      * Returns all the ELEMENT nodes with the given name in the XML file.
      * 
-     * @param nomeNodo <code>String<code/> containing the name of the node to be searched
-     * @return <code>ArrayList<Node><code/> containing all the nodes with the given name
+     * @param nomeNodo <code>String</code> containing the name of the node to be
+     *                 searched
+     * @return <code>ArrayList<Node></code> containing all the nodes with the given
+     *         name
      */
     ArrayList<Node> findNodes(String nomeNodo) {
         NodeList l = doc.getElementsByTagName(nomeNodo);
@@ -92,10 +95,35 @@ class XMLmanager {
     }
 
     /**
+     * Returns the first ELEMENT node with the given name that is a child of the
+     * given node.
+     * 
+     * @param nodo     <code>Node</code> containing the node to be searched
+     * @param nomeNodo <code>String</code> containing the name of the node to be
+     *                 searched
+     * @return <code>Node</code> containing the first node with the given name that
+     *         is a child of the given node
+     */
+    Node findChildNode(Node nodo, String nomeNodo) {
+        NodeList l = nodo.getChildNodes();
+        Node n = null;
+
+        for (int i = 0; i < l.getLength(); i++) {
+            if (l.item(i).getNodeType() == Node.ELEMENT_NODE && l.item(i).getNodeName().equals(nomeNodo)) {
+                n = l.item(i);
+                break;
+            }
+        }
+
+        return n;
+    }
+
+    /**
      * Returns all the ELEMENT nodes that are children of the given node.
      * 
-     * @param nodo <code>Node<code/> containing the node to be searched
-     * @return <code>ArrayList<Node><code/> containing all the children of the given node
+     * @param nodo <code>Node</code> containing the node to be searched
+     * @return <code>ArrayList<Node></code> containing all the children of the given
+     *         node
      */
     ArrayList<Node> findChildNodes(Node nodo) {
         NodeList l = nodo.getChildNodes();
@@ -114,8 +142,10 @@ class XMLmanager {
      * Returns data like name and followers, as well as the image path for a group
      * in the streaming service.
      * 
-     * @return <code>ArrayList &lt ArrayList &lt String &gt &gt<code/> containing in each row a group and
-     *         each column one of the pieces of data : <code>[ name , followers , imgPath ]<code/>
+     * @return <code>ArrayList &lt ArrayList &lt String &gt &gt</code> containing in
+     *         each row a group and
+     *         each column one of the pieces of data : <code>[ name , followers ,
+     *         imgPath ]</code>
      */
     ArrayList<ArrayList<String>> getGroupData() {
 
@@ -131,12 +161,11 @@ class XMLmanager {
 
             attr = n.getAttributes();
             tmp.add(attr.item(2).getNodeValue());
-            
+
             tmp2 = findChildNodes(n);
             tmp.add(tmp2.get(1).getTextContent());
             tmp.add(tmp2.get(0).getTextContent());
-            
-            
+
             dati.add(tmp);
         }
 
@@ -144,12 +173,66 @@ class XMLmanager {
     }
 
     /**
-     * Returns data like name, followers and the image path for a stream in the
-     * streaming service.
+     * Returns a list of all the streams in a given group.
      * 
-     * @return <code>ArrayList &lt ArrayList &lt String &gt &gt<code/> containing in each row a stream and
-     *         each column one of the pieces of data : <code>[ name , content , followers , language ,  , imgPath ]<code/>
+     * @param groupName <code>String</code> containing the name of the group to be
+     *                  searched
+     * @return <code>ArrayList &lt String &gt</code> containing the names of the
+     *         streams in the given group
      */
+    ArrayList<String> getStreams(String groupName) {
+        ArrayList<Node> gruppi = findNodes("group");
+        ArrayList<Node> streams;
+        ArrayList<String> dati = new ArrayList<String>();
+
+        for (Node n : gruppi) {
+            if (n.getAttributes().item(2).getNodeValue().equals(groupName)) {
+                streams = findChildNodes(n);
+                for (Node s : streams) {
+                    dati.add(findChildNode(s, "name").getTextContent());
+                }
+                break;
+            }
+        }
+        return dati;
+    }
+
+    /**
+     * Returns the data for a given stream in a given group.
+     * 
+     * @param groupName  <code>String</code> containing the name of the group to be
+     *                   searched
+     * @param streamName <code>String</code> containing the name of the stream to be
+     *                   searched
+     * @return <code>ArrayList &lt String &gt</code> containing the data for the
+     *         given stream in the given group : <code>[ name , content , followers
+     *         , language , streamPath , imagePath ]</code>
+     */
+    ArrayList<String> getStreamData(String groupName, String streamName) {
+        ArrayList<Node> gruppi = findNodes("group");
+        ArrayList<Node> streams;
+        ArrayList<String> dati = new ArrayList<String>();
+
+        for (Node n : gruppi) {
+            if (n.getAttributes().item(2).getNodeValue().equals(groupName)) {
+                streams = findChildNodes(n);
+                for (Node s : streams) {
+                    if (findChildNode(s, "name").getTextContent().equals(streamName)) {
+                        dati = new ArrayList<String>();
+                        dati.add(findChildNode(s, "name").getTextContent());
+                        dati.add(findChildNode(s, "content").getTextContent());
+                        dati.add(findChildNode(s, "followers").getTextContent());
+                        dati.add(findChildNode(s, "language").getTextContent());
+                        dati.add(findChildNode(findChildNode(s, "metadata"), "streamPath").getTextContent());
+                        dati.add(findChildNode(findChildNode(s, "metadata"), "imagePath").getTextContent());
+                        break;
+                    }
+                }
+                break;
+            }
+        }
+        return dati;
+    }
 }
 
 /**
@@ -176,7 +259,7 @@ class ClientManager extends Thread {
     @Override
     public void run() {
         String req;
-        
+
         try {
             for (;;) {
                 req = in.readLine();
@@ -188,10 +271,8 @@ class ClientManager extends Thread {
 
                     case "#LIST GROUP":
                         /*
-                         * [0] = name / [1] = followers / [2] = imgPath
-                         * 
-                         * Send data in the format "name;followers" followed by another line with the
-                         * image data
+                         * Send the list of groups to the client. The list is formatted as follows:
+                         * <code>name;followers;imgPath</code>
                          */
                         ArrayList<ArrayList<String>> dati = xml.getGroupData();
 
@@ -202,11 +283,30 @@ class ClientManager extends Thread {
                         break;
 
                     case "#LIST STREAM":
-                        //TODO: implementare
+                        /*
+                        * Send the list of streams in a given group to the client. The list is
+                        * formatted as follows: <code>name;followers;imgPath</code>
+                        */
+                        ArrayList<String> streams = xml.getStreams(getRequestData(req)[0]);
+
+                        for (String s : streams) {
+                            ArrayList<String> tmp = xml.getStreamData(getRequestData(req)[0], s);
+                            out.println(tmp.get(0) + ";" + tmp.get(2));
+                            sendImage(tmp.get(5));
+                        }
                         break;
 
                     case "#SHOW STREAM":
-                        //TODO: implementare o delegare a client/webserver
+                        /*
+                         * Send the data for a given stream in a given group to the client. The data is
+                         * formatted as follows:
+                         * <code>name;content;followers;language;streamPath;imgPath</code>
+                         */
+                        ArrayList<String> tmp = xml.getStreamData(getRequestData(req)[0], getRequestData(req)[1]);
+
+                        out.println(tmp.get(0) + ";" + tmp.get(1) + ";" + tmp.get(2) + ";" + tmp.get(3) + ";" + tmp.get(4));
+                        sendImage(tmp.get(5));
+                        //TODO: implementare funzione per inviare lo stream
                         break;
                     default:
                         break;
@@ -225,7 +325,7 @@ class ClientManager extends Thread {
     /**
      * Sends an image to the client.
      * 
-     * @param path <code>String<code/> containing the path of the image to be sent
+     * @param path <code>String</code> containing the path of the image to be sent
      */
     void sendImage(String path) {
         try {
@@ -240,10 +340,11 @@ class ClientManager extends Thread {
             e.printStackTrace();
         }
     }
-            
+
     /**
-     * Kills the client and removes it from the list of active clients in the streaming service.
-     * Calls the <code>clearClients<code/> method in <code>ProgettoServerXML<code/>.
+     * Kills the client and removes it from the list of active clients in the
+     * streaming service.
+     * Calls the <code>clearClients</code> method in <code>ProgettoServerXML</code>.
      */
     void killClient() {
         try {
@@ -256,23 +357,19 @@ class ClientManager extends Thread {
         }
         return;
     }
-}
 
-class WindowManager {
-    MyWindow window;
+    /**
+     * Returns the data relative to the request made by the client.
+     * 
+     * @return <code>String</code> containing the data of the request
+     */
+    String[] getRequestData(String req) {
+        String[] tmp = req.split(" ");
+        String[] data = new String[tmp.length - 2];
+        for (int i = 2; i < tmp.length; i++) {
+            data[i - 2] = tmp[i];
+        }
 
-    WindowManager() {
-        window = new MyWindow();
-    }
-
-}
-
-class MyWindow extends javax.swing.JFrame {
-    public MyWindow() {
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Server");
-        setResizable(false);
-        setSize(new java.awt.Dimension(400, 300));
-        setVisible(true);
+        return data;
     }
 }
