@@ -21,16 +21,18 @@ public class ProgettoServerXML {
         try {
             // Create server socket
             ServerSocket serverSocket = new ServerSocket(PORT);
+            Socket clientSocket;
+            ClientManager clientmanager;
             System.out.println("Server started . . .");
 
             // Accept and manage clients
             while (true) {
-                Socket clientSocket = serverSocket.accept();
+                clientSocket = serverSocket.accept();
+                clientmanager = new ClientManager(clientSocket);
                 System.out.println("Client connected");
 
-                clients.add(new ClientManager(clientSocket));
-                // TODO: start client manager
-                // TODO: PER INFO CONTROLLA CHATGPT 26/02
+                clients.add(clientmanager);
+                clientmanager.start();
             }
 
         } catch (Exception e) {
@@ -259,6 +261,7 @@ class ClientManager extends Thread {
     @Override
     public void run() {
         String req;
+        String tmp;
 
         try {
             for (;;) {
@@ -270,43 +273,23 @@ class ClientManager extends Thread {
                         return;
 
                     case "#LIST GROUP":
-                        /*
-                         * Send the list of groups to the client. The list is formatted as follows:
-                         * <code>name;followers;imgPath</code>
-                         */
                         ArrayList<ArrayList<String>> dati = xml.getGroupData();
 
-                        for (ArrayList<String> a : dati) {
-                            out.println(a.get(0) + ";" + a.get(1));
-                            sendImage(a.get(2));
+                        for (ArrayList<String> s : dati) {
+                            tmp = s.get(0) + " " + s.get(1);
+                            out.println(tmp);
                         }
+
+                        tmp="";
+
                         break;
 
                     case "#LIST STREAM":
-                        /*
-                        * Send the list of streams in a given group to the client. The list is
-                        * formatted as follows: <code>name;followers;imgPath</code>
-                        */
-                        ArrayList<String> streams = xml.getStreams(getRequestData(req)[0]);
 
-                        for (String s : streams) {
-                            ArrayList<String> tmp = xml.getStreamData(getRequestData(req)[0], s);
-                            out.println(tmp.get(0) + ";" + tmp.get(2));
-                            sendImage(tmp.get(5));
-                        }
                         break;
 
                     case "#SHOW STREAM":
-                        /*
-                         * Send the data for a given stream in a given group to the client. The data is
-                         * formatted as follows:
-                         * <code>name;content;followers;language;streamPath;imgPath</code>
-                         */
-                        ArrayList<String> tmp = xml.getStreamData(getRequestData(req)[0], getRequestData(req)[1]);
 
-                        out.println(tmp.get(0) + ";" + tmp.get(1) + ";" + tmp.get(2) + ";" + tmp.get(3) + ";" + tmp.get(4));
-                        sendImage(tmp.get(5));
-                        //TODO: implementare funzione per inviare lo stream
                         break;
                     default:
                         break;
