@@ -2,15 +2,9 @@
 
 ## Descrizione
 
-Il progetto consiste in un server JAVA che riceve un file XML, poi lo invia ad un client JAVA che lo invia ad una pagina HTML. La pagina HTML riceve i dati e li visualizza in tempo reale.
+Il progetto consiste in un server JAVA che riceve un file XML, poi lo invia ad un client JAVA che lo invia ad una pagina HTML. La pagina HTML riceve i dati e visualizza in tempo reale una live streaming.
 
-## Struttura
-
-Il progetto è diviso in due parti:
-
-
-- Server
-- Client
+![alt text](Scheme.svg)
 
 ## Todo
 
