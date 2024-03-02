@@ -1,5 +1,3 @@
-package Sockets.XmlServer;
-
 import java.io.*;
 import java.util.*;
 import java.net.*;
@@ -47,10 +45,10 @@ public class ProgettoServerXML {
      *             removed
      */
     public static void clearClients(String name) {
-
         for (ClientManager c : clients) {
             if (c.getName().equals(name)) {
                 clients.remove(c);
+                System.out.println("Client " + name + " removed");
                 break;
             }
         }
@@ -208,7 +206,7 @@ class XMLmanager {
      *                   searched
      * @return <code>ArrayList &lt String &gt</code> containing the data for the
      *         given stream in the given group : <code>[ name , content , followers
-     *         , language , streamPath , imagePath ]</code>
+     *         , language , streamIp , imagePath ]</code>
      */
     ArrayList<String> getStreamData(String groupName, String streamName) {
         ArrayList<Node> gruppi = findNodes("group");
@@ -225,7 +223,7 @@ class XMLmanager {
                         dati.add(findChildNode(s, "content").getTextContent());
                         dati.add(findChildNode(s, "followers").getTextContent());
                         dati.add(findChildNode(s, "language").getTextContent());
-                        dati.add(findChildNode(findChildNode(s, "metadata"), "streamPath").getTextContent());
+                        dati.add(findChildNode(findChildNode(s, "metadata"), "streamIp").getTextContent());
                         dati.add(findChildNode(findChildNode(s, "metadata"), "imagePath").getTextContent());
                         break;
                     }
@@ -276,26 +274,45 @@ class ClientManager extends Thread {
                         ArrayList<ArrayList<String>> dati = xml.getGroupData();
 
                         for (ArrayList<String> s : dati) {
-                            tmp = s.get(0) + " " + s.get(1);
+                            tmp = s.get(0) + ";" + s.get(1);
                             out.println(tmp);
+                            out.println("#IMG");
+                            sendImage(s.get(2));
                         }
 
+                        out.println("#END");
                         tmp="";
 
                         break;
 
                     case "#LIST STREAM":
+                        String[] data = getRequestData(req);
+                        ArrayList<String> streams = xml.getStreams(data[0]);
+
+                        for (String s : streams) {
+                            out.println(s);
+                        }
+
+                        out.println("#END");
 
                         break;
 
                     case "#SHOW STREAM":
+                        String[] data2 = getRequestData(req);
+                        ArrayList<String> streamData = xml.getStreamData(data2[0], data2[1]);
+
+                        for (int i = 0; i < streamData.size()-1; i++) {
+                            out.println(streamData.get(i));
+                        }
+                        out.println("#IMG");
+                        sendImage(streamData.get(streamData.size()-1));
 
                         break;
+
                     default:
                         break;
                 }
 
-                // TODO: implementare le funzioni + finisci xml
             }
         } catch (Exception e) {
             System.out.println("Errore ClientManager");

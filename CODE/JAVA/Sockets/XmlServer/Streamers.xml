@@ -2,7 +2,7 @@
 
 <albums>
     <group genre="Gaming">
-        <imagePath></imagePath>
+        <imagePath>./src/streamers/gr1.PNG</imagePath>
         <followers>120.000</followers>
         <streamers>
             <streamer>
@@ -11,8 +11,8 @@
                 <followers>20.000</followers>
                 <language>English</language>
                 <metadata>
-                    <streamPath>127.0.0.1</streamPath>
-                    <imagePath></imagePath>
+                    <streamIp>127.0.0.1</streamIp>
+                    <imagePath>./src/streamers/str1.PNG</imagePath>
                 </metadata>
             </streamer>
             <streamer>
@@ -22,13 +22,13 @@
                 <language>English</language>
                 <metadata>
                     <streamPath>127.0.0.1</streamPath>
-                    <imagePath></imagePath>
+                    <imagePath>./src/streamers/str2.PNG</imagePath>
                 </metadata>
             </streamer>
         </streamers>
     </group>
     <group genre="Hot Tub">
-        <imagePath></imagePath>
+        <imagePath>./src/streamers/gr2.PNG</imagePath>
         <followers>20.000</followers>
         <streamers>
             <streamer>
@@ -38,7 +38,7 @@
                 <language>English</language>
                 <metadata>
                     <streamPath>127.0.0.1</streamPath>
-                    <imagePath></imagePath>
+                    <imagePath>./src/streamers/str3.PNG</imagePath>
                 </metadata>
             </streamer>
             <streamer>
@@ -48,7 +48,7 @@
                 <language>English</language>
                 <metadata>
                     <streamPath>127.0.0.1</streamPath>
-                    <imagePath></imagePath>
+                    <imagePath>./src/streamers/str4.PNG</imagePath>
                 </metadata>
             </streamer>
         </streamers>
